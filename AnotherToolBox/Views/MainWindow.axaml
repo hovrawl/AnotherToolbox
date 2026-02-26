@@ -30,13 +30,7 @@
 
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.Content>
-            <ListBox ItemsSource="{Binding Characters}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate DataType="characters:CharacterSlim">
-                        <ListBoxItem Content="{Binding Name}"></ListBoxItem>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+            
         </ui:NavigationView.Content>
     </ui:NavigationView>
     

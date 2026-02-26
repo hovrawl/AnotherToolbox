@@ -15,7 +15,6 @@ public partial class MainWindowViewModel : ViewModelBase
     private readonly WikiService _wikiService;
     public readonly IServiceProvider ServiceProvider;
 
-    public ObservableCollection<CharacterSlim> Characters { get; } = new();
 
     public MainWindowViewModel()
     {
@@ -28,11 +27,6 @@ public partial class MainWindowViewModel : ViewModelBase
         ServiceProvider = serviceProvider;
     }
 
-    [RelayCommand]
-    public async Task LoadCharacters()
-    {
-        await InitializeCharacters();
-    }
     
     public async Task InitializeWiki()
     {
@@ -40,16 +34,4 @@ public partial class MainWindowViewModel : ViewModelBase
         await _wikiService.Setup();
     }
 
-    public async Task InitializeCharacters()
-    {
-        if (!_wikiService.Initialized) return;
-        Characters.Clear();
-
-        await _wikiService.LoadCharactersSlim();
-
-        foreach (var character in _wikiService.SlimCharacters)
-        {
-            Characters.Add(character);
-        }
-    }
 }
