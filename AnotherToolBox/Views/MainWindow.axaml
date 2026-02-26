@@ -1,0 +1,44 @@
+<faw:AppWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AnotherToolBox.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:faw="clr-namespace:FluentAvalonia.UI.Windowing;assembly=FluentAvalonia"
+        xmlns:ui="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
+        xmlns:characters="clr-namespace:AnotherToolBox.Models.Characters"
+        mc:Ignorable="d" d:DesignWidth="660" d:DesignHeight="400"
+        x:Class="AnotherToolBox.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AnotherToolBox">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <ui:NavigationView IsPaneOpen="False"
+                       IsBackEnabled="False"
+                       IsBackButtonVisible="False"
+                       
+                       ItemInvoked="NavOnItemInvoked">
+        <ui:NavigationView.MenuItems>
+            
+            <ui:NavigationViewItem Content="Home" IconSource="Home" Tag="Home"/>
+            <ui:NavigationViewItem Content="Team" IconSource="People" Tag="Team" />
+
+        </ui:NavigationView.MenuItems>
+        <ui:NavigationView.Content>
+            <ListBox ItemsSource="{Binding Characters}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="characters:CharacterSlim">
+                        <ListBoxItem Content="{Binding Name}"></ListBoxItem>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ui:NavigationView.Content>
+    </ui:NavigationView>
+    
+    
+</faw:AppWindow>
