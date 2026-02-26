@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using AnotherToolBox.Models.Characters;
 using AnotherToolBox.Services;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -16,6 +17,8 @@ public partial class TeamBuilderViewModel: ViewModelBase
     
     public ObservableCollection<CharacterSlim> Characters { get; } = new();
     
+    [ObservableProperty]
+    private bool isLoading;
     
     public TeamBuilderViewModel()
     {
@@ -39,13 +42,21 @@ public partial class TeamBuilderViewModel: ViewModelBase
     public async Task InitializeCharacters()
     {
         if (!_wikiService.Initialized) return;
-        Characters.Clear();
-
-        await _wikiService.LoadCharactersSlim();
-
-        foreach (var character in _wikiService.SlimCharacters)
+        IsLoading = true;
+        try
         {
-            Characters.Add(character);
+            Characters.Clear();
+
+            await _wikiService.LoadCharactersSlim();
+
+            foreach (var character in _wikiService.SlimCharacters)
+            {
+                Characters.Add(character);
+            }
+        }
+        finally
+        {
+            IsLoading = false;
         }
     }
 }
