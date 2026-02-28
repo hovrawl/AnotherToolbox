@@ -59,6 +59,7 @@ public partial class CharacterListViewModel : ViewModelBase
                 {
                     Id =  character.Id,
                     Name = character.Name,
+                    Style = character.Style,
                 });
             }
         }

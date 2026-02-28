@@ -136,7 +136,7 @@ public class WikiService
         var cts = new CancellationTokenSource();
         var tasks = characterSlims.Select(async c =>  
         {  
-            var filename = BuildCharacterImageFilename(c.Id, style: null, maxRarity: 5);  
+            var filename = BuildCharacterImageFilename(c.Id, style: c.Style, maxRarity: 5);  
             // -> "101910011_rank5 command.png"  
               
             // Resolve to URL  
@@ -159,7 +159,7 @@ public class WikiService
     {  
         var suffix = style switch  
         {  
-            2 or 3 or 4 => $"s{style}",  
+            2 or 3 or 4 => $"_s{style}",  
             _ => ""  
         };  
         var rank5 = maxRarity == 5 ? "_rank5" : "";  

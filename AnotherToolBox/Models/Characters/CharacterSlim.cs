@@ -17,6 +17,9 @@ public class CharacterSlim
     [Column("Name")]  
     public string Name { get; set; } = default!;
 
+    [Column("Style")]
+    public int Style { get; set; }
+    
     [Column("ReleaseDate")]
     public DateTime? ReleaseDate { get; set; }
 }

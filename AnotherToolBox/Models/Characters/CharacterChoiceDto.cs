@@ -10,6 +10,8 @@ public partial class CharacterChoiceDto: ObservableObject
   
 
     public string Name { get; set; } = default!;
+    
+    public int Style { get; set; }
 
     [ObservableProperty] private Bitmap thumbnail;
 
