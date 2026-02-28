@@ -18,6 +18,8 @@
                 <DataTemplate DataType="characters:CharacterChoiceDto">
                     <ListBoxItem >
                         <StackPanel Orientation="Horizontal">
+                            <controls:ProgressRing IsIndeterminate="True" Width="80" Height="80"
+                                                   IsVisible="{Binding IsLoading}"/>
                             <Image Source="{Binding Thumbnail}"
                                    Width="80" Height="80" 
                                    VerticalAlignment="Center"/>

@@ -76,7 +76,7 @@ public partial class CharacterListViewModel : ViewModelBase
         {
             var cts = new CancellationTokenSource();
             var cancellationToken = cts.Token;
-            // IsLoading = true;
+            character.IsLoading = true;
 
             var urls = await _wikiService.FetchCharacterThumbnails([character]).ConfigureAwait(false);
             var url = urls?.FirstOrDefault();
@@ -94,7 +94,7 @@ public partial class CharacterListViewModel : ViewModelBase
         }
         finally
         {
-            // IsLoading = false;
+            character.IsLoading = false;
         }
     }
 }
