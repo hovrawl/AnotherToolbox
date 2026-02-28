@@ -10,15 +10,18 @@
              x:DataType="viewModels:TeamBuilderViewModel">
    
     <Grid 
-        RowDefinitions="*, *" ColumnDefinitions="*"
+        RowDefinitions="*" ColumnDefinitions="*"
         Margin="8"
         VerticalAlignment="Center"
         HorizontalAlignment="Center"
         >
        
-        <ItemsRepeater Grid.Row="0" ItemsSource="{Binding TeamFrames}">
+        <ItemsRepeater
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            ItemsSource="{Binding TeamFrames}">
             <ItemsRepeater.Layout>
-                <StackLayout Orientation="Horizontal" Spacing="8" />
+                <WrapLayout Orientation="Horizontal" HorizontalSpacing="8" VerticalSpacing="8"/>
             </ItemsRepeater.Layout>
             <ItemsRepeater.ItemTemplate>
                 <DataTemplate DataType="viewModels:CharacterFrameViewModel">

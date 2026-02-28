@@ -10,6 +10,8 @@
         x:Class="AnotherToolBox.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
+        MinHeight="470"
+        MinWidth="500"
         Title="AnotherToolBox">
 
     <Design.DataContext>

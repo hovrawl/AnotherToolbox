@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using AnotherToolBox.Models.Characters;
 using AnotherToolBox.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -24,9 +25,23 @@ public partial class CharacterFrameViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    public void SelectCharacter()
+    public async Task SelectCharacter()
     {
         SelectorOpen = !SelectorOpen;
+        
+       
+        // When opening the selector, ensure characters are loaded (LoadCharacters is idempotent)
+        if (SelectorOpen)
+        {
+            try
+            {
+                await CharacterListVm.LoadCharacters();
+            }
+            catch
+            {
+                // ignore here (or add logging), don't want UI to crash on load failure
+            }
+        } 
     }
 
     public CharacterFrameViewModel(CharacterListViewModel characterListVm)

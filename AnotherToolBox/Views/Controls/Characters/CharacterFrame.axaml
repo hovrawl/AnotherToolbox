@@ -10,8 +10,12 @@
              x:DataType="viewModels:CharacterFrameViewModel">
     
     <Grid 
-          MinWidth="120"
-          MinHeight="140">
+          MinWidth="144"
+          MaxWidth="144"
+          MinHeight="170"
+          MaxHeight="170"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center">
         <Button 
             Command="{Binding SelectCharacter}" 
                 HorizontalAlignment="Stretch"
@@ -19,6 +23,7 @@
             <StackPanel>
                 <!-- Add Character when empty -->
                 <controls:SymbolIcon Symbol="Add" 
+                                     FontSize="24"
                                      IsVisible="{Binding SelectedCharacter, Converter={StaticResource ObjectNullBoolConverter}}"
                                      VerticalAlignment="Center"
                                      HorizontalAlignment="Center"/>
@@ -33,12 +38,18 @@
                         Source="{Binding SelectedCharacter.Thumbnail}"
                         Width="120"
                         Height="120"
+                        VerticalAlignment="Top"
                         />
                     <TextBlock 
                         Text="{Binding SelectedCharacter.Name}"
                         HorizontalAlignment="Center" 
+                        VerticalAlignment="Bottom"
+                        TextAlignment="Center"
                         TextWrapping="WrapWithOverflow"
-                        MaxLines="2"></TextBlock>
+                        MaxLines="2"
+                        MaxWidth="120" 
+                        Height="40"
+                        />
                 </StackPanel>
             </StackPanel>
             <Button.Flyout>

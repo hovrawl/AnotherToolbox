@@ -46,6 +46,8 @@ public partial class CharacterListViewModel : ViewModelBase
     {
         if (!_wikiService.Initialized) return;
         if (Characters.Count > 0) return;
+        if (IsLoading) return;
+        
         IsLoading = true;
         try
         {
