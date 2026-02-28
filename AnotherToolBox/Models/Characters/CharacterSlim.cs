@@ -1,5 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using WikiClientLibrary.Cargo.Schema;
 
 namespace AnotherToolBox.Models.Characters;

@@ -13,7 +13,7 @@ public partial class DashboardViewModel: ViewModelBase
         _wikiService = new WikiService(NullLoggerFactory.Instance.CreateLogger<WikiService>());
     }
     
-    public DashboardViewModel(WikiService wikiService) : this()
+    public DashboardViewModel(WikiService wikiService) 
     {
         _wikiService = wikiService;
     }

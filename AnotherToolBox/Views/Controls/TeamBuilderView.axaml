@@ -3,27 +3,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:AnotherToolBox.ViewModels"
-             xmlns:characters="clr-namespace:AnotherToolBox.Models.Characters"
              xmlns:controls="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
+             xmlns:characters="clr-namespace:AnotherToolBox.Views.Controls.Characters"
              mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="400"
              x:Class="AnotherToolBox.Views.Controls.TeamBuilderView"
              x:DataType="viewModels:TeamBuilderViewModel">
    
-    <Grid>
-        <ListBox ItemsSource="{Binding Characters}">
-            <ListBox.ItemTemplate>
-                <DataTemplate DataType="characters:CharacterSlim">
-                    <ListBoxItem Content="{Binding Name}"></ListBoxItem>
+    <Grid 
+        RowDefinitions="*, *" ColumnDefinitions="*"
+        Margin="8"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        >
+       
+        <ItemsRepeater Grid.Row="0" ItemsSource="{Binding TeamFrames}">
+            <ItemsRepeater.Layout>
+                <StackLayout Orientation="Horizontal" Spacing="8" />
+            </ItemsRepeater.Layout>
+            <ItemsRepeater.ItemTemplate>
+                <DataTemplate DataType="viewModels:CharacterFrameViewModel">
+                    <characters:CharacterFrame />
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
-        <!-- Loading overlay -->
-        <Border Background="#80000000" IsVisible="{Binding IsLoading}">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
-                <controls:ProgressRing IsIndeterminate="True" Width="40" Height="40" />
-                <TextBlock Text="Loading characters..." Foreground="White" HorizontalAlignment="Center" />
-            </StackPanel>
-        </Border>
+            </ItemsRepeater.ItemTemplate>
+        </ItemsRepeater>
     </Grid>
+ 
+    
 </UserControl>

@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:AnotherToolBox.ViewModels"
+             xmlns:characters="clr-namespace:AnotherToolBox.Models.Characters"
+             xmlns:controls="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
+             xmlns:anotherToolBox="clr-namespace:AnotherToolBox"
+             mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="400"
+             x:Class="AnotherToolBox.Views.Controls.Characters.CharacterList"
+             x:DataType="viewModels:CharacterListViewModel">
+    <Grid>
+        <ListBox ItemsSource="{Binding Characters}"
+                 SelectedItem="{Binding SelectedCharacter}"
+                 
+                 PreparingContainer="ItemsControl_OnPreparingContainer">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="characters:CharacterChoiceDto">
+                    <ListBoxItem >
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Thumbnail}"
+                                   Width="80" Height="80" 
+                                   VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Name}"
+                                       VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Loading overlay -->
+        <Border Background="#80000000" IsVisible="{Binding IsLoading}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
+                <controls:ProgressRing IsIndeterminate="True" Width="40" Height="40" />
+                <TextBlock Text="Loading characters..." Foreground="White" HorizontalAlignment="Center" />
+            </StackPanel>
+        </Border>
+    </Grid>
+    
+</UserControl>

@@ -21,7 +21,7 @@ public partial class MainWindowViewModel : ViewModelBase
         _wikiService = new WikiService(NullLoggerFactory.Instance.CreateLogger<WikiService>());
     }
     
-    public MainWindowViewModel(WikiService wikiService, IServiceProvider serviceProvider) : this()
+    public MainWindowViewModel(WikiService wikiService, IServiceProvider serviceProvider) 
     {
         _wikiService = wikiService;
         ServiceProvider = serviceProvider;

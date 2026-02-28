@@ -4,16 +4,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using AnotherToolBox.Models.Characters;
+using Avalonia.Media;
 using Microsoft.Extensions.Logging;
 using WikiClientLibrary;
 using WikiClientLibrary.Cargo.Linq;
 using WikiClientLibrary.Cargo.Schema;
 using WikiClientLibrary.Cargo.Schema.DataAnnotations;
 using WikiClientLibrary.Client;
+using WikiClientLibrary.Infrastructures;
 using WikiClientLibrary.Pages.Parsing;
 using WikiClientLibrary.Sites;
 
@@ -126,4 +130,39 @@ public class WikiService
         Initialized = false;
         return true;
     }
+
+    public async Task<List<string>> FetchCharacterThumbnails(List<CharacterChoiceDto> characterSlims)
+    {
+        var cts = new CancellationTokenSource();
+        var tasks = characterSlims.Select(async c =>  
+        {  
+            var filename = BuildCharacterImageFilename(c.Id, style: null, maxRarity: 5);  
+            // -> "101910011_rank5 command.png"  
+              
+            // Resolve to URL  
+            var info = await _site.InvokeMediaWikiApiAsync(new MediaWikiFormRequestMessage(new  
+            {  
+                action = "query",  
+                titles = $"File:{filename}",  
+                prop = "imageinfo",  
+                iiprop = "url"  
+            }), cts.Token);  
+            var url = info["query"]["pages"][0]["imageinfo"][0]["url"].GetValue<string>();
+            return url;  
+        });  
+        var urls = await Task.WhenAll(tasks);
+        
+        return urls.ToList();
+    }
+    
+    static string BuildCharacterImageFilename(string id, int? style, int? maxRarity)  
+    {  
+        var suffix = style switch  
+        {  
+            2 or 3 or 4 => $"s{style}",  
+            _ => ""  
+        };  
+        var rank5 = maxRarity == 5 ? "_rank5" : "";  
+        return $"{id}{suffix}{rank5} command.png";  
+    }  
 }

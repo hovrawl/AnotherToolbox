@@ -10,14 +10,20 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddCommonServices(this IServiceCollection collection)
     {
-        // Required
+        // Required services
         collection.AddLogging(logger => logger.AddConsole());
         collection.AddSingleton<WikiService>();
+        collection.AddSingleton<ImageService>();
         
-        // View Models
+        // View Models (singletons so we dont duplicate)
         collection.AddSingleton<MainWindowViewModel>();
         collection.AddSingleton<DashboardViewModel>();
         collection.AddSingleton<TeamBuilderViewModel>();
+        collection.AddSingleton<CharacterListViewModel>();
+        
+        // Scope the character frame as we have multiple
+        collection.AddScoped<CharacterFrameViewModel>();
+        
         return collection;
     }
 }

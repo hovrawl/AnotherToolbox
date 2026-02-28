@@ -3,6 +3,7 @@
              x:Class="AnotherToolBox.App"
              xmlns:local="using:AnotherToolBox"
              xmlns:styling="clr-namespace:FluentAvalonia.Styling;assembly=FluentAvalonia"
+             xmlns:converters="clr-namespace:AnotherToolBox.Converters"
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
@@ -14,4 +15,10 @@
         <FluentTheme />
         <styling:FluentAvaloniaTheme />
     </Application.Styles>
+             
+     <Application.Resources>
+         <converters:IndexToDividerVisibilityConverter x:Key="IndexToDividerVisibilityConverter" />
+         <converters:ObjectNotNullToBoolConverter x:Key="ObjectNotNullBoolConverter" />
+         <converters:ObjectNullToBoolConverter x:Key="ObjectNullBoolConverter" />
+     </Application.Resources> 
 </Application>

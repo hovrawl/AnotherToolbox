@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:AnotherToolBox.ViewModels"
+             xmlns:controls="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
+             xmlns:characters="clr-namespace:AnotherToolBox.Views.Controls.Characters"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AnotherToolBox.Views.Controls.Characters.CharacterFrame"
+             x:DataType="viewModels:CharacterFrameViewModel">
+    
+    <Grid>
+        <Button Command="{Binding SelectCharacter}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel>
+                <!-- Add Character when empty -->
+                <controls:SymbolIcon Symbol="Add" 
+                                     IsVisible="{Binding SelectedCharacter, Converter={StaticResource ObjectNullBoolConverter}}"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"/>
+                
+                <!-- Show character image + details -->
+                <StackPanel 
+                    IsVisible="{Binding SelectedCharacter, Converter={StaticResource ObjectNotNullBoolConverter}}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <Image 
+                        Source="{Binding SelectedCharacter.Thumbnail}"
+                        Width="120"
+                        Height="120"
+                        />
+                    <TextBlock 
+                        Text="{Binding SelectedCharacter.Name}"
+                        HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <Button.Flyout>
+                <Flyout IsOpen="{Binding SelectorOpen}"
+                        Closing="PopupFlyoutBase_OnClosing">
+                    <characters:CharacterList 
+                        DataContext="{Binding CharacterListVm}"
+                        Width="240"
+                        Height="300"/>
+                </Flyout>
+            </Button.Flyout>
+        </Button>
+    </Grid>
+</UserControl>
