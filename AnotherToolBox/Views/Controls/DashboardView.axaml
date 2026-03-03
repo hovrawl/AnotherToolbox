@@ -5,6 +5,27 @@
              xmlns:viewModels="clr-namespace:AnotherToolBox.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AnotherToolBox.Views.Controls.DashboardView"
-             x:DataType="viewModels:DashboardViewModel">>
-    Dashboard View
+             x:DataType="viewModels:DashboardViewModel">
+    <Grid 
+        ColumnDefinitions="*, *"
+        RowDefinitions="*, *">
+        <Carousel
+            Grid.Row="0" Grid.ColumnSpan="2">
+            Game news banners
+        </Carousel>
+        <StackPanel 
+            x:Name="LeftPane"
+            Grid.Row="1" Grid.Column="0">
+            <Border BorderThickness="1">
+                <TextBlock Text="daily check"></TextBlock>
+            </Border>
+        </StackPanel>
+        <StackPanel
+            x:Name="RightPane"
+            Grid.Row="1" Grid.Column="1">
+            <Border BorderThickness="1">
+                <TextBlock Text="timers"></TextBlock>
+            </Border>
+        </StackPanel>
+    </Grid>
 </UserControl>
