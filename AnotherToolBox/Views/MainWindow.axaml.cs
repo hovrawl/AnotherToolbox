@@ -1,9 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using AnotherToolBox.Services;
 using AnotherToolBox.ViewModels;
+using AnotherToolBox.ViewModels.Player;
 using AnotherToolBox.Views.Controls;
+using AnotherToolBox.Views.Controls.Player;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
+using Avalonia.Threading;
 using FluentAvalonia.UI.Controls;
 using FluentAvalonia.UI.Windowing;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,8 +36,24 @@ public partial class MainWindow : AppWindow
     {
         try
         {
+            if (NavigationView.MenuItems.FirstOrDefault(i => 
+                    i is NavigationViewItem navItem 
+                    && (navItem.Tag.ToString().ToLower() == "dashboard"
+                        || navItem.Tag.ToString().ToLower() == "home")) is NavigationViewItem dashboardItem)
+            {
+                Dispatcher.UIThread.Post(() =>
+                {
+                    NavigationView.SelectedItem = dashboardItem;
+
+                    // Don't try to fake ItemInvoked / RaisePropertyChanged.
+                    // Just run the same navigation logic you run on click.
+                    if (dashboardItem.Tag is string tag)
+                        NavigateTo(tag);
+                }, DispatcherPriority.Loaded);
+            }
+
             if (DataContext is not MainWindowViewModel vm) return;
-        
+
             await vm.InitializeWiki();
         }
         catch (Exception ex)
@@ -40,12 +61,17 @@ public partial class MainWindow : AppWindow
             throw; // TODO handle exception
         }
     }
-    
+
     private void NavOnItemInvoked(object? sender, NavigationViewItemInvokedEventArgs e)
     {
-        if (sender is not NavigationView nv) return;
         if (e.InvokedItemContainer is not NavigationViewItem item) return;
         if (item.Tag is not string tag) return;
+
+        NavigateTo(tag);
+    }
+
+    private void NavigateTo(string tag)
+    {
         if (DataContext is not MainWindowViewModel vm) return;
 
         // normalize the key so cache lookups are case-insensitive
@@ -77,7 +103,7 @@ public partial class MainWindow : AppWindow
                 });
 
                 // Set content to the (possibly cached) view instance
-                nv.Content = dashboardView;
+                NavigationView.Content = dashboardView;
                 break;
             }
             case "team":
@@ -91,7 +117,21 @@ public partial class MainWindow : AppWindow
                     };
                 });
 
-                nv.Content = teamView;
+                NavigationView.Content = teamView;
+                break;
+            }
+            case "stories":
+            {
+                var teamView = GetOrCreateView(key, () =>
+                {
+                    var teamVm = vm.ServiceProvider.GetRequiredService<StoryChecksViewModel>();
+                    return new StoryChecksView()
+                    {
+                        DataContext = teamVm
+                    };
+                });
+
+                NavigationView.Content = teamView;
                 break;
             }
         }

@@ -1,0 +1,194 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:playerVm="clr-namespace:AnotherToolBox.ViewModels.Player"
+             xmlns:player="clr-namespace:AnotherToolBox.Views.Controls.Player"
+             xmlns:data="clr-namespace:FluentAvalonia.UI.Data;assembly=FluentAvalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AnotherToolBox.Views.Controls.Player.StoryChecksView"
+             x:DataType="playerVm:StoryChecksViewModel">
+    <!-- Players keeps track of what content they have completed -->
+    <!-- This allows for us to determine what daily content they can complete-->
+    <!-- as well as what they should do next, ala Roadmap -->
+    <Control.Resources>
+        <Style x:Key="SharedTextBlockStyle" Selector="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <DataTemplate x:Key="StoryCheckTemplate" DataType="playerVm:StoryCheckViewModel">
+            <player:StoryCheckView />
+        </DataTemplate>
+    </Control.Resources>
+    <!-- <Grid -->
+    <!--     ColumnDefinitions="Auto, *"> -->
+    <!--      -->
+    <!--     <StackPanel Grid.Column="0" Orientation="Vertical"> -->
+    <!--         ~1~ Filters @1@ -->
+    <!--         <Button>All</Button> -->
+    <!--         <Button>Main Story</Button> -->
+    <!--         <Button>Episode</Button> -->
+    <!--         <Button>Symphony</Button> -->
+    <!--         <Button>Mythos</Button> -->
+    <!--         <Button>Ensemble</Button> -->
+    <!--         <Button>Apocrypha</Button> -->
+    <!--         <Button>Other Tales</Button> -->
+    <!--     </StackPanel> -->
+    <!--     <StackPanel Grid.Column="1" Orientation="Vertical"> -->
+    <!--         ~1~ Story Episodes @1@ -->
+    <!--          -->
+    <!--         <StackPanel Orientation="Vertical"> -->
+    <!--             <TextBlock>Main Story</TextBlock> -->
+    <!--             <Border BorderThickness="1" BorderBrush="DarkSlateGray"></Border> -->
+    <!--             <ItemsRepeater -->
+    <!--                 HorizontalAlignment="Center" -->
+    <!--                 ItemsSource="{Binding MainStoryChecks}"> -->
+    <!--                 <ItemsRepeater.Layout> -->
+    <!--                     <StackLayout Orientation="Horizontal" Spacing="8"/> -->
+    <!--                 </ItemsRepeater.Layout> -->
+    <!--                 <ItemsRepeater.ItemTemplate> -->
+    <!--                     <DataTemplate DataType="playerVm:StoryCheckViewModel"> -->
+    <!--                         <player:StoryCheckView /> -->
+    <!--                     </DataTemplate> -->
+    <!--                 </ItemsRepeater.ItemTemplate> -->
+    <!--             </ItemsRepeater> -->
+    <!--         </StackPanel> -->
+    <!--         <StackPanel Orientation="Vertical"> -->
+    <!--             <TextBlock>Episode</TextBlock> -->
+    <!--             <Border BorderThickness="1" BorderBrush="DarkSlateGray"></Border> -->
+    <!--             <ItemsRepeater -->
+    <!--                 HorizontalAlignment="Center" -->
+    <!--                 ItemsSource="{Binding EpisodeChecks}"> -->
+    <!--                 <ItemsRepeater.Layout> -->
+    <!--                     <StackLayout Orientation="Horizontal" Spacing="8"/> -->
+    <!--                 </ItemsRepeater.Layout> -->
+    <!--                 <ItemsRepeater.ItemTemplate> -->
+    <!--                     <DataTemplate DataType="playerVm:StoryCheckViewModel"> -->
+    <!--                         <player:StoryCheckView /> -->
+    <!--                     </DataTemplate> -->
+    <!--                 </ItemsRepeater.ItemTemplate> -->
+    <!--             </ItemsRepeater> -->
+    <!--         </StackPanel> -->
+    <!--         <StackPanel Orientation="Vertical"> -->
+    <!--             <TextBlock>Mythos</TextBlock> -->
+    <!--             <Border BorderThickness="1" BorderBrush="DarkSlateGray"></Border> -->
+    <!--             <ItemsRepeater -->
+    <!--                 HorizontalAlignment="Center" -->
+    <!--                 ItemsSource="{Binding MythosChecks}"> -->
+    <!--                 <ItemsRepeater.Layout> -->
+    <!--                     <StackLayout Orientation="Horizontal" Spacing="8"/> -->
+    <!--                 </ItemsRepeater.Layout> -->
+    <!--                 <ItemsRepeater.ItemTemplate> -->
+    <!--                     <DataTemplate DataType="playerVm:StoryCheckViewModel"> -->
+    <!--                         <player:StoryCheckView /> -->
+    <!--                     </DataTemplate> -->
+    <!--                 </ItemsRepeater.ItemTemplate> -->
+    <!--             </ItemsRepeater> -->
+    <!--         </StackPanel> -->
+    <!--         <StackPanel Orientation="Vertical"> -->
+    <!--             <TextBlock>Apocrypha</TextBlock> -->
+    <!--             <Border BorderThickness="1" BorderBrush="DarkSlateGray"></Border> -->
+    <!--             <ItemsRepeater -->
+    <!--                 HorizontalAlignment="Center" -->
+    <!--                 ItemsSource="{Binding ApocryphaChecks}"> -->
+    <!--                 <ItemsRepeater.Layout> -->
+    <!--                     <StackLayout Orientation="Horizontal" Spacing="8"/> -->
+    <!--                 </ItemsRepeater.Layout> -->
+    <!--                 <ItemsRepeater.ItemTemplate> -->
+    <!--                     <DataTemplate DataType="playerVm:StoryCheckViewModel"> -->
+    <!--                         <player:StoryCheckView /> -->
+    <!--                     </DataTemplate> -->
+    <!--                 </ItemsRepeater.ItemTemplate> -->
+    <!--             </ItemsRepeater> -->
+    <!--         </StackPanel> -->
+    <!--         <StackPanel Orientation="Vertical"> -->
+    <!--             <TextBlock>Ensemble</TextBlock> -->
+    <!--             <Border BorderThickness="1" BorderBrush="DarkSlateGray"></Border> -->
+    <!--             <ItemsRepeater -->
+    <!--                 HorizontalAlignment="Center" -->
+    <!--                 ItemsSource="{Binding EnsembleChecks}"> -->
+    <!--                 <ItemsRepeater.Layout> -->
+    <!--                     <StackLayout Orientation="Horizontal" Spacing="8"/> -->
+    <!--                 </ItemsRepeater.Layout> -->
+    <!--                 <ItemsRepeater.ItemTemplate> -->
+    <!--                     <DataTemplate DataType="playerVm:StoryCheckViewModel"> -->
+    <!--                         <player:StoryCheckView /> -->
+    <!--                     </DataTemplate> -->
+    <!--                 </ItemsRepeater.ItemTemplate> -->
+    <!--             </ItemsRepeater> -->
+    <!--         </StackPanel> -->
+    <!--         <StackPanel Orientation="Vertical"> -->
+    <!--             <TextBlock>Symphony</TextBlock> -->
+    <!--             <Border BorderThickness="1" BorderBrush="DarkSlateGray"></Border> -->
+    <!--             <ItemsRepeater -->
+    <!--                 HorizontalAlignment="Center" -->
+    <!--                 ItemsSource="{Binding SymphonyChecks}"> -->
+    <!--                 <ItemsRepeater.Layout> -->
+    <!--                     <StackLayout Orientation="Horizontal" Spacing="8"/> -->
+    <!--                 </ItemsRepeater.Layout> -->
+    <!--                 <ItemsRepeater.ItemTemplate> -->
+    <!--                     <DataTemplate DataType="playerVm:StoryCheckViewModel"> -->
+    <!--                         <player:StoryCheckView /> -->
+    <!--                     </DataTemplate> -->
+    <!--                 </ItemsRepeater.ItemTemplate> -->
+    <!--             </ItemsRepeater> -->
+    <!--         </StackPanel> -->
+    <!--         <StackPanel Orientation="Vertical"> -->
+    <!--             <TextBlock>Other Tales</TextBlock> -->
+    <!--             <Border BorderThickness="1" BorderBrush="DarkSlateGray"></Border> -->
+    <!--             <ItemsRepeater -->
+    <!--                 HorizontalAlignment="Center" -->
+    <!--                 ItemsSource="{Binding OtherChecks}"> -->
+    <!--                 <ItemsRepeater.Layout> -->
+    <!--                     <StackLayout Orientation="Horizontal" Spacing="8"/> -->
+    <!--                 </ItemsRepeater.Layout> -->
+    <!--                 <ItemsRepeater.ItemTemplate> -->
+    <!--                     <StaticResource ResourceKey="StoryCheckTemplate"/> -->
+    <!--                 </ItemsRepeater.ItemTemplate> -->
+    <!--             </ItemsRepeater> -->
+    <!--         </StackPanel> -->
+    <!--     </StackPanel> -->
+    <!-- -->
+    <!-- </Grid> -->
+    <Grid RowDefinitions="Auto, *" Margin="8" RowSpacing="8">
+        <Border BorderThickness="1" BorderBrush="DarkSlateGray" CornerRadius="4">
+            <Button>Grouped</Button>
+        </Border>
+        <ScrollViewer Grid.Row="1"
+                      HorizontalContentAlignment="Left"
+                      HorizontalScrollBarVisibility="Disabled"
+                      VerticalScrollBarVisibility="Auto">
+            <ItemsRepeater ItemsSource="{Binding GroupedChecks}">
+                <ItemsRepeater.Layout>
+                    <StackLayout Orientation="Vertical" Spacing="8" />
+                </ItemsRepeater.Layout>  
+                <ItemsRepeater.ItemTemplate>  
+                    <DataTemplate>
+                        <Grid RowDefinitions="Auto, Auto, *">
+                            
+                            <TextBlock Grid.Row="0" Text="{Binding Group}" FontWeight="Bold" />
+                            <Border Grid.Row="1" BorderThickness="1" BorderBrush="DarkSlateGray" Margin="4"></Border>
+                            <ScrollViewer Grid.Row="2" 
+                                          HorizontalContentAlignment="Left"
+                                          VerticalScrollBarVisibility="Disabled"
+                                          HorizontalScrollBarVisibility="Auto">
+                                <ItemsRepeater ItemsSource="{Binding Items}">
+                                    <!-- Item template -->
+                                    <ItemsRepeater.Layout>
+                                        <StackLayout Orientation="Horizontal" Spacing="8" />
+                                    </ItemsRepeater.Layout>
+                                    <ItemsRepeater.ItemTemplate>
+                                        <DataTemplate DataType="playerVm:StoryCheckViewModel">
+                                            <player:StoryCheckView />
+                                        </DataTemplate>
+                                    </ItemsRepeater.ItemTemplate>
+                                </ItemsRepeater>
+                            </ScrollViewer>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsRepeater.ItemTemplate>  
+            </ItemsRepeater>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -20,15 +20,17 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <ui:NavigationView IsPaneOpen="False"
+    <ui:NavigationView
+        x:Name="NavigationView"
+        IsPaneOpen="False"
                        IsBackEnabled="False"
                        IsBackButtonVisible="False"
-                       
                        ItemInvoked="NavOnItemInvoked">
         <ui:NavigationView.MenuItems>
             
             <ui:NavigationViewItem Content="Home" IconSource="Home" Tag="Home"/>
             <ui:NavigationViewItem Content="Team" IconSource="People" Tag="Team" />
+            <ui:NavigationViewItem Content="Stories" IconSource="Book" Tag="Stories" />
 
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.Content>

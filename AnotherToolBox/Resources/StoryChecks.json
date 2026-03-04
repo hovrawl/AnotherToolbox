@@ -1,0 +1,294 @@
+﻿[
+  {
+    "type": 1,
+    "name": "Main Story",
+    "checks": 
+    [
+      {
+        "id": 1,
+        "title": "Main Story 1",
+        "subTitle": "Another Eden"
+      },
+      {
+        "id": 2,
+        "title": "Main Story 1.5",
+        "subTitle": "Ogre Wars"
+      },
+      {
+        "id": 3,
+        "title": "Main Story 2",
+        "subTitle": "Part 1",
+        "description": "Return of the Goddess of Time: Tales from the East"
+      },
+      {
+        "id": 4,
+        "title": "Main Story 2",
+        "subTitle": "Part 2",
+        "description": "Return of the Goddess of Time: Tales from the East"
+      },
+      {
+        "id": 5,
+        "title": "Main Story 2",
+        "subTitle": "Part 3",
+        "description": "Return of the Goddess of Time: The Twist"
+      },
+      {
+        "id": 6,
+        "title": "Main Story 2",
+        "subTitle": "Part 3",
+        "description": "Return of the Goddess of Time: Conclusion"
+      },
+      {
+        "id": 7,
+        "title": "Main Story 3",
+        "subTitle": "Part 1",
+        "description": "The Chronos Empire Strikes Back"
+      },
+      {
+        "id": 8,
+        "title": "Main Story 3",
+        "subTitle": "Part 2",
+        "description": "The Chronos Empire Strikes Back"
+      },
+      {
+        "id": 9,
+        "title": "Main Story 3",
+        "subTitle": "Part 3",
+        "description": "The Chronos Empire Strikes Back"
+      },
+      {
+        "id": 10,
+        "title": "Main Story 3",
+        "subTitle": "Part 4",
+        "description": "The Chronos Empire Strikes Back"
+      }
+    ]
+  },
+  {
+    "type": 2,
+    "name": "Episode",
+    "checks": 
+    [
+      {
+        "id": 1,
+        "title": "Holy Sword",
+        "subTitle": "Two Knights and the Holy Sword"
+      },
+      {
+        "id": 2,
+        "title": "Holy Sword",
+        "subTitle": "Firs Knight and the Holy Sword"
+      },
+      {
+        "id": 3,
+        "title": "IDA School",
+        "subTitle": "IDA School Part 1",
+        "description": "Absolute Zero Chain"
+      },
+      {
+        "id": 4,
+        "title": "IDA School",
+        "subTitle": "IDA School Part 2",
+        "description": "Butterfly's City and Heaven's Cradle"
+      },
+      {
+        "id": 5,
+        "title": "IDA School",
+        "subTitle": "IDA School Part 3",
+        "description": "Fruit of Guidance and the Lost Digital Child"
+      },
+      {
+        "id": 6,
+        "title": "Ocean Palace",
+        "subTitle": "The 1000 Year Ark of the Ocean Palace"
+      },
+      {
+        "id": 7,
+        "title": "Ocean Palace",
+        "subTitle": "The 3000 Realm Ark of the Sea Abyss"
+      },
+      {
+        "id": 8,
+        "title": "The Time Mine and the Dreamers"
+      },
+      {
+        "id": 9,
+        "title": "The Celestial Tower and the Shadow Witch"
+      },
+      {
+        "id": 10,
+        "title": "Azure Rebel",
+        "subTitle": "The Closed-off Open World and the Azure Rebel"
+      },
+      {
+        "id": 11,
+        "title": "Azure Rebel",
+        "subTitle": "A Paradise of Imperfections"
+      },
+      {
+        "id": 12,
+        "title": "The Lost Tome and the Silver Unfading Flower"
+      },
+      {
+        "id": 13,
+        "title": "Wanderer in the Binding Night"
+      },
+      {
+        "id": 14,
+        "title": "Wryz Saga",
+        "subTitle": "Part 1",
+        "description": "The Cliffs of Wyrmrest"
+      },
+      {
+        "id": 15,
+        "title": "Wryz Saga",
+        "subTitle": "Part 2",
+        "description": "The Wings of Destiny"
+      },
+      {
+        "id": 16,
+        "title": "Wryz Saga",
+        "subTitle": "Part 3",
+        "description": "The Mists of Myth"
+      },
+      {
+        "id": 17,
+        "title": "Ode to Origin",
+        "subTitle": "Act 1",
+        "description": "The Beastfolk \"Antimony\""
+      },
+      {
+        "id": 18,
+        "title": "Ode to Origin",
+        "subTitle": "Act 2",
+        "description": "The Humans \"A Just Dream\""
+      },
+      {
+        "id": 19,
+        "title": "Ode to Origin",
+        "subTitle": "Act 3",
+        "description": "The Demi-Humans \"Eudaemonism\""
+      }
+    ]
+  },
+  {
+    "type": 3,
+    "name": "Mythos",
+    "checks": 
+    [
+      {
+        "id": 1,
+        "title": "Song of Sword and Wings of Lost Paradise"
+      },
+      {
+        "id": 2,
+        "title": "The Apex of Logic and Cardinal Scales"
+      },
+      {
+        "id": 3,
+        "title": "Shadow of Sin and Steel"
+      }
+    ]
+  },
+  {
+    "type": 4,
+    "name": "Apocrypha",
+    "checks": 
+    [
+      {
+        "id": 1,
+        "title": "Wanderer in the Vortex"
+      }
+    ]
+  },
+  {
+    "type": 5,
+    "name": "Ensemble",
+    "checks": 
+    [
+      {
+        "id": 1,
+        "title": "Heroes of Bygone Days and the Engraved Oath"
+      },
+      {
+        "id": 2,
+        "title": "Scythe of Rebirth and the Crimson Flower"
+      },
+      {
+        "id": 3,
+        "title": "Commander and Sheep"
+      },
+      {
+        "id": 4,
+        "title": "Where Light Does Not Fall"
+      }
+    ]
+  },
+  {
+    "type": 6,
+    "name": "Symphony",
+    "checks": 
+    [
+      {
+        "id": 1,
+        "title": "Persona 5",
+        "subTitle": "Bound Wills and the Hollow Puppeteer"
+      },
+      {
+        "id": 2,
+        "title": "Persona 5",
+        "subTitle": "Bound Wills and the Hollow Puppeteer: Promises, Vows and Rings"
+      },
+      {
+        "id": 3,
+        "title": "Tales Of...",
+        "subTitle": "Tails of Time and the Brave Four: Tales of Chronographia"
+      },
+      {
+        "id": 4,
+        "title": "Tales Of...",
+        "subTitle": "Crown of the Pale Dawn"
+      },
+      {
+        "id": 5,
+        "title": "Chrono Cross",
+        "subTitle": "The Forgotten Dream"
+      },
+      {
+        "id": 6,
+        "title": "Octopath Traveler",
+        "subTitle": "Octolight Conductors: The Prisoner's Odyssey"
+      },
+      {
+        "id": 7,
+        "title": "King of Fighters",
+        "subTitle": "The King of Fighters: Another Bout"
+      },
+      {
+        "id": 8,
+        "title": "Atelier Ryza",
+        "subTitle": "Crystal of Wisdom and the Secret Castle"
+      },
+      {
+        "id": 9,
+        "title": "Final Fantasy",
+        "subTitle": "Memories of Another Sky"
+      }
+    ]
+  },
+  {
+    "type": 7,
+    "name": "Other Tales",
+    "checks": 
+    [
+      {
+        "id": 1,
+        "title": "Little Princess' Big Adventure"
+      },
+      {
+        "id": 2,
+        "title": "Foreign Skies and the Ship to Freedom"
+      }
+    ]
+  }
+]

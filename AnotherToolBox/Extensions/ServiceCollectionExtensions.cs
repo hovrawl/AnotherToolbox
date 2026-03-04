@@ -1,5 +1,6 @@
 using AnotherToolBox.Services;
 using AnotherToolBox.ViewModels;
+using AnotherToolBox.ViewModels.Player;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -14,12 +15,14 @@ public static class ServiceCollectionExtensions
         collection.AddLogging(logger => logger.AddConsole());
         collection.AddSingleton<WikiService>();
         collection.AddSingleton<ImageService>();
+        collection.AddSingleton<PlayerService>();
         
         // View Models (singletons so we dont duplicate)
         collection.AddSingleton<MainWindowViewModel>();
         collection.AddSingleton<DashboardViewModel>();
         collection.AddSingleton<TeamBuilderViewModel>();
         collection.AddSingleton<CharacterListViewModel>();
+        collection.AddSingleton<StoryChecksViewModel>();
         
         // Scope the character frame as we have multiple
         collection.AddScoped<CharacterFrameViewModel>();
