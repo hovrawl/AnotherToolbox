@@ -26,21 +26,22 @@ public partial class StoryChecksViewModel: ViewModelBase
     {
         _playerService = playerService;
 
-        var id = 1;
         foreach (var story in _playerService.StoryChecks)
         {
             var checkLists = new List<StoryCheckViewModel>();
             foreach (var check in story.Checks)
             {
-                var newVm = new StoryCheckViewModel()
+                var checkId = $"{story.Type}-{check.Id}";
+                var newVm = new StoryCheckViewModel(playerService)
                 {
-                    Id = $"{story.Type}-{check.Id}",
+                    Id = checkId,
                     Name = story.Name,
                     StoryType = story.Type,
                     Title = check.Title,
                     SubTitle = check.SubTitle,
                     Description = check.Description,
                     Image = check.Image,
+                    Cleared = playerService.IsStoryCleared(checkId)
                 };
                 checkLists.Add(newVm);
 

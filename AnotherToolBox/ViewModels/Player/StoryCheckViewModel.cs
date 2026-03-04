@@ -1,4 +1,5 @@
 ﻿using AnotherToolBox.Models.StoryChecks;
+using AnotherToolBox.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -6,6 +7,7 @@ namespace AnotherToolBox.ViewModels.Player;
 
 public partial class StoryCheckViewModel: ViewModelBase
 {
+    private readonly PlayerService _playerService;
     public string Id { get; set; }
     public string Name { get; set; }
     
@@ -21,5 +23,15 @@ public partial class StoryCheckViewModel: ViewModelBase
     public void CheckClick()
     {
         Cleared = !Cleared;
+        
+        // persist
+        _playerService.SaveStoryChecksData(Id, Cleared);
     }
+
+    public StoryCheckViewModel(PlayerService playerService)
+    {
+        _playerService = playerService;
+
+    }
+    
 }
