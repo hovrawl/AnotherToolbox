@@ -8,172 +8,94 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AnotherToolBox.Views.Controls.Team.CharacterStatusView"
              x:DataType="teamBuilder:CharacterStatusViewModel">
+    <Control.Styles>
+        <Style Selector="Border.StatBorder">
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="BorderBrush" Value="DarkSlateGray"></Setter>
+            <Setter Property="CornerRadius" Value="4"></Setter>
+        </Style>
+        <Style Selector="ItemsRepeater.StatsLayout">
+            <Setter Property="Layout">
+                <UniformGridLayout 
+                    Orientation="Horizontal"
+                    MaximumRowsOrColumns="2"
+                    ItemsJustification="Start"
+                    ItemsStretch="Fill"
+                    MinColumnSpacing="12"
+                    MinRowSpacing="6"
+                                   />
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <DataTemplate DataType="team:CharacterStatDto">
+                    <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch">
+                        <TextBlock Grid.Column="0"
+                                   Margin="0,0,8,0"
+                                   Text="{Binding Stat}" />
+                        <TextBlock Grid.Column="1"
+                                   Text="{Binding Value}" />
+                    </Grid>
+                </DataTemplate>
+            </Setter>
+        </Style>
+    </Control.Styles>
     <ScrollViewer>
         
         <StackPanel Spacing="8">
             
             <!-- show all stats -->
-            <Border BorderThickness="1" BorderBrush="DarkSlateGray" CornerRadius="4">
+            <Border Classes="StatBorder">
                 <StackPanel>
                     <TextBlock Text="Attack/Def"></TextBlock>
-                    <ItemsRepeater ItemsSource="{Binding AtkStats}">
-                        <ItemsRepeater.Layout>
-                            <UniformGridLayout Orientation="Horizontal"
-                                               MaximumRowsOrColumns="2"
-                                               ItemsJustification="Start"
-                                               ItemsStretch="Fill"
-                                               MinColumnSpacing="12"
-                                               MinRowSpacing="6" />
-                        </ItemsRepeater.Layout>
-
-                        <ItemsRepeater.ItemTemplate>
-                            <DataTemplate DataType="team:CharacterStatDto">
-                                <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch">
-                                    <TextBlock Grid.Column="0"
-                                               Margin="0,0,8,0"
-                                               Text="{Binding Stat}" />
-                                    <TextBlock Grid.Column="1"
-                                               Text="{Binding Value}" />
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsRepeater.ItemTemplate>
+                    <ItemsRepeater
+                        Classes="StatsLayout" 
+                        ItemsSource="{Binding AtkStats}">
                     </ItemsRepeater>
                 </StackPanel>
             </Border>
 
-            <Border BorderThickness="1" BorderBrush="DarkSlateGray" CornerRadius="4">
+            <Border Classes="StatBorder">
                 <StackPanel>
                     <TextBlock Text="Base Stats"></TextBlock>
-                    <ItemsRepeater ItemsSource="{Binding BaseStats}">
-                        <ItemsRepeater.Layout>
-                            <UniformGridLayout Orientation="Horizontal"
-                                               MaximumRowsOrColumns="2"
-                                               ItemsJustification="Start"
-                                               ItemsStretch="Fill"
-                                               MinColumnSpacing="12"
-                                               MinRowSpacing="6" />
-                        </ItemsRepeater.Layout>
-
-                        <ItemsRepeater.ItemTemplate>
-                            <DataTemplate DataType="team:CharacterStatDto">
-                                <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch">
-                                    <TextBlock Grid.Column="0"
-                                               Margin="0,0,8,0"
-                                               Text="{Binding Stat}" />
-                                    <TextBlock Grid.Column="1"
-                                               Text="{Binding Value}" />
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsRepeater.ItemTemplate>
+                    <ItemsRepeater 
+                        Classes="StatsLayout" 
+                        ItemsSource="{Binding BaseStats}">
                     </ItemsRepeater>
                 </StackPanel>
             </Border>
 
-            <Border BorderThickness="1" BorderBrush="DarkSlateGray" CornerRadius="4">
+            <Border Classes="StatBorder">
                 <StackPanel>
                     <TextBlock Text="Critical"></TextBlock>
-                    <ItemsRepeater ItemsSource="{Binding CritStats}">
-                        <ItemsRepeater.Layout>
-                            <UniformGridLayout Orientation="Horizontal"
-                                               MaximumRowsOrColumns="2"
-                                               ItemsJustification="Start"
-                                               ItemsStretch="Fill"
-                                               MinColumnSpacing="12"
-                                               MinRowSpacing="6" />
-                        </ItemsRepeater.Layout>
-
-                        <ItemsRepeater.ItemTemplate>
-                            <DataTemplate DataType="team:CharacterStatDto">
-                                <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch">
-                                    <TextBlock Grid.Column="0"
-                                               Margin="0,0,8,0"
-                                               Text="{Binding Stat}" />
-                                    <TextBlock Grid.Column="1"
-                                               Text="{Binding Value}" />
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsRepeater.ItemTemplate>
+                    <ItemsRepeater 
+                        Classes="StatsLayout" 
+                        ItemsSource="{Binding CritStats}">
                     </ItemsRepeater>
                 </StackPanel>
             </Border>
-            <Border BorderThickness="1" BorderBrush="DarkSlateGray" CornerRadius="4">
+            <Border Classes="StatBorder">
                 <StackPanel>
                     <TextBlock Text="Type Attack Damage"></TextBlock>
-                    <ItemsRepeater ItemsSource="{Binding TypeAtkStats}">
-                        <ItemsRepeater.Layout>
-                            <UniformGridLayout Orientation="Horizontal"
-                                               MaximumRowsOrColumns="2"
-                                               ItemsJustification="Start"
-                                               ItemsStretch="Fill"
-                                               MinColumnSpacing="12"
-                                               MinRowSpacing="6" />
-                        </ItemsRepeater.Layout>
-
-                        <ItemsRepeater.ItemTemplate>
-                            <DataTemplate DataType="team:CharacterStatDto">
-                                <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch">
-                                    <TextBlock Grid.Column="0"
-                                               Margin="0,0,8,0"
-                                               Text="{Binding Stat}" />
-                                    <TextBlock Grid.Column="1"
-                                               Text="{Binding Value}" />
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsRepeater.ItemTemplate>
+                    <ItemsRepeater 
+                        Classes="StatsLayout" 
+                        ItemsSource="{Binding TypeAtkStats}">
                     </ItemsRepeater>
                 </StackPanel>
             </Border>
-            <Border BorderThickness="1" BorderBrush="DarkSlateGray" CornerRadius="4">
+            <Border Classes="StatBorder">
                 <StackPanel>
                     <TextBlock Text="Type Resistance"></TextBlock>
-                    <ItemsRepeater ItemsSource="{Binding TypeResStats}">
-                        <ItemsRepeater.Layout>
-                            <UniformGridLayout Orientation="Horizontal"
-                                               MaximumRowsOrColumns="2"
-                                               ItemsJustification="Start"
-                                               ItemsStretch="Fill"
-                                               MinColumnSpacing="12"
-                                               MinRowSpacing="6" />
-                        </ItemsRepeater.Layout>
-
-                        <ItemsRepeater.ItemTemplate>
-                            <DataTemplate DataType="team:CharacterStatDto">
-                                <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch">
-                                    <TextBlock Grid.Column="0"
-                                               Margin="0,0,8,0"
-                                               Text="{Binding Stat}" />
-                                    <TextBlock Grid.Column="1"
-                                               Text="{Binding Value}" />
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsRepeater.ItemTemplate>
+                    <ItemsRepeater 
+                        Classes="StatsLayout" 
+                        ItemsSource="{Binding TypeResStats}">
                     </ItemsRepeater>
                 </StackPanel>
             </Border>
-            <Border BorderThickness="1" BorderBrush="DarkSlateGray" CornerRadius="4">
+            <Border Classes="StatBorder">
                 <StackPanel>
                     <TextBlock Text="Status Resistances"></TextBlock>
-                    <ItemsRepeater ItemsSource="{Binding StatusResStats}">
-                        <ItemsRepeater.Layout>
-                            <UniformGridLayout Orientation="Horizontal"
-                                               MaximumRowsOrColumns="2"
-                                               ItemsJustification="Start"
-                                               ItemsStretch="Fill"
-                                               MinColumnSpacing="12"
-                                               MinRowSpacing="6" />
-                        </ItemsRepeater.Layout>
-
-                        <ItemsRepeater.ItemTemplate>
-                            <DataTemplate DataType="team:CharacterStatDto">
-                                <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch">
-                                    <TextBlock Grid.Column="0"
-                                               Margin="0,0,8,0"
-                                               Text="{Binding Stat}" />
-                                    <TextBlock Grid.Column="1"
-                                               Text="{Binding Value}" />
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsRepeater.ItemTemplate>
+                    <ItemsRepeater 
+                        Classes="StatsLayout" 
+                        ItemsSource="{Binding StatusResStats}">
                     </ItemsRepeater>
                 </StackPanel>
             </Border>
