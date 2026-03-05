@@ -5,6 +5,7 @@
              xmlns:viewModels="clr-namespace:AnotherToolBox.ViewModels"
              xmlns:controls="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
              xmlns:characters="clr-namespace:AnotherToolBox.Views.Controls.Characters"
+             xmlns:team="clr-namespace:AnotherToolBox.Views.Controls.Team"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AnotherToolBox.Views.Controls.Characters.CharacterFrame"
              x:DataType="viewModels:CharacterFrameViewModel">
@@ -13,7 +14,7 @@
           MinWidth="144"
           MaxWidth="144"
           MinHeight="170"
-          MaxHeight="170"
+          MaxHeight="190"
           HorizontalAlignment="Center"
           VerticalAlignment="Center">
         <Button 
@@ -50,6 +51,19 @@
                         MaxWidth="120" 
                         Height="40"
                         />
+                    <Button Command="{Binding ViewStats}" >
+                        Stats
+                        <Button.Flyout>
+                            <Flyout
+                                IsOpen="{Binding StatsOpen}"
+                                    Closing="StatsFlyout_OnClosing">
+                                <team:CharacterStatusView 
+                                    DataContext="{Binding CharacterStatusVm}"
+                                    Width="240"
+                                    Height="300"/>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
                 </StackPanel>
             </StackPanel>
             <Button.Flyout>

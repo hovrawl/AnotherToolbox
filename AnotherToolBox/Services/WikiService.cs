@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using AnotherToolBox.Models.Characters;
+using AnotherToolBox.Models.Team;
 using Avalonia.Media;
 using Microsoft.Extensions.Logging;
 using WikiClientLibrary;
@@ -32,7 +33,11 @@ public class WikiService
     
     private WikiClient _client;
     private WikiSite _site;
-    
+    public List<CharacterSlim> SlimCharacters = new();
+    public List<WeaponCargo> CargoWeapons = new();
+    public List<ArmorCargo> CargoArmor = new();
+    public List<GrastaCargo> CargoGrasta = new();
+
     public bool Initialized { get; private set; }
     
     public WikiService(ILogger<WikiService> logger)
@@ -94,7 +99,15 @@ public class WikiService
        
     }
 
-    public List<CharacterSlim> SlimCharacters = new();
+    public async Task<bool> Shutdown()
+    {
+        await _site.LogoutAsync();
+        _client.Dispose();
+
+        Initialized = false;
+        return true;
+    }
+    
     public async Task LoadCharactersSlim()
     {
         SlimCharacters.Clear();
@@ -111,25 +124,13 @@ public class WikiService
                 SlimCharacters.Add(ch);
             }
         }
-        catch (MediaWikiRemoteException ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
-        catch (WikiClientException ex)
+        catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
             // Add your exception handler for failed login attempt.
         }
     }
 
-    public async Task<bool> Shutdown()
-    {
-        await _site.LogoutAsync();
-        _client.Dispose();
-
-        Initialized = false;
-        return true;
-    }
 
     public async Task<List<string>> FetchCharacterThumbnails(List<CharacterChoiceDto> characterSlims)
     {
@@ -164,5 +165,92 @@ public class WikiService
         };  
         var rank5 = maxRarity == 5 ? "_rank5" : "";  
         return $"{id}{suffix}{rank5} command.png";  
-    }  
+    }
+
+    public async Task LoadWeapons()
+    {
+        CargoWeapons.Clear();
+        try
+        {
+            var context = new CargoQueryContext(_site) { PaginationSize = 500 };
+            var query = context.Table<WeaponCargo>()
+                .Where(c => !c.Unreleased)
+                .OrderByDescending(c => c.Level)
+                .Take(9999);
+            await foreach (var ch in query.AsAsyncEnumerable())
+            {
+                // Use ch.Name, ch.Element, etc.  
+                CargoWeapons.Add(ch);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            // Add your exception handler for failed login attempt.
+        }
+    }
+    
+    public async Task LoadArmors()
+    {
+        CargoArmor.Clear();
+        try
+        {
+            var context = new CargoQueryContext(_site) { PaginationSize = 500 };
+            var query = context.Table<ArmorCargo>()
+                .Where(c => !c.Unreleased)
+                .OrderByDescending(c => c.Level)
+                .Take(9999);
+            await foreach (var ch in query.AsAsyncEnumerable())
+            {
+                // Use ch.Name, ch.Element, etc.  
+                CargoArmor.Add(ch);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+    
+    public async Task LoadGrasta()
+    {
+        CargoGrasta.Clear();
+        try
+        {
+            var context = new CargoQueryContext(_site) { PaginationSize = 500 };
+            var query = context.Table<GrastaCargo>()
+                .Where(c => !c.Unreleased)
+                .OrderByDescending(c => c.Tier)
+                .Take(9999);
+            await foreach (var ch in query.AsAsyncEnumerable())
+            {
+                // Use ch.Name, ch.Element, etc.  
+                CargoGrasta.Add(ch);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+    
+    public async Task<CharacterStatsCargo> LoadCharacterStats(string pageId)
+    {
+        try
+        {
+            var context = new CargoQueryContext(_site) { PaginationSize = 10 };
+            var query = context
+                .Table<CharacterStatsCargo>()
+                .Where(c => c.PageId == pageId).Take(1);
+            await foreach (var row in query.AsAsyncEnumerable())
+            {
+                return row; // first row
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        return null;
+    }
 }

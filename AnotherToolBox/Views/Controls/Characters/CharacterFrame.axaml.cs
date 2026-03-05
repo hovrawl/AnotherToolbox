@@ -20,4 +20,12 @@ public partial class CharacterFrame : UserControl
             vm.SelectorOpen = false;
         }
     }
+    
+    private void StatsFlyout_OnClosing(object? sender, CancelEventArgs e)
+    {
+        if (DataContext is CharacterFrameViewModel vm)
+        {
+            vm.StatsOpen = false;
+        }
+    }
 }

@@ -1,0 +1,360 @@
+﻿{{Badge|filter=mixed |name=Hero's Medal |effect=PWR +30; Testament (Transfer Buff/Debuffs) |location=[[Complex Dream/Mark of Bravery|Complex Dream - Mark of Bravery]] }}
+{{Badge|filter=mixed |name=Dragoon's Honor |effect=Physical/Magic Critical Rate +50% |location=[[Astral Archive/Book of Fate|Astral Archive:Book of Fate 6]] }}
+{{Badge|filter=stats |name=Revolutionary |effect=SPD +20, MP +10% |location=[[Astral Archive/Book of Steropes|Astral Archive: Book of Steropes 3]] }}
+{{Badge|filter=mixed |name=Refuse the Apex Order |effect=Awakened Zone: DMG +5%, PWR +30 |location= Clear [[Trial to Refuse the Apex Order|Trial to Refuse the Apex Order 4]] }}
+{{Badge|filter=mixed |name=Vigorous |effect=Stun Resistance +50%; END +30 |location=Astral Ruins 1F Northeast (On path not leading to Garden of Despair) go to 2 ! and select the tile to access hidden area }}
+{{Badge|filter=stats |name=Sovereign |effect=PWR +30, HP +300 |location=[[Astral Archive/Book of The Sovereign|Astral Archive: Book of The Sovereign 1]] }}
+{{Badge|filter=skill |name=Mana Recharge |effect=Obtain [[Mana Recharge]] |location=[[Astral Archive/Book of Zomas 86|Astral Archive: Book of Zomas 86 1]] }}
+{{Badge|filter=skill |name=Poison Curse |effect=Obtain [[Poison Curse]] |location=[[Astral Archive/Book of Aspid|Astral Archive: Book of Aspid 2]] }}
+{{Badge|filter=skill |name=Pain Curse |effect=Obtain [[Pain Curse]] |location=[[Astral Archive/Book of Gardos|Astral Archive: Book of Gardos 8]] }}
+{{Badge|filter=mixed |name=Divine Cure |effect=Restore Skill Effect +50% and INT +30 |location=Bring [[Heirloom Blade]] to Macminal at Synth Hydra - Edax Museum }}
+{{Badge|filter=stat |name=Life Booster|effect=HP +20% and MP -20%|location=[[Into the Hollow. The Chronos Empire Strikes Back. Volume 4/Shops|Buy for 2000 Gabble at Edax Torlutan]] }}
+{{Badge|filter=mixed |name=Acute Drill |effect=Critical rate +70% and Weak Point Damage +30% (No dup.) |location=[[Edax Rinde]], top left through hidden path }}
+{{Badge|filter=mixed |name=Edax |effect=Absorb 1% of Inflicted Dmg and SPD +20 |location=Behind imperial solider at [[Edax Dreamland]] - Scary Area, bottom right }}
+{{Badge|filter=mixed |name=Beginning Blow |effect=Inflicted Damage +15%, MP Consumption +50%, and 1 Preemptive attack per battle| location=[[Into the Hollow. The Chronos Empire Strikes Back. Volume 4/Bonus#Edax Crystal|Destroy Edax Crystal Southeast from Edax Omegapolis on the Edax Domain Overmap]] }}
+{{Badge|filter=skill |name=Star Loess |effect=Obtain [[Stardust Rain]] |location=[[Into the Hollow. The Chronos Empire Strikes Back. Volume 4/Shops|Buy for 2000 Gabble at Edax Torlutan]] }}
+{{Badge|filter=mixed |name=Sharpened Blade |effect=Damage increased according to turns passed |location=[[Into the Hollow. The Chronos Empire Strikes Back. Volume 4/Bonus|Find 20 Totos]] }}
+{{Badge|filter=mixed |name=Type Shroud |effect=Type attack +10% and Type resistance +10% |location=[[Into the Hollow. The Chronos Empire Strikes Back. Volume 4/Bonus|Find 25 Totos]] }}
+{{Badge|filter=mixed |name=Galaxy |effect=HP +1,000 and AF combo rate increases |location=[[Into the Hollow. The Chronos Empire Strikes Back. Volume 4/Bonus|Find 30 Totos]] }}
+{{Badge|filter=skill |name=Serpent Edge |effect=Obtain [[Serpent Edge]] |location=[[Astral Archive/Book of Hoe Ko|Book of Hoe Ko 1]] }}
+{{Badge|filter=skill |name=Invite |effect=Obtain [[Invite]] |location=[[Astral Archive/Book of Phantom Eden|Book of Phantom Eden 1]] }}
+{{Badge|filter=skill |name=Chaotic |effect=Obtain [[Chaotic]] |location=[[Astral Archive/Book of D.D. Himika|Book of D.D. Himika 1]] }}
+{{Badge|filter=skill |name=Blood Barrier |effect=Obtain [[Blood Barrier]] |location=[[Astral Archive/Book of Titan Ogre|Book of Titan Ogre 1]] }}
+{{Badge|filter=skill |name=Sorcery Order |effect=Obtain [[Sorcery Order]] |location=[[Astral Archive/Book of Synth Drone Ver 2.0|Book of Synth Drone Ver 2.0 1]] }}
+{{Badge|filter=skill |name=Attack Order |effect=Obtain [[Attack Order (Badge)|Attack Order]] |location=[[Astral Archive/Book of Miroku Disaster|Book of Miroku Disaster 1]] }}
+{{Badge|filter=skill |name=Physical Down |effect=Obtain [[Physical Down]] |location=[[Astral Archive/Book of Big Gonjuro|Book of Big Gonjuro 2]] }}
+{{Badge|filter=skill |name=Defensive Posture |effect=Obtain [[Defensive Posture]] |location=[[Astral Archive/Book of Sacred Beast|Book of Sacred Beast 1]] }}
+{{Badge|filter=skill |name=Waterstop |effect=Obtain [[Waterstop Blessing]] |location=[[Astral Archive/Book of Sorcery Soldier|Book of Sorcery Soldier 2]] }}
+{{Badge|filter=skill |name=Windstop |effect=Obtain [[Windstop Blessing]] |location=[[Astral Archive/Book of Suzaku|Book of Suzaku 1]] }}
+{{Badge|filter=skill |name=Earthstop |effect=Obtain [[Earthstop Blessing]] |location=[[Astral Archive/Book of Sorcery Soldier|Book of Sorcery Soldier 6]] }}
+{{Badge|filter=skill |name=Firestop |effect=Obtain [[Firestop Blessing]] |location=[[Astral Archive/Book of Karakuri|Book of Karakuri 6]] }}
+{{Badge|filter=mixed |name=Unleashed |effect=PWR +20, Fire Type Attack +10% |location=[[The King of Fighters: Another Bout/Bonus|Exchange 70 KOF Medal at White Ark]] }}
+{{Badge|filter=mixed |name=Pirate Girl |effect=PWR +20, Earth Type Attack +10% |location=[[The King of Fighters: Another Bout/Bonus|Exchange 70 KOF Medal at White Ark]] }}
+{{Badge|filter=mixed |name=Psychic Idol |effect=SPD +30, Physical Resistance -10% |location=[[The King of Fighters: Another Bout/Bonus|Exchange 70 KOF Medal at White Ark]] }}
+{{Badge|filter=stat |name= K Vanquisher |effect=SPD +20, MP +40 |location=[[The King of Fighters: Another Bout/Bonus|Exchange 70 KOF Medal at White Ark]] }}
+{{Badge|filter=skill |name= Eternal Tree |effect=HP +500; Obtain [[Deploy: Awaken]] |location=[[Jasmond (Another Dungeon)]]}}
+{{Badge|filter=mixed |name=Opening Day |effect=Restore AF/HP/MP 10% after victory |location=Illusialand }}
+{{Badge|filter=mixed |name=Inventor King |effect=Fire type attack+ base on Light/Shadow |location=Magifactory Tower }}
+{{Badge|filter=mixed |name=Storm King's |effect=AF Combo Rate+, Critical Strength Up|location=Boiling Caves of Gazarak }}
+{{Badge|filter=mixed |name=Misteel |effect=Damage taken down according to turns passed |location=Magic Ore Tunnels }}
+{{Badge|filter=mixed |name=Glass |effect={{status icon|break|s}} Chance to inflict Break on attack |location=Glass Mausoleum }}
+{{Badge|filter=stat |name=MP |effect=MP +240 |location=
+<ul><li>[[Into the Hollow. The Chronos Empire Strikes Back. Volume 3/Shops|Richman Inc. (Tower of Wisdom)]]</li>
+<li>From cat-shaped statue in [[Edax Xeno-Domain]] Industrial Sector: Security Need Passcode</li></ul> }}
+{{Badge|filter=stat |name=HP |effect=HP +2000 |location=[[Into the Hollow. The Chronos Empire Strikes Back. Volume 3/Shops|Richman Inc. (Tower of Wisdom)]] }}
+{{Badge|filter=mixed |name=Master |effect=Critical Rate +100% |location=[[Into the Hollow. The Chronos Empire Strikes Back. Volume 3/Shops|Richman Inc. (Tower of Wisdom)]] }}
+{{Badge|filter=mixed |name=Wisdom |effect= Magic Critical Rate +100% |location=[[Into the Hollow. The Chronos Empire Strikes Back. Volume 3/Shops|Richman Inc. (Tower of Wisdom)]] }}
+{{Badge|filter=stat |name=INT/SPD |effect=INT +30, SPD +30 |location=<ul>
+<li>[[Into the Hollow. The Chronos Empire Strikes Back. Volume 3/Shops|Richman Inc. (Tower of Wisdom)]]</li>
+<li>[[Burning Kurosagi Castle (Another Dungeon)|Collect 29,700 Moonstruck Obsidian]]</li></ul> }}
+{{Badge|filter=stat |name=PWR/SPD |effect=PWR +30, SPD +30 |location=<ul>
+<li>[[Into the Hollow. The Chronos Empire Strikes Back. Volume 3/Shops|Richman Inc. (Tower of Wisdom)]]</li>
+<li>[[Burning Kurosagi Castle (Another Dungeon)|Collect 17,100 Moonstruck Obsidian]]</li></ul> }}
+{{Badge|filter=stat |name=PWR/LCK |effect=PWR +30, LCK +30 |location=<ul>
+<li>[[Meigoku (Another Dungeon)|Collect 17,100 Sunstruck Alabaster]]</li>
+<li>Lost Sector - Ward D Hidden Path (Same Path to Boss room but reverse direction)</li></ul>
+}}
+{{Badge|filter=stat |name=INT/LCK |effect=INT +30, LCK +30 |location=<ul>
+<li>[[Meigoku (Another Dungeon)|Collect 29,700 Sunstruck Alabaster]]</li>
+<li>[[Astral Archive/Book of Lucidium|Book of Lucidium 1]]</li></ul>
+}}
+{{Badge|filter=stat|name=Steely Resolve|effect=HP +800, {{status icon|hold ground|s}} Hold Ground - 1 time at Max HP|location=During the [[Into_the_Hollow._The_Chronos_Empire_Strikes_Back._Volume_3#Planie_Island-0|Planie Island]] event}}<!---->{{Badge|filter=mix |name=Surging Gales |effect=PWR +25, [[Grasta Support/Falcon|Preemptive]] move once in battle (Similiar effect to [[Grasta Support/Falcon|Falcon Grasta]]) |location=During the [[Into_the_Hollow._The_Chronos_Empire_Strikes_Back._Volume_3#Planie_Island-0|Planie Island]] event}}
+{{Badge|filter=mixed |name=Dragon Exile |effect=MP +100, Damage +15%, MP Consumption +50%  |location=[[Astral Archive]] Book of Wyrmking 7 }}
+{{Badge|filter=mixed |name=Dark Dragon |effect=SPD +30, Continual MP Regen |location=[[Astral Archive]] Book of Wyrmking 1 }}
+{{Badge|filter=mixed |name=Determination |effect=Damage +30% per defeated ally |location=[[The Mists of Myth - Wryz Saga III/Bonus|Wryz Saga III]] - Nopaew's Request }}
+{{Badge|filter=mixed |name=Spurring |effect=PWR +30, MP Consumption -15% |location=[[Astral Archive]] Book of Empress 1 }}
+{{Badge|filter=mixed |name=Light Alliance |effect=Damage+ per Light ally (max +15% for 6 Light characters in party) |location=[[Astral Archive]] Book of Wyrmking's Envoy 5}}
+{{Badge|filter=mixed|name=Shadow Alliance|effect=Damage+ per Shadow ally (max +15% for 6 Shadow characters in party)|location=Behind imperial solider at [[Edax Arkiris Plains]], bottom left}}
+{{Badge|filter=skill |name=Banish |effect=Obtain [[Banish]] |location=[[The Wings of Destiny - Wryz Saga II]]}}
+{{Badge|filter=stat |name=Light/Shadow MP+ |effect=MP+ based on L/S pts (30-150) |location=[[The Wings of Destiny - Wryz Saga II]]}}
+{{Badge|filter=stat |name=Light/Shadow HP+ |effect=HP+ based on L/S pts (60-300) |location=[[The Wings of Destiny - Wryz Saga II]]}}
+{{Badge|filter=mixed |name=Dragonbond |effect= HP +500, Continual Regen|location=[[Astral Archive]] Book of Wyrmking's Envoy 1}}
+{{Badge|filter=mixed |name=Fallen Wing |effect=INT +30, Type Attack +10% |location=[[Astral Archive/Book of Mare Marginis|Astral Archive Book of Mare Marginis 7]] }}
+{{Badge|filter=mixed |name=Sword-Savior |effect=PWR +30, Damage +15%, MP Consumption +50% |location= [[Astral Archive/Book of Sinus Iridum|Astral Archive Book of Sinus Iridum 7]] }}
+{{Badge|filter=mixed |name=Winged One |effect=PWR +30, AF Combo Rate+ |location= [[Astral Archive/Book of Peninsula Fulminu|Astral Archive Book of Peninsula Fulminu 7]] }}
+{{Badge|filter=mixed |name=Preeminent |effect=SPD +30, MP Consumption -15% |location=[[Astral Archive]] Book of Sun Goddess 1 }}
+{{Badge|filter=mixed |name=Marked |effect=MP +20%, HP -20% |location=[[Astral Archive]] Book of Veilis 5 }}
+{{Badge|filter=mixed |name=Dragon God |effect=PWR +30, MP Consumption -15% |location=[[Astral Archive]] Book of Dragon God 1 }}
+{{Badge|filter=mixed |name=Wyrmkiller |effect=Critical Damage and Magic Critical Damage +15% when in [[Environmental Effects|Special Environment]] |location=[[The Cliffs of Wyrmrest - Wryz Saga I/Bonus|Arcadia Port Hidden Treasure]] }}
+{{Badge|filter=skill |name=Dragon Pierce |effect=Obtain [[Dragon Pierce]] |location=Windfang Plains Cave (Past Downstream) }}
+{{Badge|filter=skill |name=Meditation |effect=Obtain [[Meditation (Badge)|Meditation]] |location=[[Astral Archive]] Book of Zennon Ogre 5 }}
+{{Badge|filter=skill |name=Rally |effect=Obtain [[Rally]] |location=[[Astral Archive]] Book of Zennon Ogre 1 }}
+{{Badge|filter=mixed |name=Flame Lord |effect=INT +30, MP Consumption -15% |location=[[Astral Archive]] Book of Flame Lord 1 }}
+{{Badge|filter=skill |name=Heat Blast |effect=Obtain [[Heat Blast]] |location=[[Astral Archive]] Book of Papa Macminal 4 }}
+{{Badge|filter=skill |name=Heat Cutter |effect=Obtain [[Heat Cutter]] |location=[[Astral Archive]] Book of Dragon God's Envoy 4	}}
+{{Badge|filter=skill |name=Patron Shield |effect=Obtain [[Patron Shield]] |location=[[Home's Lost Atelier (Another Dungeon)|Home's Lost Atelier (AD) Wulfpack Manor]] - Defeat the Horrors Hall within 10 turns }}
+{{Badge|filter=mixed |name=Norm. Att.+ |effect=Normal Attack Damage +30% |location=[[Cradle of Time]] 20k years reward }}
+{{Badge|filter=mixed |name=Thrill of Victory |effect=Restore MP by 10% after victory |location=[[Astral Archive]] Book of Time Layer Distortion 7 }}
+{{Badge|filter=skill |name=Support |effect=Obtain [[Support]] |location=[[Astral Archive]] Book of Geo Anguirus 5	}}
+{{Badge|filter=skill |name=Focus |effect=Obtain [[Focus]] |location=[[Astral Archive]] Book of Beast King Guildna 8 }}
+{{Badge|filter=mixed |name=Unlife |effect=Magic Critical Damage +15%, Type Resistance -10% |location=The Sanctuary - Infirmary }}
+{{Badge|filter=mixed |name=Butchery |effect=Critical Damage +15%, Physical Resistance -10% |location=The Sanctuary - Infirmary }}
+{{Badge|filter=stat |name=Terrenergy |effect=MP +200, INT +20 |location=[[Wanderer in the Vortex]] Chapter 6 - Dust City - Forbidden Lane - Lab (behind right Purple keycard door)}}
+{{Badge|filter=mixed |name=Dahnan Mage |effect=INT +20, Type Attack +5% |location=[[Crown of the Pale Dawn]] Max Bond with Rinwell; Given at Final Battle Camp in Consuming Tree }}
+{{Badge|filter=mixed |name=Eternal Protector |effect=MP +80, Restore skill effect +50% |location=[[Crown of the Pale Dawn]] Max Bond with Dohalim; Given at Final Battle Camp in Consuming Tree }}
+{{Badge|filter=mixed |name=Strongest Pre-Teen |effect=INT +20, Damage +15%, MP Consumption +50% |location=[[Crown of the Pale Dawn]] Max Bond with Genis; Given at Final Battle Camp in Consuming Tree }}
+{{Badge|filter=mixed |name=Elegant Swordsman |effect=PWR +20, Critical Rate +30% |location=[[Crown of the Pale Dawn]] Max Bond with Zelos; Given at Final Battle Camp in Consuming Tree }}
+{{Badge|filter=skill |name=Stopping Power |effect=Obtain [[Stopping Power]] |location=Lightspark Hollow Layer 2 Chest (Behind Boulder) }}
+{{Badge|filter=mixed |name=Pain |effect=Damage +20% when target has pain status |location=Ashihara Warehouse during [[Wanderer in the Vortex/Bonus#Ashihara: Rebuild the Karakuri|Rebuild the Karakuri]] }}
+{{Badge|filter=ore |name=Last Stand |effect=Damage+ per enemy (Similar effect to [[Last Stand Ore]]) |location=[[Trial of Those Severed From Fate (Extreme)]] Stage 3 }}
+{{Badge|filter=mixed |name=M. Crit Strike |effect=Magic Critical Rate +30%, Type Attack +10% |location=[[Trial of Those Severed From Fate (Extreme)]] Stage 3}}
+{{Badge|filter=mixed |name=Crit Strike |effect=Critical Rate +30%, Type Attack +10% |location=[[Trial of Those Severed From Fate (Extreme)]] Stage 4}}
+{{Badge|filter=skill |name=Wind King's Bastion |effect=Obtain [[Wind King's Bastion]] |location=[[Trial of the Firestorm (Extreme)]] Stage 4 }}
+{{Badge|filter=mixed |name=Manaspring |effect=MP +100, Type Attack -10% |location=[[Trial of Those Severed From Fate]] Stage 4 }}
+{{Badge|filter=mixed |name=Lifespring |effect=HP +1000, Type Attack -10% |location=[[Trial of the Firestorm]] Stage 4 }}
+{{Badge|filter=ore |name=Weak Point |effect=Weak Point Damage +30% (Similar effect to [[Grasta Attack|Weak Point Strike Grasta]] and [[Insult-to-Injury Ore]]) |location=
+<ul>
+<li>after [[Wanderer in the Vortex/Chapter 2]] in Treasure Room</li>
+<li>[[The Wings of Destiny - Wryz Saga II]]</li>
+</ul>
+}}
+{{Badge|filter=mixed |name=Charm |effect=INT +40, Type resistance -10% |location=Defeat [[EPS-227 Patel]] }}
+{{Badge|filter=ore |name=Falcon |effect=[[Grasta Support/Falcon|Preemptive]] move once in battle (Similiar effect to [[Grasta Support/Falcon|Falcon Grasta]]) |location=
+<ul>
+<li>Toto Dream Ocean stamp collection ([[The Apex of Logic and Cardinal Scales|Logic and Scales ch5]])</li>
+<li>Chapter 92, at [[Tree of Time]], behind horror, locked by vines area</li>
+</ul>
+}}
+{{Badge|filter=mixed |name=Testament |effect=Transfer buffs/debuffs on switching |location=[[Trial of the Sealed Malefics (Extreme)]] Stage 4 }}
+{{Badge|filter=mixed |name=Vitality |effect=Damage +20% when HP Max |location=[[Trial of the Electric Shadow Mystery]] Stage 4 }}
+{{Badge|filter=ore |name=Bullseye |effect=Damage +50% outside AF (Similar to [[Bull's Eye Ore]]) |location=[[Trial of the Electric Shadow Mystery]] Stage 4 }}
+{{Badge|filter=skill |name=Obtain Fresh Heal |effect=Obtain [[Fresh Heal]] |location=[[Home's Lost Atelier (Another Dungeon)]] - Purgatory (2.7B damage) }}
+{{Badge|filter=skill |name=Fire Wall |effect=Obtain [[Fire Wall]] |location=[[Trial of Burning Rage (Extreme)]] Stage 4 }}
+{{Badge|filter=stat |name=Grand Sage |effect=600 HP-, 120MP+ |location=[[Trial of Burning Rage]] Stage 4 }}
+{{Badge|filter=ore |name=Enhanced Combo Rate |effect=AF Combo Rate +1% per hit per target (Similar to [[Combo Rate Enhance Ore]]) |location=[[Trial to Fix the Time Distortion]] Stage 4 }}
+{{Badge|filter=mixed |name=Berserker |effect=PWR +40, Physical Resistance -10% |location=[[Trial to Fix the Time Distortion]] Stage 3 }}
+{{Badge|filter=skill |name=Rumbling Wall |effect=Obtain [[Rumbling Wall]] |location=[[Trial of Cascading Quakes (Extreme)]] Stage 4}}
+{{Badge|filter=skill |name=Wa. Skywall |effect=Obtain [[Water Skywall]] |location=[[Trial of Perilous Tides (Extreme)]] Stage 4 }}
+{{Badge|filter=stat |name=PWR/INT |effect=PWR +20, INT +20 |location=[[Trial of Perilous Tides]] Stage 4 }}
+{{Badge|filter=stat |name=HP/SPD |effect=HP +500, SPD +20 |location=[[Trial of Cascading Quakes]] Stage 4 }}
+{{Badge|filter=stat |name=Giant's |effect=HP +1000, SPD -100 |location=[[Trial to Light the Darkness of Time Extreme]] Stage 4}}
+{{Badge|filter=mixed |name=MP Recovery |effect=MP Restore +50% when in reserve |location=[[Trial to Light the Darkness of Time Extreme]] Stage 3 }}
+{{Badge|filter=ore |name=All Attack |effect=Damage +15%, MP Consumption +50% (Similar effect to [[Rose-with-Thorns Ore]]) |location=[[Trial to Light the Darkness of Time]] Stage 6 }}
+{{Badge|filter=ore |name=Enemy Encounter- |effect=Reduces enemy encounter rate (3 Max) (Similar effect to [[Enemy Encounters- Ore]]) |location=
+<ul>
+<li>[[Trial to Light the Darkness of Time]] Stage 7</li>
+<li>[[Crown of the Pale Dawn]]</li>
+<li>x3 August 2023 Catch-up Campaign Supply Drop</li>
+<li>Recount 10 [[The Cliffs of Wyrmrest - Wryz Saga I/Bonus#Wryz Saga|Wryz Saga]] to the minstrel</li>
+</ul>
+}}
+{{Badge|filter=ore |name=Enemy Encounter+ |effect=Increases enemy encounter rate (3 Max) (Similar effect to [[Enemy Encounters+ Ore]]) |location=
+<ul>
+<li>[[Trial to Light the Darkness of Time]] Stage 3</li>
+<li>[[Crown of the Pale Dawn]] Owl Find You (Bonus Quest)</li>
+<li>x3 October 2023 Catch-up Campaign Supply Drop</li>
+<li>[[The Wings of Destiny - Wryz Saga II]]</li>
+</ul>
+}}
+{{Badge|filter=stat |name=Stats+ |effect=Stats +20 except HP/MP |location=
+<ul>
+<li>[[City of Lost Paradise (Another Dungeon)|Song of Sword and Wings of Lost Paradise: City of Lost Paradise AD]]</li>
+<li>Defeat [[Amal Gamal]]</li>
+<li>[[Trial of Those Embracing Emptiness|Trial of Those Embracing Emptiness Stage 4]]</li>
+</ul>
+}}
+{{Badge|filter=stat |name=Stats+ |effect=Stats +15 except HP/MP |location=
+<ul>
+<li>[[Crown of the Pale Dawn]]</li>
+<li>[[Astral Archive]] Book of Chronos Menas 7</li>
+</ul>
+}}
+{{Badge|filter=stat |name=Stats+ |effect=Stats +10 except HP/MP |location=
+<ul>
+<li>[[Astral Archive]] Book of Synth Hydra 7</li>
+<li>[[Octolight Conductors: The Prisoner's Odyssey/Purchase|Purchase from Laborer Man - Saltore Mines West]]</li>
+</ul>
+}}
+{{Badge|filter=stat |name=Stats+ |effect=Stats +5 except HP/MP |location=
+<ul>
+<li>6 badges from buying [[Premium Starter Set]]</li>
+<li>[[Astral Archive]] Book of Beast King Guildna 7</li>
+</ul>
+}}
+{{Badge|filter=skill |name=Area Heal |effect=Obtain [[Area Heal]] |location=[[Trial to Light the Darkness of Time]] Stage 5 }}
+{{Badge|filter=mixed |name=Cornered |effect=When HP under 50%, Damage +15% |location=[[Song of Sword and Wings of Lost Paradise]] }}
+{{Badge|filter=mixed |name=MP Regen |effect=Continual MP Regen +4 |location=[[Song of Sword and Wings of Lost Paradise|Prism Dust trader]] }}
+{{Badge|filter=mixed |name=Heavy Duty |effect=Physical Resistance +15%, SPD -30 |location=
+<ul>
+<li>[[The Lost Tome and the Silver Unfading Flower]]</li>
+<li>The Sanctuary - Infirmary</li>
+</ul>
+}}
+{{Badge|filter=stat |name=Magic |effect=HP -300, MP +60 |location=[[The Lost Tome and the Silver Unfading Flower]] }}
+{{Badge|filter=stat |name=Tough |effect=HP +300, MP -60 |location=[[The Lost Tome and the Silver Unfading Flower]] }}
+{{Badge|filter=stat |name=MP |effect=MP +60 |location=[[Astral Archive]] Book of Ghost King 8 }}
+{{Badge|filter=stat|name=MP |effect=MP +40|location= [[Octolight Conductors: The Prisoner's Odyssey/Purchase|Purchase from Elderly Woman - Atratt Manor Ground House (Allure Young Lady Tesolo)]] }}
+{{Badge|filter=stat |name=HP/MP |effect=HP +300, MP +30 |location=[[Spirit Sanctuary]] - Sealed Room }}
+{{Badge|filter=stat |name=HP/MP |effect=HP +200, MP +20 |location=[[Bound Wills and the Hollow Puppeteer]] }}
+{{Badge|filter=stat |name=HP |effect=HP +1000 |location=[[Complex Dream]] Beast Feeding Minigame for feeding 30 beasts }}
+{{Badge|filter=stat |name=HP |effect=HP +500 |location=[[Shadow of Sin and Steel]] Chapter 5 }}
+{{Badge|filter=ore |name=Nine Lives |effect=When max HP, give Hold Ground once (Similar effect to [[Nine Lives Ore]]) |location=[[Tails of Time and the Brave Four: Tales of Chronographia]] }}
+{{Badge|filter=ore |name=Pain Enhance |effect=Damage +50% when Pain on self (Similar effect to [[Pain Enhance Ore]]) |location=[[Tails of Time and the Brave Four: Tales of Chronographia]] }}
+{{Badge|filter=mixed |name=Restore Skill |effect=Restore skill effects +15% (Similar effect to [[Improve Restore Skill Ore]]) |location=
+<ul>
+<li>[[Bound Wills and the Hollow Puppeteer]]</li>
+<li>[[Astral Archive]] Book of Synth Hydra 5</li>
+</ul>
+}}
+{{Badge|filter=mixed |name= MP Use- |effect={{status icon|mp cost|s}} MP Consumption -25% |location=[[Astral Archive]] Book of Galliard 8 }}
+{{Badge|filter=mixed |name=MP Use- |effect={{status icon|mp cost|s}} MP Consumption -10% |location=[[Bound Wills and the Hollow Puppeteer]] }}
+{{Badge|filter=stat |name=HP |effect= HP +300 |location=[[Song of Sword and Wings of Lost Paradise|Prism Dust trader]] }}
+{{Badge|filter=stat|name=HP |effect=HP +200|location= [[Octolight Conductors: The Prisoner's Odyssey/Purchase|Purchase from Elder - Atratt Manor Ground (Night)]]}}
+{{Badge|filter=stat |name=HP |effect= HP +500 |location=
+<ul>
+<li>[[Wanderer in the Vortex/Chapter 3]]</li>
+<li>[[Astral Archive]] Book of Berserk Beast King 4</li>
+</ul>
+}}
+{{Badge|filter=resist |name=Confusion/Bind Resistance |effect=Confusion & Bind Resistance +30% |location= Astra Ruins 2F (Northwest Passage) Top Left Chest }}
+{{Badge|filter=resist |name=Freeze Resistance |effect=Frozen resistance +60% |location= [[The Wings of Destiny - Wryz Saga II]] }}
+{{Badge|filter=resist |name=Freeze Resistance |effect=Immune to Frozen |location=
+<ul>
+<li>Buy 1 from [[Fileria]] Shop Lady for 4800 [[Bearings]]</li>
+<li>[[Mt. Weissel]] Chest behind [[Diamond Drill]] action</li>
+</ul>
+}}
+{{Badge|filter=resist |name=Pain Resistance |effect=Immune to Pain |location=
+<ul>
+<li>[[Trial of the Sealed Malefics]] Stage 4</li>
+<li>Kogane Village Post-Attack Offer Grilled Eggplant to Eastern Shrine</li>
+</ul>
+}}
+{{Badge|filter=resist |name=Darkness Resistance |effect=Immune to Darkness |location=
+<ul>
+<li>Prison Ship Gulfagin chest</li>
+<li>[[Complex Dream]]</li>
+<li>[[The Wings of Destiny - Wryz Saga II]]</li>
+</ul>
+}}
+{{Badge|filter=resist |name=Confusion Resistance |effect=Immune to Confusion |location=
+<ul>
+<li>Specter Palace - 2F Right - Below the Floor in the bottom chest</li>
+<li>[[Song of Sword and Wings of Lost Paradise|Prism Dust trader]]</li>
+<li>[[Parallel Time Layer - Kurosagi Castle]] 2nd floor (past the roof), behind horror</li>
+</ul>
+}}
+{{Badge|filter=resist |name=Stone Resistance |effect=Immune to Stone |location=
+<ul>
+<li>[[The Celestial Tower and the Shadow Witch]] (total of 2)</li>
+<li>[[Complex Dream]]</li>
+</ul>
+}}
+{{Badge|filter=resist |name=Rage Resistance |effect=Immune to Rage |location=[[The Cat Beyond its Territory]] Moonlight Forest }}
+{{Badge|filter=resist |name=Bind Resistance |effect=Immune to Bind |location=[[The Cat Beyond its Territory]] Moonlight Forest }}
+{{Badge|filter=resist |name=Sleep Resistance |effect=Immune to Sleep |location=
+<ul>
+<li>[[The Cat Beyond its Territory]] Charol Plains</li>
+<li>[[Omegapolis|Omegapolis Mid Layer]], in house unlocked by Hi-Pressure Atmo Pump ability</li>
+</ul>
+}}
+{{Badge|filter=resist |name=Stun Resistance |effect=Immune to Stun |location=
+<ul>
+<li>[[The Cat Beyond its Territory]] Moonlight Forest</li>
+<li>[[Trial of the Sealed Malefics (Extreme)]] Stage 2</li>
+<li>[[Shadow of Sin and Steel]] Chapter 5</li>
+</ul>
+}}
+{{Badge|filter=elementResist |name=Water Type Resistance |effect=Water res +25%, Wind res -50% |location=[[Nagsham]] chest }}
+{{Badge|filter=elementResist |name=Wind Type Resistance |effect=Wind res +25%, Water res -50% |location=[[Cat Shrine]] chest }}
+{{Badge|filter=elementResist |name=Earth Type Resistance |effect=Earth res +25%, Fire res -50% |location=[[Dragon God's Swamp]] chest }}
+{{Badge|filter=elementResist |name=Fire Type Resistance |effect= Fire res +25%, Earth res -50% |location=[[Inanari Plateau]] chest }}
+{{Badge|filter=elementResist |name=Thunder Type Resistance |effect=Thunder resistance +10% |location=[[Song of Sword and Wings of Lost Paradise|Prism Dust trader]] }}
+{{Badge|filter=elementResist |name=Crystal Type Resistance |effect=Crystal resistance +10% |location=[[Song of Sword and Wings of Lost Paradise|Prism Dust trader]] }}
+{{Badge|filter=elementResist |name=Shade Type Resistance |effect=Shade resistance +15% |location=Use [[Exorcism Key]] on [[Atlantica]] 2nd Area Chest}}
+{{Badge|filter=elementResist |name=Shade Type Resistance |effect=Shade resistance +10% |location=[[Song of Sword and Wings of Lost Paradise|Prism Dust trader]] }}
+{{Badge|filter=elementResist |name=Water Type Resistance |effect=Water resistance +10% |location=[[Trial of Perilous Tides]] Stage 4 }}
+{{Badge|filter=elementResist |name=Earth Type Resistance |effect=Earth resistance +10% |location=[[Trial of Cascading Quakes]] Stage 4 }}
+{{Badge|filter=elementResist |name=Fire Type Resistance |effect=Fire resistance +10% |location=[[Trial of Burning Rage]] Stage 3 }}
+{{Badge|filter=elementResist |name=Wind Type Resistance |effect=Wind resistance +10% |location=[[Trial of the Firestorm]] Stage 3 }}
+{{Badge|filter=exp/git |name=Obtained EXP+ |effect=Individual EXP+50% |location=
+<ul>
+<li>Wryz Saga I - Godspike (North of 1st Terrawing Plateau)</li>
+<li>Octopath - complete Feed the Goblins sidequest</li>
+<li>[[Trial to Light the Darkness of Time]] Stage 2</li>
+<li>[[Trial of Cascading Quakes]] Stage 3</li>
+<li>[[Trial_of_the_Electric_Shadow_Mystery|Trial of the Electric Shadow Mystery]] Stage 3</li>
+<li>[[Astral Archive]] Book of Chronos Menas 5</li>
+<li>[[Astral Archive]] Book of Veilis 7</li>
+</ul>
+}}
+{{Badge|filter=exp/git |name=Obtained Git+ |effect=Increased Git +50% |location= Terrawing Plateau Cave (Entrance from 1st map) }}
+{{Badge|filter=exp/git |name=Obtained Git+ |effect=Obtained Git +30% |location=
+<ul>
+<li>[[Trial of Perilous Tides]] Stage 3 </li>
+<li>Can be rarely found in the [[Memories of Another Sky/Chocobo Hot %26 Cold]] minigame</li>
+</ul>
+}}
+{{Badge|filter=exp/git |name=Obtained EXP/Git+ |effect=EXP +20%, Git +10% |location=[[Bound Wills and the Hollow Puppeteer]] }}
+{{Badge|filter=exp/git |name=Obtained EXP+ |effect=Individual EXP +30% |location=
+<ul>
+<li>[[Complex Dream]] (2 total)</li>
+<li>Mayor's tutorial - Graduate Tests</li>
+<li>x3 October 2023 Catch-up Campaign Supply Drop</li>
+<li>Can be rarely found in the [[Memories of Another Sky/Chocobo Hot %26 Cold]] minigame</li>
+}}
+{{Badge|filter=exp/git |name=Obtained EXP+ |effect=Individual EXP +25% |location=[[Astral Archive]] Book of Visus Embryo 7 }}
+{{Badge|filter=exp/git |name=Obtained EXP+ |effect=Individual EXP +20% |location=Mayor's tutorial }}
+{{Badge|filter=exp/git |name=Obtained EXP+ |effect=Individual EXP +10% |location=Mayor's tutorial }}
+{{Badge|filter=exp/git |name=Obtained EXP+ |effect=Individual EXP +5% |location=Mayor's tutorial }}
+{{Badge|filter=exp/git |name=Obtained EXP+ |effect=Individual EXP +5% |location=Mayor's tutorial }}
+{{Badge|filter=exp/git |name=Obtained Git+ |effect=Obtained Git +15% |location=x3 August 2023 Catch-up Campaign Supply Drop }}
+{{Badge|filter=resist| name=Confusion Resistance |effect=Confusion Resistance +60% |location=[[The Wings of Destiny - Wryz Saga II]] }}
+{{Badge|filter=resist| name=Stun Resistance |effect=Stun Resistance +60% |location=
+<ul>
+<li>[[The Cliffs of Wyrmrest - Wryz Saga I]]</li>
+<li>[[The Wings of Destiny - Wryz Saga II]]</li>
+}}
+{{Badge|filter=resist| name=Poison Resistance |effect=Poison Resistance +60% |location=Aquatail Wilds Cave (2nd map bottom of map) }}
+{{Badge|filter=resist| name=Poison Resistance |effect=Poison Resistance +100% |location=[[Shadow of Sin and Steel]] Chapter 4}}
+{{Badge|filter=resist| name=Stone Resistance |effect=Stone Resistance +60% |location=[[The Cliffs of Wyrmrest - Wryz Saga I/Bonus#Blacksmith Apprentice|Blacksmith Apprentice]] }}
+{{Badge|filter=stat |name=Shade Curse |effect=Stats +25 except HP/MP. HP -15% |location=[[Astral Archive/Book of Nightmare Nue|Astral Archive Book of Nightmare Nue 1]] }}
+{{Badge|filter=stat |name=PWR +35 |effect=PWR +35 |location=Buy 1 for 3800 [[Bearings]] from Omegapolis Midlayer Blacksmith. }}
+{{Badge|filter=stat |name=INT +35 |effect=INT +35 |location=Buy 1 for 3800 [[Bearings]] from Omegapolis Midlayer Blacksmith. }}
+{{Badge|filter=stat |name=SPD +35 |effect=SPD +35 |location=Buy 1 for 3800 [[Bearings]] from Omegapolis Midlayer Blacksmith. }}
+{{Badge|filter=stat |name=END +35 |effect=END +35 |location=Buy 1 for 3800 [[Bearings]] from Omegapolis Midlayer Blacksmith. }}
+{{Badge|filter=stat |name=SPR +35 |effect=SPR +35 |location=Buy 1 for 3800 [[Bearings]] from Omegapolis Midlayer Blacksmith. }}
+{{Badge|filter=stat |name=LCK +35 |effect=LCK +35 |location=Buy 1 for 3800 [[Bearings]] from Omegapolis Midlayer Blacksmith. }}
+{{Badge|filter=stat|name=LCK |effect=LCK +30|location= Give [[Magiburger DX]] to [[Ice Gleam]] NPC at the Illusialand - Dream Teatime }}
+{{Badge|filter=stat |name=INT/SPD |effect=INT +29, SPD +18 |location=[[Song of Sword and Wings of Lost Paradise]] }}
+{{Badge|filter=stat |name=LCK/INT |effect=LCK +29, INT +18 |location=[[Song of Sword and Wings of Lost Paradise]] }}
+{{Badge|filter=stat |name=PWR/SPD |effect=PWR +25, SPD +25 |location=[[Trial of the Electric Shadow Mystery (Extreme)]] Stage 1 }}
+{{Badge|filter=stat |name=SPR/PWR |effect=SPR +29, PWR +18 |location=[[Song of Sword and Wings of Lost Paradise]] }}
+{{Badge|filter=stat |name=PWR/SPD |effect=PWR +20, SPD +20 |location=[[The Wings of Destiny - Wryz Saga II]]}}
+{{Badge|filter=stat |name=INT/SPD |effect=INT +20, SPD +20 |location=[[The Wings of Destiny - Wryz Saga II]]}}
+{{Badge|filter=stat |name=PWR/SPD |effect=PWR +20, SPD +15 |location=[[Astral Archive]] Book of Archive Guard 8 }}
+{{Badge|filter=stat |name=INT/SPD |effect=INT +20, SPD +15 |location=[[Astral Archive]] Book of Dragon God's Envoy 8 }}
+{{Badge|filter=stat |name=PWR/LCK |effect=PWR +24, LCK +13 |location=[[Heroes of Bygone Days and the Engraved Oath]] }}
+{{Badge|filter=stat |name=PWR/INT |effect=PWR +15, INT +15 |location=[[Bound Wills and the Hollow Puppeteer]] }}
+{{Badge|filter=stat |name=INT |effect=INT +30 |location=[[Astral Archive]] Book of Proto Eden Core 6 }}
+{{Badge|filter=stat |name=PWR |effect=PWR +25 |location=
+<ul>
+<li>[[Astral Archive]] Book of Psychic Ego 8</li>
+<li>[[Edax Xeno-Domain]] Research Sector, map 2, 2nd row from bottom to right</li>
+</ul>
+}}
+{{Badge|filter=stat |name=INT |effect=INT +25 |location=
+<ul>
+<li>[[Astral Archive]] Book of Twin Ogres 7</li>
+<li>[[Dimensional Fortress Chronos|Eroded Capital]] (map with globe device), bottom left through hidden path</li>
+</ul>
+}}
+{{Badge|filter=stat |name=SPD |effect=SPD +25 |location=
+<ul>
+<li>[[Astral Archive]] Book of Ogre Baron 8</li>
+<li>[[Edax Satellite Stadium]] 2F, top middle row to right through hidden path</li>
+</ul
+}}
+{{Badge|filter=stat|name=PWR |effect=PWR +20|location= [[Octolight Conductors: The Prisoner's Odyssey/Purchase|Purchase from Laborer Man - Saltore Mines Northwest]]}}
+{{Badge|filter=stat|name=INT |effect=INT +20|location= [[Octolight Conductors: The Prisoner's Odyssey/Purchase|Purchase from Laborer Girl - Paupers' Cave]]}}
+{{Badge|filter=stat|name=SPD |effect=SPD +20|location= [[Octolight Conductors: The Prisoner's Odyssey/Purchase|Purchase from Servant Woman - Atratt Manor 3F Conservatory]]}}
+{{Badge|filter=stat|name=END |effect=END +20|location= [[Octolight Conductors: The Prisoner's Odyssey/Purchase|Purchase from Man - Atratt Manor Ground]]}}
+{{Badge|filter=stat|name=SPR |effect=SPR +20|location= [[Octolight Conductors: The Prisoner's Odyssey/Purchase|Purchase from Streamer Lady - Elzion Sigma District]]}}
+{{Badge|filter=stat|name=LCK |effect=LCK +20|location= [[Octolight Conductors: The Prisoner's Odyssey/Purchase|Purchase from Influencer - Sigma Tower 5F]]}}
+{{Badge|filter=stat |name=PWR |effect=PWR +15 |location=[[Astral Archive]] Book of Synth Drone 7 }}
+{{Badge|filter=stat |name=INT |effect=INT +15 |location=[[Astral Archive]] Book of King Palsifal 7 }}
+{{Badge|filter=stat |name=SPD |effect=SPD +15 |location=[[Astral Archive]] Book of Geo Anguirus 7 }}
+{{Badge|filter=stat |name=PWR |effect=PWR +10 |location=[[Astral Archive]] Book of Beast Vares 7 }}
+{{Badge|filter=stat |name=INT |effect=INT +10 |location=[[Astral Archive]] Book of Galliard 7 }}
+{{Badge|filter=stat |name=SPD |effect=SPD +10 |location=[[Astral Archive]] Book of Dark Salamander 7 }}
+{{Badge|filter=stat |name=Refuse the Apex Order Badge |effect=Awaken Zone: DMG +5%, PWR +30 |location=[[Trial to Refuse the Apex Order]] Stage 4 }}

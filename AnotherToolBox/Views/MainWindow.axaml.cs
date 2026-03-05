@@ -12,6 +12,7 @@ using Avalonia.Threading;
 using FluentAvalonia.UI.Controls;
 using FluentAvalonia.UI.Windowing;
 using Microsoft.Extensions.DependencyInjection;
+using TeamBuilderView = AnotherToolBox.Views.Controls.Team.TeamBuilderView;
 
 namespace AnotherToolBox.Views;
 

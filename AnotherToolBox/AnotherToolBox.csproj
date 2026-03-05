@@ -40,6 +40,10 @@
       <Compile Update="Views\Controls\Player\StoryChecksView.axaml.cs">
         <DependentUpon>StoryChecks.axaml</DependentUpon>
       </Compile>
+      <Compile Update="Views\Controls\Team\TeamBuilderView.axaml.cs">
+        <DependentUpon>TeamBuilderView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>

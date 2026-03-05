@@ -11,6 +11,9 @@ public class CharacterSlim
     [Column(CargoSpecialColumnNames.PageName)]  
     public string Page { get; set; }  
     
+    [Column(CargoSpecialColumnNames.PageId)]  
+    public string PageId { get; set; }  
+    
     [Column("Id")]  
     public string Id { get; set; } = default!;  
   

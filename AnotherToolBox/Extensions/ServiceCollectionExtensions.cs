@@ -1,6 +1,7 @@
 using AnotherToolBox.Services;
 using AnotherToolBox.ViewModels;
 using AnotherToolBox.ViewModels.Player;
+using AnotherToolBox.ViewModels.TeamBuilder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -26,7 +27,7 @@ public static class ServiceCollectionExtensions
         
         // Scope the character frame as we have multiple
         collection.AddScoped<CharacterFrameViewModel>();
-        
+        collection.AddScoped<CharacterStatusViewModel>();
         return collection;
     }
 }

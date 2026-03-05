@@ -27,7 +27,15 @@ public partial class CharacterListViewModel : ViewModelBase
     
     [ObservableProperty]
     private CharacterChoiceDto selectedCharacter;
-    
+
+    public CharacterSlim? SelectedCharacterSlim
+    {
+        get
+        {
+            return _wikiService.SlimCharacters.FirstOrDefault(c => c.Id == selectedCharacter?.Id);
+        }
+    }
+
     public CharacterListViewModel(WikiService wikiService, ImageService imageService)
     {
         _wikiService = wikiService;
@@ -64,6 +72,12 @@ public partial class CharacterListViewModel : ViewModelBase
                     Style = character.Style,
                 });
             }
+            
+            // Init weapons etc
+
+            // await _wikiService.LoadWeapons();
+            // await _wikiService.LoadArmors();
+            // await _wikiService.LoadGrasta();
         }
         finally
         {

@@ -6,7 +6,7 @@
              xmlns:controls="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
              xmlns:characters="clr-namespace:AnotherToolBox.Views.Controls.Characters"
              mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="400"
-             x:Class="AnotherToolBox.Views.Controls.TeamBuilderView"
+             x:Class="AnotherToolBox.Views.Controls.Team.TeamBuilderView"
              x:DataType="viewModels:TeamBuilderViewModel">
    
     <Grid 

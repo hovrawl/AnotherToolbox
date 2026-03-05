@@ -3,21 +3,27 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using AnotherToolBox.Models.Characters;
 using AnotherToolBox.Services;
+using AnotherToolBox.ViewModels.TeamBuilder;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AnotherToolBox.ViewModels;
 
 public partial class CharacterFrameViewModel : ViewModelBase
 {
+    private readonly IServiceProvider _serviceProvider;
     public string Id { get; } = Guid.NewGuid().ToString();
     [ObservableProperty]
     private CharacterChoiceDto? selectedCharacter;
 
     [ObservableProperty] private bool selectorOpen;
+    [ObservableProperty] private bool statsOpen;
     
+    [ObservableProperty] private CharacterStatusViewModel characterStatusVm;
+
     public CharacterListViewModel CharacterListVm { get; set; }
-    
+
     [RelayCommand]
     public void RemoveCharacter()
     {
@@ -44,8 +50,29 @@ public partial class CharacterFrameViewModel : ViewModelBase
         } 
     }
 
-    public CharacterFrameViewModel(CharacterListViewModel characterListVm)
+    [RelayCommand]
+    public async Task ViewStats()
     {
+        if (SelectedCharacter == null) return;
+
+        if (CharacterStatusVm == null)
+        {
+            
+            var scope = _serviceProvider.CreateScope();
+            var charStatusVm = scope.ServiceProvider.GetRequiredService<CharacterStatusViewModel>();
+            CharacterStatusVm = charStatusVm;
+        }
+
+        if (CharacterStatusVm == null) return;
+
+        await CharacterStatusVm.ConfigureCharacter(CharacterListVm.SelectedCharacterSlim);
+        StatsOpen = true;
+    }
+
+
+    public CharacterFrameViewModel(CharacterListViewModel characterListVm, IServiceProvider serviceProvider)
+    {
+        _serviceProvider = serviceProvider;
         CharacterListVm = characterListVm;
         
         CharacterListVm.PropertyChanged += CharacterListVmOnPropertyChanged;
