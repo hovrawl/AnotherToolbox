@@ -59,8 +59,7 @@
                                     Closing="StatsFlyout_OnClosing">
                                 <team:CharacterStatusView 
                                     DataContext="{Binding CharacterStatusVm}"
-                                    Width="240"
-                                    Height="300"/>
+                                    Height="340"/>
                             </Flyout>
                         </Button.Flyout>
                     </Button>

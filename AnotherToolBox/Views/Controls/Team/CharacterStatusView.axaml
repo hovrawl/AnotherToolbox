@@ -38,70 +38,135 @@
             </Setter>
         </Style>
     </Control.Styles>
-    <ScrollViewer>
+    <Grid 
+        ColumnDefinitions="Auto,Auto"
+        ColumnSpacing="10">
         
-        <StackPanel Spacing="8">
+        <ScrollViewer Grid.Column="0">
             
-            <!-- show all stats -->
-            <Border Classes="StatBorder">
-                <StackPanel>
-                    <TextBlock Text="Attack/Def"></TextBlock>
-                    <ItemsRepeater
-                        Classes="StatsLayout" 
-                        ItemsSource="{Binding AtkStats}">
-                    </ItemsRepeater>
-                </StackPanel>
-            </Border>
+            <StackPanel Spacing="8">
+                
+                <!-- show all stats -->
+                <Border Classes="StatBorder">
+                    <StackPanel>
+                        <TextBlock Text="Attack/Def"></TextBlock>
+                        <ItemsRepeater
+                            Classes="StatsLayout" 
+                            ItemsSource="{Binding AtkStats}">
+                        </ItemsRepeater>
+                    </StackPanel>
+                </Border>
 
-            <Border Classes="StatBorder">
-                <StackPanel>
-                    <TextBlock Text="Base Stats"></TextBlock>
-                    <ItemsRepeater 
-                        Classes="StatsLayout" 
-                        ItemsSource="{Binding BaseStats}">
-                    </ItemsRepeater>
-                </StackPanel>
-            </Border>
+                <Border Classes="StatBorder">
+                    <StackPanel>
+                        <TextBlock Text="Base Stats"></TextBlock>
+                        <ItemsRepeater 
+                            Classes="StatsLayout" 
+                            ItemsSource="{Binding BaseStats}">
+                        </ItemsRepeater>
+                    </StackPanel>
+                </Border>
 
-            <Border Classes="StatBorder">
-                <StackPanel>
-                    <TextBlock Text="Critical"></TextBlock>
-                    <ItemsRepeater 
-                        Classes="StatsLayout" 
-                        ItemsSource="{Binding CritStats}">
-                    </ItemsRepeater>
+                <Border Classes="StatBorder">
+                    <StackPanel>
+                        <TextBlock Text="Critical"></TextBlock>
+                        <ItemsRepeater 
+                            Classes="StatsLayout" 
+                            ItemsSource="{Binding CritStats}">
+                        </ItemsRepeater>
+                    </StackPanel>
+                </Border>
+                <Border Classes="StatBorder">
+                    <StackPanel>
+                        <TextBlock Text="Type Attack Damage"></TextBlock>
+                        <ItemsRepeater 
+                            Classes="StatsLayout" 
+                            ItemsSource="{Binding TypeAtkStats}">
+                        </ItemsRepeater>
+                    </StackPanel>
+                </Border>
+                <Border Classes="StatBorder">
+                    <StackPanel>
+                        <TextBlock Text="Type Resistance"></TextBlock>
+                        <ItemsRepeater 
+                            Classes="StatsLayout" 
+                            ItemsSource="{Binding TypeResStats}">
+                        </ItemsRepeater>
+                    </StackPanel>
+                </Border>
+                <Border Classes="StatBorder">
+                    <StackPanel>
+                        <TextBlock Text="Status Resistances"></TextBlock>
+                        <ItemsRepeater 
+                            Classes="StatsLayout" 
+                            ItemsSource="{Binding StatusResStats}">
+                        </ItemsRepeater>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            
+        </ScrollViewer>
+        <Border
+            Grid.Column="1"
+            BorderBrush="DarkSlateGray"
+            BorderThickness="1"
+            CornerRadius="4"
+            >
+            <Grid 
+                ColumnDefinitions="Auto, Auto"
+                RowDefinitions="Auto, Auto, Auto"
+                RowSpacing="4"
+                ColumnSpacing="4"
+                >
+                
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <TextBlock Text="Weapon"></TextBlock>
+                    <Button>
+                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
+                    </Button>
                 </StackPanel>
-            </Border>
-            <Border Classes="StatBorder">
-                <StackPanel>
-                    <TextBlock Text="Type Attack Damage"></TextBlock>
-                    <ItemsRepeater 
-                        Classes="StatsLayout" 
-                        ItemsSource="{Binding TypeAtkStats}">
-                    </ItemsRepeater>
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <TextBlock Text="Armor"></TextBlock>
+                    <Button >
+                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
+                    </Button>
                 </StackPanel>
-            </Border>
-            <Border Classes="StatBorder">
-                <StackPanel>
-                    <TextBlock Text="Type Resistance"></TextBlock>
-                    <ItemsRepeater 
-                        Classes="StatsLayout" 
-                        ItemsSource="{Binding TypeResStats}">
-                    </ItemsRepeater>
-                </StackPanel>
-            </Border>
-            <Border Classes="StatBorder">
-                <StackPanel>
-                    <TextBlock Text="Status Resistances"></TextBlock>
-                    <ItemsRepeater 
-                        Classes="StatsLayout" 
-                        ItemsSource="{Binding StatusResStats}">
-                    </ItemsRepeater>
-                </StackPanel>
-            </Border>
-        </StackPanel>
-        
-    </ScrollViewer>
+                <Grid Grid.Row="1" Grid.Column="0" ColumnSpan="2"
+                      RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="Auto, Auto">
+                    <TextBlock Text="Badge" Grid.ColumnSpan="2"></TextBlock>
+                    <Button Grid.Row="1" Grid.Column="0">
+                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="1">
+                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="0" ColumnSpan="2"
+                      RowDefinitions="Auto, Auto, Auto, Auto, Auto"
+                      ColumnDefinitions="Auto, Auto">
+                    <TextBlock Text="Grasta" Grid.ColumnSpan="2"></TextBlock>
+                    <Button Grid.Row="1" Grid.Column="0">
+                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="1">
+                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
+                    </Button>
+                    <Button Grid.Row="2" Grid.Column="0">
+                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
+                    </Button>
+                    <Button Grid.Row="2" Grid.Column="1">
+                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
+                    </Button>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Special Grasta" Grid.ColumnSpan="2"></TextBlock>
+                    <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
+                    </Button>
+                
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
     <!-- ~1~ Loading overlay @1@ -->
     <!-- <Border  Background="#80000000" IsVisible="{Binding IsLoading}"> -->
     <!--     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8"> -->
