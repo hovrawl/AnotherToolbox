@@ -7,6 +7,7 @@
              xmlns:controls="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AnotherToolBox.Views.Controls.Team.CharacterStatusView"
+             x:Name="Root"
              x:DataType="teamBuilder:CharacterStatusViewModel">
     <Control.Styles>
         <Style Selector="Border.StatBorder">
@@ -63,7 +64,7 @@
                         <ItemsRepeater 
                             Classes="StatsLayout" 
                             ItemsSource="{Binding BaseStats}">
-                        </ItemsRepeater>
+                            </ItemsRepeater>
                     </StackPanel>
                 </Border>
 
@@ -106,66 +107,165 @@
             </StackPanel>
             
         </ScrollViewer>
-        <Border
-            Grid.Column="1"
-            BorderBrush="DarkSlateGray"
-            BorderThickness="1"
-            CornerRadius="4"
-            >
-            <Grid 
-                ColumnDefinitions="Auto, Auto"
-                RowDefinitions="Auto, Auto, Auto"
-                RowSpacing="4"
-                ColumnSpacing="4"
+        <Grid Grid.Column="1" MinWidth="260">
+            
+            <Border
+                Grid.Column="1"
+                BorderBrush="DarkSlateGray"
+                BorderThickness="1"
+                CornerRadius="4"
                 >
-                
-                <StackPanel Grid.Row="0" Grid.Column="0">
-                    <TextBlock Text="Weapon"></TextBlock>
-                    <Button>
-                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
-                    </Button>
-                </StackPanel>
-                <StackPanel Grid.Row="0" Grid.Column="1">
-                    <TextBlock Text="Armor"></TextBlock>
-                    <Button >
-                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
-                    </Button>
-                </StackPanel>
-                <Grid Grid.Row="1" Grid.Column="0" ColumnSpan="2"
-                      RowDefinitions="Auto, Auto"
-                      ColumnDefinitions="Auto, Auto">
-                    <TextBlock Text="Badge" Grid.ColumnSpan="2"></TextBlock>
-                    <Button Grid.Row="1" Grid.Column="0">
-                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
-                    </Button>
-                    <Button Grid.Row="1" Grid.Column="1">
-                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
-                    </Button>
+                <Grid 
+                    ColumnDefinitions="Auto, Auto"
+                    RowDefinitions="Auto, Auto, Auto"
+                    RowSpacing="4"
+                    ColumnSpacing="4"
+                    >
+                    
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock Text="Weapon"></TextBlock>
+                        <Button 
+                            Command="{Binding ChangeEquipmentCommand}"
+                            CommandParameter="{Binding WeaponSlot}">
+                            <StackPanel>
+                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding WeaponSlot.IsEmpty}"/>
+                                <TextBlock Text="{Binding WeaponSlot.SelectedItemName}" IsVisible="{Binding WeaponSlot.IsSelected}" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+                        <TextBlock Text="Armor"></TextBlock>
+                        <Button 
+                            Command="{Binding ChangeEquipmentCommand}"
+                            CommandParameter="{Binding ArmorSlot}">
+                            <StackPanel>
+                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding ArmorSlot.IsEmpty}"/>
+                                <TextBlock Text="{Binding ArmorSlot.SelectedItemName}" IsVisible="{Binding ArmorSlot.IsSelected}" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                    <Grid Grid.Row="1" Grid.Column="0" ColumnSpan="2"
+                          RowDefinitions="Auto, Auto"
+                          ColumnDefinitions="Auto, Auto">
+                        <TextBlock Text="Badge" Grid.ColumnSpan="2"></TextBlock>
+                        <Button 
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Command="{Binding ChangeEquipmentCommand}"
+                            CommandParameter="{Binding BadgeSlots[0]}">
+                            <StackPanel>
+                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding BadgeSlots[0].IsEmpty}"/>
+                                <TextBlock Text="{Binding BadgeSlots[0].SelectedItemName}" IsVisible="{Binding BadgeSlots[0].IsSelected}" />
+                            </StackPanel>
+                        </Button>
+                        <Button 
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Command="{Binding ChangeEquipmentCommand}"
+                            CommandParameter="{Binding BadgeSlots[1]}">
+                            <StackPanel>
+                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding BadgeSlots[1].IsEmpty}"/>
+                                <TextBlock Text="{Binding BadgeSlots[1].SelectedItemName}" IsVisible="{Binding BadgeSlots[1].IsSelected}" />
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.Column="0" ColumnSpan="2"
+                          RowDefinitions="Auto, Auto, Auto, Auto, Auto"
+                          ColumnDefinitions="Auto, Auto">
+                        <TextBlock Text="Grasta" Grid.ColumnSpan="2"></TextBlock>
+                        <Button   
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Command="{Binding ChangeEquipmentCommand}"
+                            CommandParameter="{Binding GrastaSlots[0]}">
+                            <StackPanel>
+                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[0].IsEmpty}"/>
+                                <TextBlock Text="{Binding GrastaSlots[0].SelectedItemName}" IsVisible="{Binding GrastaSlots[0].IsSelected}" />
+                            </StackPanel>
+                        </Button>
+                        <Button 
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Command="{Binding ChangeEquipmentCommand}"
+                            CommandParameter="{Binding GrastaSlots[1]}">
+                            <StackPanel>
+                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[1].IsEmpty}"/>
+                                <TextBlock Text="{Binding GrastaSlots[1].SelectedItemName}" IsVisible="{Binding GrastaSlots[1].IsSelected}" />
+                            </StackPanel>
+                        </Button>
+                        <Button 
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Command="{Binding ChangeEquipmentCommand}"
+                            CommandParameter="{Binding GrastaSlots[2]}">
+                            <StackPanel>
+                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[2].IsEmpty}"/>
+                                <TextBlock Text="{Binding GrastaSlots[2].SelectedItemName}" IsVisible="{Binding GrastaSlots[2].IsSelected}" />
+                            </StackPanel>
+                        </Button>
+                        <Button 
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Command="{Binding ChangeEquipmentCommand}"
+                            CommandParameter="{Binding GrastaSlots[3]}">
+                            <StackPanel>
+                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[3].IsEmpty}"/>
+                                <TextBlock Text="{Binding GrastaSlots[3].SelectedItemName}" IsVisible="{Binding GrastaSlots[3].IsSelected}" />
+                            </StackPanel>
+                        </Button>
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Special Grasta" Grid.ColumnSpan="2"></TextBlock>
+                        <Button
+                            Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                            Command="{Binding ChangeEquipmentCommand}"
+                            CommandParameter="{Binding SpecialGrastaSlot}">
+                            <StackPanel>
+                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding SpecialGrastaSlot.IsEmpty}"/>
+                                <TextBlock Text="{Binding SpecialGrastaSlot.SelectedItemName}" IsVisible="{Binding SpecialGrastaSlot.IsSelected}" />
+                            </StackPanel>
+                        </Button>
+                        
+                    </Grid>
                 </Grid>
-                <Grid Grid.Row="2" Grid.Column="0" ColumnSpan="2"
-                      RowDefinitions="Auto, Auto, Auto, Auto, Auto"
-                      ColumnDefinitions="Auto, Auto">
-                    <TextBlock Text="Grasta" Grid.ColumnSpan="2"></TextBlock>
-                    <Button Grid.Row="1" Grid.Column="0">
-                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
-                    </Button>
-                    <Button Grid.Row="1" Grid.Column="1">
-                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
-                    </Button>
-                    <Button Grid.Row="2" Grid.Column="0">
-                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
-                    </Button>
-                    <Button Grid.Row="2" Grid.Column="1">
-                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
-                    </Button>
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Special Grasta" Grid.ColumnSpan="2"></TextBlock>
-                    <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
-                        <controls:SymbolIcon Symbol="Add"></controls:SymbolIcon>
-                    </Button>
-                
+            </Border>
+            
+            <!-- shared picker overlay -->
+            <Border
+                Background="#80000000"
+                IsVisible="{Binding IsEquipmentPickerOpen}">
+                <Grid HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                    <Border
+                        Background="White"
+                        Padding="12"
+                        CornerRadius="6"
+                        MinWidth="260"
+                        MaxHeight="320">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="{Binding ActiveSlot.Label}" FontWeight="Bold" />
+
+                            <ScrollViewer MaxHeight="220">
+                                <ItemsControl ItemsSource="{Binding AvailableEquipment}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="teamBuilder:EquipmentItemViewModel">
+                                            <Button
+                                                Command="{Binding #Root.SelectEquipmentCommandProxy}"
+                                                CommandParameter="{Binding}"
+                                                HorizontalAlignment="Stretch">
+                                                <TextBlock Text="{Binding Name}" />
+                                            </Button>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+
+                            <Button
+                                Content="Cancel"
+                                Command="{Binding CloseEquipmentPickerCommand}" />
+                        </StackPanel>
+                    </Border>
                 </Grid>
-            </Grid>
-        </Border>
+            </Border>
+        </Grid>
     </Grid>
     <!-- ~1~ Loading overlay @1@ -->
     <!-- <Border  Background="#80000000" IsVisible="{Binding IsLoading}"> -->

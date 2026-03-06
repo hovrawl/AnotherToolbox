@@ -1,9 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using AnotherToolBox.Models.Characters;
 using AnotherToolBox.Models.Team;
 using AnotherToolBox.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace AnotherToolBox.ViewModels.TeamBuilder;
 
@@ -20,9 +22,35 @@ public partial class CharacterStatusViewModel : ViewModelBase
     
 
     [ObservableProperty] private bool isLoading;
+    [ObservableProperty] private bool equipmentLoading;
+    
+    [ObservableProperty] private EquipmentSlot? activeSlot;
+
+    [ObservableProperty] private bool isEquipmentPickerOpen;
+
+    public ObservableCollection<EquipmentItemViewModel> AvailableEquipment { get; } = new();
     
     public CharacterSlim Character { get; set; }
     
+    public EquipmentSlot WeaponSlot { get; } = new(EquipmentType.Weapon, 0, "Weapon");
+    public EquipmentSlot ArmorSlot { get; } = new(EquipmentType.Armor, 0, "Armor");
+
+    public IReadOnlyList<EquipmentSlot> BadgeSlots { get; } =
+    [
+        new(EquipmentType.Badge, 0, "Badge 1"),
+        new(EquipmentType.Badge, 1, "Badge 2")
+    ];
+
+    public IReadOnlyList<EquipmentSlot> GrastaSlots { get; } =
+    [
+        new(EquipmentType.Grasta, 0, "Grasta 1"),
+        new(EquipmentType.Grasta, 1, "Grasta 2"),
+        new(EquipmentType.Grasta, 2, "Grasta 3"),
+        new(EquipmentType.Grasta, 3, "Grasta 4")
+    ];
+
+    public EquipmentSlot SpecialGrastaSlot { get; } = new(EquipmentType.Grasta, 0, "Special Grasta");
+
     public CharacterStatusViewModel(WikiService wikiService)
     {
         _wikiService = wikiService;
@@ -269,5 +297,117 @@ public partial class CharacterStatusViewModel : ViewModelBase
 
         
         IsLoading = false;
+    }
+
+    [RelayCommand]
+    public async Task ChangeEquipment(EquipmentSlot slot)
+    {
+        if (slot is null)
+            return;
+
+        // slot.Type
+        // slot.Slot
+        ActiveSlot = slot;
+
+        AvailableEquipment.Clear();
+
+        var items = await LoadEquipmentForType(slot.Type);
+
+        foreach (var item in items)
+            AvailableEquipment.Add(item);
+
+        IsEquipmentPickerOpen = true;
+    }
+
+    private async Task<IEnumerable<EquipmentItemViewModel>> LoadEquipmentForType(EquipmentType slotType)
+    {
+        // load equipment
+        EquipmentLoading = true;
+        var results = new List<EquipmentItemViewModel>();
+
+        switch (slotType)
+        {
+            case EquipmentType.Weapon: 
+            {
+                if (_wikiService.CargoWeapons.Count == 0) await _wikiService.LoadWeapons();
+                foreach (var wep in _wikiService.CargoWeapons)
+                {
+                    var wepModel = new EquipmentItemViewModel()
+                    {
+                        Type = slotType,
+                        Name = wep.Name,
+                        Id = wep.Id,
+                    };
+                    results.Add(wepModel);
+                } 
+                break;
+            }
+            case EquipmentType.Armor: 
+            {
+                if (_wikiService.CargoArmor.Count == 0) await _wikiService.LoadArmors();
+                foreach (var wep in _wikiService.CargoArmor)
+                {
+                    var wepModel = new EquipmentItemViewModel()
+                    {
+                        Type = slotType,
+                        Name = wep.Name,
+                        Id = wep.Id,
+                    };
+                    results.Add(wepModel);
+                }
+                break;
+            }
+            case EquipmentType.Badge:
+            {
+                if (_wikiService.CargoBadges.Count == 0) await _wikiService.LoadBadges();
+                foreach (var wep in _wikiService.CargoBadges)
+                {
+                    var wepModel = new EquipmentItemViewModel()
+                    {
+                        Type = slotType,
+                        Name = wep.Name,
+                        Id = wep.Id,
+                    };
+                    results.Add(wepModel);
+                }
+                break;
+            }
+            case EquipmentType.Grasta: 
+            {
+                if (_wikiService.CargoGrasta.Count == 0) await _wikiService.LoadGrasta();
+                foreach (var wep in _wikiService.CargoGrasta)
+                {
+                    var wepModel = new EquipmentItemViewModel()
+                    {
+                        Type = slotType,
+                        Name = wep.Name,
+                        Id = wep.Id,
+                    };
+                    results.Add(wepModel);
+                }
+                break;
+            }
+        }
+
+        EquipmentLoading = false;
+        return results;
+    }
+
+    [RelayCommand]
+    private void SelectEquipment(EquipmentItemViewModel item)
+    {
+        if (ActiveSlot is null || item is null)
+            return;
+
+        ActiveSlot.SelectedItem = item;
+        IsEquipmentPickerOpen = false;
+
+        ActiveSlot = null;
+    }
+
+    [RelayCommand]
+    private void CloseEquipmentPicker()
+    {
+        IsEquipmentPickerOpen = false;
     }
 }

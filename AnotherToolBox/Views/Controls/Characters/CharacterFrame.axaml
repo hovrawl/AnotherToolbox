@@ -52,7 +52,7 @@
                         Height="40"
                         />
                     <Button Command="{Binding ViewStats}" >
-                        Stats
+                        Configure
                         <Button.Flyout>
                             <Flyout
                                 IsOpen="{Binding StatsOpen}"

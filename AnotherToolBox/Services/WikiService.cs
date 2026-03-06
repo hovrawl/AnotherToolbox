@@ -37,6 +37,7 @@ public class WikiService
     public List<WeaponCargo> CargoWeapons = new();
     public List<ArmorCargo> CargoArmor = new();
     public List<GrastaCargo> CargoGrasta = new();
+    public List<BadgeCargo> CargoBadges = new();
 
     public bool Initialized { get; private set; }
     
@@ -226,6 +227,27 @@ public class WikiService
             {
                 // Use ch.Name, ch.Element, etc.  
                 CargoGrasta.Add(ch);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+    
+    public async Task LoadBadges()
+    {
+        CargoBadges.Clear();
+        try
+        {
+            var context = new CargoQueryContext(_site) { PaginationSize = 500 };
+            var query = context.Table<BadgeCargo>()
+                .Where(c => !c.Unreleased)
+                .Take(9999);
+            await foreach (var ch in query.AsAsyncEnumerable())
+            {
+                // Use ch.Name, ch.Element, etc.  
+                CargoBadges.Add(ch);
             }
         }
         catch (Exception ex)

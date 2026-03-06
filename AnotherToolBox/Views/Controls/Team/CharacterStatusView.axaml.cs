@@ -1,4 +1,6 @@
-﻿using Avalonia;
+﻿using System.Windows.Input;
+using AnotherToolBox.ViewModels.TeamBuilder;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
@@ -10,4 +12,10 @@ public partial class CharacterStatusView : UserControl
     {
         InitializeComponent();
     }
+    
+    public CharacterStatusViewModel? ViewModel => DataContext as CharacterStatusViewModel;
+
+    
+    public ICommand? SelectEquipmentCommandProxy => ViewModel?.SelectEquipmentCommand;
+
 }

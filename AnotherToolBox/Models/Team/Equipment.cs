@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using WikiClientLibrary.Cargo.Schema;
 using WikiClientLibrary.Cargo.Schema.DataAnnotations;
 
 namespace AnotherToolBox.Models.Team;
@@ -139,6 +140,22 @@ public class WeaponCargo
 [Table("Armor")]
 public class ArmorCargo
 {
+    [Column(CargoSpecialColumnNames.PageId)]
+    public string Id { get; set; }  
+    public string Type { get; set; }  
+    public string Name { get; set; }  
+    public int? Level { get; set; }  
+    public int? Def { get; set; }  
+    public int? MDef { get; set; }  
+
+    public bool Unreleased { get; set; }
+}
+
+[Table("Badge")]
+public class BadgeCargo
+{
+    [Column(CargoSpecialColumnNames.PageId)]
+    public string Id { get; set; }  
     public string Type { get; set; }  
     public string Name { get; set; }  
     public int? Level { get; set; }  
@@ -151,6 +168,8 @@ public class ArmorCargo
 [Table("Grasta")]
 public class GrastaCargo
 {
+    [Column(CargoSpecialColumnNames.PageId)]
+    public string Id { get; set; }  
     public string Image { get; set; }  
     public string Name { get; set; }  // - Wikitext - links to its own page I think
     public string Stat1 { get; set; }  
