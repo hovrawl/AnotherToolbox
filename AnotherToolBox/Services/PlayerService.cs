@@ -13,7 +13,7 @@ namespace AnotherToolBox.Services;
 
 public class PlayerService
 {
-    private readonly ConcurrentDictionary<string, bool> _pendingStoryChecks = new();
+    private readonly ConcurrentDictionary<int, bool> _pendingStoryChecks = new();
     private Timer? _debounceTimer;
     private readonly CancellationTokenSource _cancellationTokenSource = new();
     private const int DebounceDelayMs = 1000;
@@ -68,7 +68,7 @@ public class PlayerService
     }
 
 
-    public void SaveStoryChecksData(string id, bool cleared)
+    public void SaveStoryChecksData(int id, bool cleared)
     {
         _pendingStoryChecks[id] = cleared;
 
@@ -108,7 +108,7 @@ public class PlayerService
     }
 
 
-    public bool IsStoryCleared(string? id)
+    public bool IsStoryCleared(int id)
     {
         _pendingStoryChecks.TryGetValue(id, out var cleared);
         return cleared;

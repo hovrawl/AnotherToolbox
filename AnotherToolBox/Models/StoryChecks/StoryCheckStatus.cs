@@ -2,7 +2,7 @@
 
 public class StoryCheckStatus
 {
-    public string Id { get; init; }
+    public int Id { get; init; }
     
     public bool Cleared { get; set; }
 }
