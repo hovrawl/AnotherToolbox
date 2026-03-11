@@ -49,6 +49,12 @@ public struct StatEffect
     public double Value;
     public StatEffectType Effect;
     public bool Multiplicative;
+    public bool Percentage { get; set; }
+
+    public override string ToString()
+    {
+        return Stat.ToString("G") + " " + (Effect == StatEffectType.Increase ? "+" : "-") + Value;
+    }
 }
 
 public enum UnitStat

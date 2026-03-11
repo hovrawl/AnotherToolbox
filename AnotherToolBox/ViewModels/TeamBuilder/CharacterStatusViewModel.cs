@@ -12,6 +12,7 @@ namespace AnotherToolBox.ViewModels.TeamBuilder;
 public partial class CharacterStatusViewModel : ViewModelBase
 {
     private readonly WikiService _wikiService;
+    private readonly PlayerService _playerService;
     public ObservableCollection<CharacterStatDto> AtkStats { get; set; } = new();
     public ObservableCollection<CharacterStatDto> BaseStats { get; set; } = new();
     public ObservableCollection<CharacterStatDto> CritStats { get; set; } = new();
@@ -51,9 +52,10 @@ public partial class CharacterStatusViewModel : ViewModelBase
 
     public EquipmentSlot SpecialGrastaSlot { get; } = new(EquipmentType.Grasta, 0, "Special Grasta");
 
-    public CharacterStatusViewModel(WikiService wikiService)
+    public CharacterStatusViewModel(WikiService wikiService, PlayerService playerService)
     {
         _wikiService = wikiService;
+        _playerService = playerService;
     }
 
     public async Task ConfigureCharacter(CharacterSlim character)
@@ -359,14 +361,14 @@ public partial class CharacterStatusViewModel : ViewModelBase
             }
             case EquipmentType.Badge:
             {
-                if (_wikiService.CargoBadges.Count == 0) await _wikiService.LoadBadges();
-                foreach (var wep in _wikiService.CargoBadges)
+                if (_playerService.Badges.Length == 0) _playerService.LoadBadgeData();
+                foreach (var wep in _playerService.Badges)
                 {
                     var wepModel = new EquipmentItemViewModel()
                     {
                         Type = slotType,
                         Name = wep.Name,
-                        Id = wep.Id,
+                        Id = wep.Name,
                     };
                     results.Add(wepModel);
                 }

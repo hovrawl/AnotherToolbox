@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
+using AnotherToolBox.Data.Equipment;
 using AnotherToolBox.Models;
 using AnotherToolBox.Models.StoryChecks;
 using AnotherToolBox.ViewModels.Player;
@@ -19,12 +20,17 @@ public class PlayerService
     private const int DebounceDelayMs = 1000;
     private string StoryChecksDataPath = Path.Combine("Resources", "StoryChecks.json");
     private string StoryChecksStatusPath = Path.Combine("Resources", "StoryChecksStatus.json");
+    private string BadgesDbPath = Path.Combine("Resources", "Badges.json");
+    private string BadgeSourcePath = Path.Combine("Resources", "badges.txt");
 
     public StoryChecks[]? StoryChecks { get; private set; } = [];
 
+    public Badge[]? Badges { get; private set; } = [];
+    
     public PlayerService()
     {
         LoadStoryChecksData();
+        LoadBadgeData();
     }
 
     public void LoadStoryChecksData()
@@ -113,4 +119,49 @@ public class PlayerService
         _pendingStoryChecks.TryGetValue(id, out var cleared);
         return cleared;
     }
+    
+    public void LoadBadgeData()
+    {
+        var serialiserOptions = new JsonSerializerOptions()
+        {
+            PropertyNameCaseInsensitive = true
+        };
+        if (File.Exists(BadgesDbPath))
+        {
+            try
+            {
+               
+                var jsonContent = File.ReadAllText(BadgesDbPath);
+                var result = JsonSerializer.Deserialize<Badge[]>(jsonContent, serialiserOptions);
+                Badges = result;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        // If we have badges already we can load from source
+        if (Badges?.Length > 0) return;
+        
+        if (File.Exists(BadgeSourcePath))
+        {
+            try
+            {
+                // Use parser
+                var badges = BadgeDataParser.ParseBadgeFile(BadgeSourcePath);
+                Badges = badges.ToArray();
+                
+                // Update badge db
+                
+                var jsonContent = JsonSerializer.Serialize(Badges);
+                File.WriteAllText(BadgesDbPath, jsonContent);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+    }
+
 }
