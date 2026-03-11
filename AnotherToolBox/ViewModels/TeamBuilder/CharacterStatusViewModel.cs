@@ -24,13 +24,18 @@ public partial class CharacterStatusViewModel : ViewModelBase
 
     [ObservableProperty] private bool isLoading;
     [ObservableProperty] private bool equipmentLoading;
-    
+    [ObservableProperty] private bool skillsLoading;
+
     [ObservableProperty] private EquipmentSlot? activeSlot;
+    [ObservableProperty] private SkillSlot? activeSkillSlot;
 
     [ObservableProperty] private bool isEquipmentPickerOpen;
+    [ObservableProperty] private bool isSkillPickerOpen;
 
     public ObservableCollection<EquipmentItemViewModel> AvailableEquipment { get; } = new();
     
+    public ObservableCollection<CharacterSkillViewModel> AvailableSkills { get; } = new();
+
     public CharacterSlim Character { get; set; }
     
     public EquipmentSlot WeaponSlot { get; } = new(EquipmentType.Weapon, 0, "Weapon");
@@ -48,6 +53,14 @@ public partial class CharacterStatusViewModel : ViewModelBase
         new(EquipmentType.Grasta, 1, "Grasta 2"),
         new(EquipmentType.Grasta, 2, "Grasta 3"),
         new(EquipmentType.Grasta, 3, "Grasta 4")
+    ];
+    
+    public IReadOnlyList<SkillSlot> SkillSlots { get; } =
+    [
+        new(0, "Slot 1"),
+        new(1, "Slot 2"),
+        new (2, "Slot 3"),
+        new (3, "Slot 4")
     ];
 
     public EquipmentSlot SpecialGrastaSlot { get; } = new(EquipmentType.Grasta, 0, "Special Grasta");
@@ -311,14 +324,42 @@ public partial class CharacterStatusViewModel : ViewModelBase
         // slot.Slot
         ActiveSlot = slot;
 
-        AvailableEquipment.Clear();
+        if (AvailableEquipment.Count < 1)
+        {
+            // AvailableEquipment.Clear();
 
-        var items = await LoadEquipmentForType(slot.Type);
+            var items = await LoadEquipmentForType(slot.Type);
 
-        foreach (var item in items)
-            AvailableEquipment.Add(item);
+            foreach (var item in items)
+                AvailableEquipment.Add(item);
+            
+        }
 
         IsEquipmentPickerOpen = true;
+    }
+    
+    [RelayCommand]
+    public async Task ChangeSkill(SkillSlot slot)
+    {
+        if (slot is null)
+            return;
+
+        // slot.Type
+        // slot.Slot
+        ActiveSkillSlot = slot;
+
+        if (AvailableSkills.Count < 1)
+        {
+            // AvailableSkills.Clear();
+
+            var items = await LoadSkillsForCharacter(Character);
+
+            foreach (var item in items)
+                AvailableSkills.Add(item);
+            
+        }
+
+        IsSkillPickerOpen = true;
     }
 
     private async Task<IEnumerable<EquipmentItemViewModel>> LoadEquipmentForType(EquipmentType slotType)
@@ -395,6 +436,47 @@ public partial class CharacterStatusViewModel : ViewModelBase
         return results;
     }
 
+
+    private async Task<IEnumerable<CharacterSkillViewModel>> LoadSkillsForCharacter(CharacterSlim character)
+    {
+        var returnSkills = new List<CharacterSkillViewModel>();
+        SkillsLoading = true;
+        
+        // Load skills for passed in character
+        var skills = await _wikiService.LoadCharacterSkills(character);
+        
+        foreach (var skill in skills)
+        {
+            if (skill is null) continue;
+            var skillType = skill.SkillType?.ToLower() ?? "";
+
+            if (skillType.Equals("passive") 
+                || skillType.Equals("stack")
+                || skillType.Equals("status")
+                || skillType.Equals("zone buff")
+                || string.IsNullOrEmpty(skillType))
+            {
+                continue;
+            }
+            returnSkills.Add(new CharacterSkillViewModel()
+            {
+                Id = skill.Id,
+                Name = skill.Name,
+                Image = skill.Image,
+                Description = skill.Description,
+                Element = skill.Element,
+                ActionType = skill.ActionType,
+                SkillType = skill.SkillType,
+                SkillGroup = skill.SkillGroup,
+                MPCost = skill.MPCost,
+                CriticalMultiplier = skill.CriticalMultiplier,
+                Multiplier = skill.Multiplier,
+            });
+        }
+        SkillsLoading = false;
+        return returnSkills;
+    }
+    
     [RelayCommand]
     private void SelectEquipment(EquipmentItemViewModel item)
     {
@@ -406,10 +488,28 @@ public partial class CharacterStatusViewModel : ViewModelBase
 
         ActiveSlot = null;
     }
+    
+    [RelayCommand]
+    private void SelectSkill(CharacterSkillViewModel item)
+    {
+        if (ActiveSkillSlot is null || item is null)
+            return;
+
+        ActiveSkillSlot.SelectedItem = item;
+        IsSkillPickerOpen = false;
+
+        ActiveSkillSlot = null;
+    }
 
     [RelayCommand]
     private void CloseEquipmentPicker()
     {
         IsEquipmentPickerOpen = false;
+    }
+    
+    [RelayCommand]
+    private void CloseSkillPicker()
+    {
+        IsSkillPickerOpen = false;
     }
 }

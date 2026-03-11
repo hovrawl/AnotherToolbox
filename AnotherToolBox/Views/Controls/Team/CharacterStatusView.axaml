@@ -40,7 +40,7 @@
         </Style>
     </Control.Styles>
     <Grid 
-        ColumnDefinitions="Auto,Auto"
+        ColumnDefinitions="Auto,Auto, Auto"
         ColumnSpacing="10">
         
         <ScrollViewer Grid.Column="0">
@@ -110,7 +110,6 @@
         <Grid Grid.Column="1" MinWidth="260">
             
             <Border
-                Grid.Column="1"
                 BorderBrush="DarkSlateGray"
                 BorderThickness="1"
                 CornerRadius="4"
@@ -261,6 +260,88 @@
                             <Button
                                 Content="Cancel"
                                 Command="{Binding CloseEquipmentPickerCommand}" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+         <Grid Grid.Column="2" MinWidth="260">
+            
+            <Border
+                BorderBrush="DarkSlateGray"
+                BorderThickness="1"
+                CornerRadius="4"
+                >
+                <StackPanel>
+                    <TextBlock Text="Skills"></TextBlock>
+                    <Button 
+                        Command="{Binding ChangeSkillCommand}"
+                        CommandParameter="{Binding SkillSlots[0]}">
+                        <StackPanel>
+                            <controls:SymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[0].IsEmpty}"/>
+                            <TextBlock Text="{Binding SkillSlots[0].SelectedItemName}" IsVisible="{Binding SkillSlots[0].IsSelected}" />
+                        </StackPanel>
+                    </Button>
+                    <Button 
+                        Command="{Binding ChangeSkillCommand}"
+                        CommandParameter="{Binding SkillSlots[1]}">
+                        <StackPanel>
+                            <controls:SymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[1].IsEmpty}"/>
+                            <TextBlock Text="{Binding SkillSlots[1].SelectedItemName}" IsVisible="{Binding SkillSlots[1].IsSelected}" />
+                        </StackPanel>
+                    </Button>
+                    <Button 
+                        Command="{Binding ChangeSkillCommand}"
+                        CommandParameter="{Binding SkillSlots[2]}">
+                        <StackPanel>
+                            <controls:SymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[2].IsEmpty}"/>
+                            <TextBlock Text="{Binding SkillSlots[2].SelectedItemName}" IsVisible="{Binding SkillSlots[2].IsSelected}" />
+                        </StackPanel>
+                    </Button>
+                    <Button 
+                        Command="{Binding ChangeSkillCommand}"
+                        CommandParameter="{Binding SkillSlots[3]}">
+                        <StackPanel>
+                            <controls:SymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[3].IsEmpty}"/>
+                            <TextBlock Text="{Binding SkillSlots[3].SelectedItemName}" IsVisible="{Binding SkillSlots[3].IsSelected}" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Border>
+            
+            <!-- shared picker overlay -->
+            <Border
+                Background="#80000000"
+                IsVisible="{Binding IsSkillPickerOpen}">
+                <Grid HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                    <Border
+                        Background="White"
+                        Padding="12"
+                        CornerRadius="6"
+                        MinWidth="260"
+                        MaxHeight="320">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="{Binding ActiveSkillSlot.Label}" FontWeight="Bold" />
+
+                            <ScrollViewer MaxHeight="220">
+                                <ItemsControl ItemsSource="{Binding AvailableSkills}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="teamBuilder:CharacterSkillViewModel">
+                                            <Button
+                                                Command="{Binding #Root.SelectSkillCommandProxy}"
+                                                CommandParameter="{Binding}"
+                                                HorizontalAlignment="Stretch">
+                                                <TextBlock Text="{Binding Name}" />
+                                            </Button>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+
+                            <Button
+                                Content="Cancel"
+                                Command="{Binding CloseSkillPickerCommand}" />
                         </StackPanel>
                     </Border>
                 </Grid>

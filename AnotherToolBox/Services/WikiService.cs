@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -38,6 +39,7 @@ public class WikiService
     public List<ArmorCargo> CargoArmor = new();
     public List<GrastaCargo> CargoGrasta = new();
     public List<BadgeCargo> CargoBadges = new();
+    private Dictionary<string, CargoSkill> _characterSkills = new();
 
     public bool Initialized { get; private set; }
     
@@ -274,5 +276,77 @@ public class WikiService
             Console.WriteLine(ex.Message);
         }
         return null;
+    }
+
+    private Dictionary<string, CargoSkill> dupedSkills = new();
+    
+    private async Task CacheCharacterSkills()
+    {
+        var totalRows = 0;
+        try
+        {
+
+            // Todo - not all skills are found uniquely through page name
+            var context = new CargoQueryContext(_site) { PaginationSize = 500 };
+            var query = context
+                .Table<CargoSkill>()
+                .Where(c => c.PageName != null).Take(9999);
+            await foreach (var row in query.AsAsyncEnumerable())
+            {
+                totalRows++;
+                if (_characterSkills.ContainsKey(row.PageName))
+                {
+                    var newName = $"{row.PageName}__{totalRows}";
+                    dupedSkills[newName] = row;
+                    continue;
+                }
+                _characterSkills[row.PageName] = row; // first row
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        // Console.WriteLine($"Fetched rows: {totalRows}");
+        // Console.WriteLine($"Unique keys: {_characterSkills.Count}");
+    }
+    
+    public async Task<ICollection<CargoSkill>> LoadCharacterSkills(CharacterSlim character)
+    {
+        var returnCollection = new List<CargoSkill>();
+        try
+        {
+            var context = new CargoQueryContext(_site) { PaginationSize = 10 };
+            var query = context
+                .Table<CharacterDetailsDto>()
+                .Where(c => c.Id == character.Id).Take(1);
+            CharacterDetailsDto? characterDetails = null;
+            await foreach (var row in query.AsAsyncEnumerable())
+            {
+                characterDetails = row; // first row
+            }
+            
+            if (characterDetails == null) return returnCollection;
+
+            // Cache skills
+            if (_characterSkills.Count < 1)
+            {
+                await CacheCharacterSkills();
+            }
+            
+            // filter our loaded skills
+            foreach (var skillName in characterDetails.Skills)
+            {
+                if (_characterSkills.TryGetValue(skillName, out var skill))
+                {
+                    returnCollection.Add(skill);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        return returnCollection;
     }
 }

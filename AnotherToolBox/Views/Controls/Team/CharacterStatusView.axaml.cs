@@ -17,5 +17,8 @@ public partial class CharacterStatusView : UserControl
 
     
     public ICommand? SelectEquipmentCommandProxy => ViewModel?.SelectEquipmentCommand;
+    
+    public ICommand? SelectSkillCommandProxy => ViewModel?.SelectSkillCommand;
+
 
 }

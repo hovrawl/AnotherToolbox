@@ -16,7 +16,9 @@ public partial class CharacterFrameViewModel : ViewModelBase
     public string Id { get; } = Guid.NewGuid().ToString();
     [ObservableProperty]
     private CharacterChoiceDto? selectedCharacter;
-
+    [ObservableProperty]
+    private CharacterSlim? selectedCharacterSlim;
+    
     [ObservableProperty] private bool selectorOpen;
     [ObservableProperty] private bool statsOpen;
     
@@ -65,7 +67,7 @@ public partial class CharacterFrameViewModel : ViewModelBase
 
         if (CharacterStatusVm == null) return;
 
-        await CharacterStatusVm.ConfigureCharacter(CharacterListVm.SelectedCharacterSlim);
+        await CharacterStatusVm.ConfigureCharacter(SelectedCharacterSlim);
         StatsOpen = true;
     }
 
@@ -85,6 +87,7 @@ public partial class CharacterFrameViewModel : ViewModelBase
             if (SelectorOpen)
             {
                 SelectedCharacter =  CharacterListVm.SelectedCharacter;
+                SelectedCharacterSlim = CharacterListVm.SelectedCharacterSlim;
             }
         }
     }
