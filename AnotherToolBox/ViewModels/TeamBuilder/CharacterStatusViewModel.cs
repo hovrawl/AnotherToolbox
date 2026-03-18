@@ -322,11 +322,15 @@ public partial class CharacterStatusViewModel : ViewModelBase
 
         // slot.Type
         // slot.Slot
+        var slotChanged = ActiveSlot?.Type != slot.Type;
         ActiveSlot = slot;
 
+        // If change type lets clear the equipment 
+        if (slotChanged) AvailableEquipment.Clear();
+        
+        // When no items, or changed ^
         if (AvailableEquipment.Count < 1)
         {
-            // AvailableEquipment.Clear();
 
             var items = await LoadEquipmentForType(slot.Type);
 
