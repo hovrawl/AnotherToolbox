@@ -40,6 +40,7 @@ public class WikiService
     public List<GrastaCargo> CargoGrasta = new();
     public List<BadgeCargo> CargoBadges = new();
     private Dictionary<string, CargoSkill> _characterSkills = new();
+    private Dictionary<string, CharacterDetailsDto> _characterDetailsCache = new();
 
     public bool Initialized { get; private set; }
     
@@ -170,14 +171,29 @@ public class WikiService
         return $"{id}{suffix}{rank5} command.png";  
     }
 
-    public async Task LoadWeapons()
+    public async Task LoadWeapons(string weaponType = "")
     {
-        CargoWeapons.Clear();
+        // If blank we are getting all weps, clear list to ensure no dupes
+        // Else we getting a particular type, return that type
+        if (string.IsNullOrEmpty(weaponType)) CargoWeapons.Clear();
+        else
+        {
+            // Check if we already have this type, if so return
+            var subset = CargoWeapons.Where(i => i.Type == weaponType);
+            if (subset.Any()) return;
+            //CargoWeapons.RemoveAll(i => i.Type == weaponType);
+        }
         try
         {
             var context = new CargoQueryContext(_site) { PaginationSize = 500 };
-            var query = context.Table<WeaponCargo>()
-                .Where(c => !c.Unreleased)
+            var initialQuery = context.Table<WeaponCargo>()
+                .Where(c => !c.Unreleased);
+            
+            if (!string.IsNullOrEmpty(weaponType))
+            {
+                initialQuery = initialQuery.Where(i => i.Type == weaponType);
+            }
+            var query = initialQuery
                 .OrderByDescending(c => c.Level)
                 .Take(9999);
             await foreach (var ch in query.AsAsyncEnumerable())
@@ -193,14 +209,28 @@ public class WikiService
         }
     }
     
-    public async Task LoadArmors()
+    public async Task LoadArmors(string accessoryType)
     {
-        CargoArmor.Clear();
+        if (string.IsNullOrEmpty(accessoryType)) CargoArmor.Clear();
+        else
+        {
+            var subset = CargoArmor.Where(i => i.Type == accessoryType);
+            if (subset.Any()) return;
+            //CargoArmor.RemoveAll(i => i.Type == accessoryType);
+        }
         try
         {
             var context = new CargoQueryContext(_site) { PaginationSize = 500 };
-            var query = context.Table<ArmorCargo>()
-                .Where(c => !c.Unreleased)
+            var initialQuery = context.Table<ArmorCargo>()
+                .Where(c => !c.Unreleased);
+            
+            if (!string.IsNullOrEmpty(accessoryType))
+            {
+                initialQuery = initialQuery
+                    .Where(i => i.Type == accessoryType);
+            }
+            
+            var query = initialQuery
                 .OrderByDescending(c => c.Level)
                 .Take(9999);
             await foreach (var ch in query.AsAsyncEnumerable())
@@ -310,22 +340,48 @@ public class WikiService
         // Console.WriteLine($"Fetched rows: {totalRows}");
         // Console.WriteLine($"Unique keys: {_characterSkills.Count}");
     }
+
+    public async Task<CharacterDetailsDto?> LoadCharacterDetails(string characterId)
+    {
+        if (characterId == null) throw new ArgumentNullException(nameof(characterId));
+        CharacterDetailsDto? characterDetails = null;
+
+        try
+        {
+            // Try to get from cache first
+            if (!_characterDetailsCache.TryGetValue(characterId, out characterDetails))
+            {
+                // Not in cache, fetch from wiki
+                var context = new CargoQueryContext(_site) { PaginationSize = 10 };
+                var query = context
+                    .Table<CharacterDetailsDto>()
+                    .Where(c => c.Id == characterId).Take(1);
+                await foreach (var row in query.AsAsyncEnumerable())
+                {
+                    characterDetails = row; // first row
+                }
+
+                // Cache the result if found
+                if (characterDetails != null)
+                {
+                    _characterDetailsCache[characterId] = characterDetails;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        
+        return characterDetails;
+    }
     
     public async Task<ICollection<CargoSkill>> LoadCharacterSkills(CharacterSlim character)
     {
         var returnCollection = new List<CargoSkill>();
         try
         {
-            var context = new CargoQueryContext(_site) { PaginationSize = 10 };
-            var query = context
-                .Table<CharacterDetailsDto>()
-                .Where(c => c.Id == character.Id).Take(1);
-            CharacterDetailsDto? characterDetails = null;
-            await foreach (var row in query.AsAsyncEnumerable())
-            {
-                characterDetails = row; // first row
-            }
-            
+            var characterDetails = await LoadCharacterDetails(character.Id);
             if (characterDetails == null) return returnCollection;
 
             // Cache skills

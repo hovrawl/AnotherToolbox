@@ -6,7 +6,13 @@ namespace AnotherToolBox.Models.Team;
 public partial class EquipmentSlot : ObservableObject
 {
     public EquipmentType Type { get; }
+    
+    public string WeaponType { get; set; }
+    
+    public string ArmorType { get; set; }
+    
     public int SlotIndex { get; }
+    
     public string Label { get; }
 
 

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using AnotherToolBox.Models.Characters;
 using AnotherToolBox.Models.Team;
@@ -76,7 +78,16 @@ public partial class CharacterStatusViewModel : ViewModelBase
         IsLoading = true;
         Character = character;
         
-        // Get current stats 
+        var characterDetails = await _wikiService.LoadCharacterDetails(Character.Id);
+        if (characterDetails is not null)
+        {
+            WeaponSlot.WeaponType = characterDetails.WeaponType;
+            ArmorSlot.ArmorType = characterDetails.AccessoryType;
+        } 
+        
+        #region Stats
+        // Get current stats
+        
         // Equipment effects
         var stats = await _wikiService.LoadCharacterStats(Character.PageId);
 
@@ -309,7 +320,7 @@ public partial class CharacterStatusViewModel : ViewModelBase
             Stat = UnitStat.BetrayalRes,
             Value = 10
         });
-
+        #endregion
         
         IsLoading = false;
     }
@@ -332,10 +343,12 @@ public partial class CharacterStatusViewModel : ViewModelBase
         if (AvailableEquipment.Count < 1)
         {
 
-            var items = await LoadEquipmentForType(slot.Type);
+            var items = await LoadEquipmentForType(slot);
 
             foreach (var item in items)
+            {
                 AvailableEquipment.Add(item);
+            }
             
         }
 
@@ -366,18 +379,21 @@ public partial class CharacterStatusViewModel : ViewModelBase
         IsSkillPickerOpen = true;
     }
 
-    private async Task<IEnumerable<EquipmentItemViewModel>> LoadEquipmentForType(EquipmentType slotType)
+    private async Task<IEnumerable<EquipmentItemViewModel>> LoadEquipmentForType(EquipmentSlot equipmentSlot)
     {
         // load equipment
         EquipmentLoading = true;
         var results = new List<EquipmentItemViewModel>();
 
+        var slotType = equipmentSlot.Type;
         switch (slotType)
         {
             case EquipmentType.Weapon: 
             {
-                if (_wikiService.CargoWeapons.Count == 0) await _wikiService.LoadWeapons();
-                foreach (var wep in _wikiService.CargoWeapons)
+                // Load weapons for the type
+                var cargoWeapons = _wikiService.CargoWeapons.Where(i => i.Type == equipmentSlot.WeaponType);
+                if (!cargoWeapons.Any()) await _wikiService.LoadWeapons(equipmentSlot.WeaponType);
+                foreach (var wep in _wikiService.CargoWeapons.Where(i => i.Type == equipmentSlot.WeaponType))
                 {
                     var wepModel = new EquipmentItemViewModel()
                     {
@@ -391,8 +407,9 @@ public partial class CharacterStatusViewModel : ViewModelBase
             }
             case EquipmentType.Armor: 
             {
-                if (_wikiService.CargoArmor.Count == 0) await _wikiService.LoadArmors();
-                foreach (var wep in _wikiService.CargoArmor)
+                var cargoArmors = _wikiService.CargoArmor.Where(i => i.Type == equipmentSlot.ArmorType);
+                if (!cargoArmors.Any()) await _wikiService.LoadArmors(equipmentSlot.ArmorType);
+                foreach (var wep in _wikiService.CargoArmor.Where(i => i.Type == equipmentSlot.ArmorType))
                 {
                     var wepModel = new EquipmentItemViewModel()
                     {
