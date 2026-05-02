@@ -1,3 +1,11 @@
 <Solution>
+  <Folder Name="/External/" />
+  <Folder Name="/External/WikiClient/">
+    <Project Path="External/WikiClient/WikiClientLibrary.Cargo/WikiClientLibrary.Cargo.csproj" />
+    <Project Path="External/WikiClient/WikiClientLibrary.Flow/WikiClientLibrary.Flow.csproj" />
+    <Project Path="External/WikiClient/WikiClientLibrary.Wikia/WikiClientLibrary.Wikia.csproj" />
+    <Project Path="External/WikiClient/WikiClientLibrary.Wikibase/WikiClientLibrary.Wikibase.csproj" />
+    <Project Path="External/WikiClient/WikiClientLibrary/WikiClientLibrary.csproj" />
+  </Folder>
   <Project Path="AnotherToolBox/AnotherToolBox.csproj" />
 </Solution>

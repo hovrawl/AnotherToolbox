@@ -1,0 +1,3 @@
+[submodule "External/WikiClient"]
+	path = External/WikiClient
+	url = https://github.com/CXuesong/WikiClientLibrary.git
