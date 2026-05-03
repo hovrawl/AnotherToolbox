@@ -7,14 +7,14 @@
              x:Class="AnotherToolBox.Views.Controls.Player.StoryCheckView"
              x:DataType="player:StoryCheckViewModel">
     <Border BorderBrush="LightSlateGray" BorderThickness="1" CornerRadius="4">
-        <Button Command="{Binding CheckClick}">
+        <Button Command="{CompiledBinding CheckClick}">
             <StackPanel>
                 <!-- <Image></Image> -->
-                <TextBlock Text="{Binding Title}"></TextBlock>
-                <TextBlock Text="{Binding SubTitle}"></TextBlock>
-                <TextBlock Text="{Binding Description}"></TextBlock>
+                <TextBlock Text="{CompiledBinding Title}"></TextBlock>
+                <TextBlock Text="{CompiledBinding SubTitle}"></TextBlock>
+                <TextBlock Text="{CompiledBinding Description}"></TextBlock>
                 <CheckBox
-                    IsChecked="{Binding Cleared}"></CheckBox>
+                    IsChecked="{CompiledBinding Cleared}"></CheckBox>
             </StackPanel>
         </Button>
     </Border>

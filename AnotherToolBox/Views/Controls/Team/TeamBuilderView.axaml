@@ -19,7 +19,7 @@
         <ItemsRepeater
             Grid.Row="0"
             HorizontalAlignment="Center"
-            ItemsSource="{Binding TeamFrames}">
+            ItemsSource="{CompiledBinding TeamFrames}">
             <ItemsRepeater.Layout>
                 <WrapLayout Orientation="Horizontal" HorizontalSpacing="8" VerticalSpacing="8"/>
             </ItemsRepeater.Layout>

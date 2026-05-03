@@ -18,31 +18,31 @@
           HorizontalAlignment="Center"
           VerticalAlignment="Center">
         <Button 
-            Command="{Binding SelectCharacter}" 
+            Command="{CompiledBinding SelectCharacter}" 
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch">
             <StackPanel>
                 <!-- Add Character when empty -->
                 <controls:FASymbolIcon Symbol="Add" 
                                      FontSize="24"
-                                     IsVisible="{Binding SelectedCharacter, Converter={StaticResource ObjectNullBoolConverter}}"
+                                     IsVisible="{CompiledBinding SelectedCharacter, Converter={StaticResource ObjectNullBoolConverter}}"
                                      VerticalAlignment="Center"
                                      HorizontalAlignment="Center"/>
                 
                 <!-- Show character image + details -->
                 <StackPanel 
-                    IsVisible="{Binding SelectedCharacter, Converter={StaticResource ObjectNotNullBoolConverter}}"
+                    IsVisible="{CompiledBinding SelectedCharacter, Converter={StaticResource ObjectNotNullBoolConverter}}"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     >
                     <Image 
-                        Source="{Binding SelectedCharacter.Thumbnail}"
+                        Source="{CompiledBinding SelectedCharacter.Thumbnail}"
                         Width="120"
                         Height="120"
                         VerticalAlignment="Top"
                         />
                     <TextBlock 
-                        Text="{Binding SelectedCharacter.Name}"
+                        Text="{CompiledBinding SelectedCharacter.Name}"
                         HorizontalAlignment="Center" 
                         VerticalAlignment="Bottom"
                         TextAlignment="Center"
@@ -53,38 +53,38 @@
                         />
                     <StackPanel Orientation="Horizontal">
                         
-                        <Button Command="{Binding ViewStats}">
+                        <Button Command="{CompiledBinding ViewStats}">
                             <controls:FASymbolIcon Symbol="BulletList"></controls:FASymbolIcon>
                             <Button.Flyout>
                                 <Flyout
-                                    IsOpen="{Binding StatsOpen}"
+                                    IsOpen="{CompiledBinding StatsOpen}"
                                         Closing="StatsFlyout_OnClosing">
                                     <characters:CharacterStatusView 
-                                        DataContext="{Binding CharacterStatusVm}"
+                                        DataContext="{CompiledBinding CharacterStatusVm}"
                                         Height="340"/>
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        <Button Command="{Binding ViewEquipment}">
+                        <Button Command="{CompiledBinding ViewEquipment}">
                             <controls:FASymbolIcon Symbol="XboxConsole"></controls:FASymbolIcon>
                             <Button.Flyout>
                                 <Flyout
-                                    IsOpen="{Binding EquipmentOpen}"
+                                    IsOpen="{CompiledBinding EquipmentOpen}"
                                     Closing="StatsFlyout_OnClosing">
                                     <characters:CharacterEquipmentView 
-                                        DataContext="{Binding CharacterStatusVm}"
+                                        DataContext="{CompiledBinding CharacterStatusVm}"
                                         Height="340"/>
                                 </Flyout>
                             </Button.Flyout>
                         </Button>
-                        <Button Command="{Binding ViewSkills}">
+                        <Button Command="{CompiledBinding ViewSkills}">
                             <controls:FASymbolIcon Symbol="StarAdd"></controls:FASymbolIcon>
                             <Button.Flyout>
                                 <Flyout
-                                    IsOpen="{Binding SkillsOpen}"
+                                    IsOpen="{CompiledBinding SkillsOpen}"
                                     Closing="StatsFlyout_OnClosing">
                                     <characters:CharacterSkillsView 
-                                        DataContext="{Binding CharacterStatusVm}"
+                                        DataContext="{CompiledBinding CharacterStatusVm}"
                                         Height="340"/>
                                 </Flyout>
                             </Button.Flyout>
@@ -93,10 +93,10 @@
                 </StackPanel>
             </StackPanel>
             <Button.Flyout>
-                <Flyout IsOpen="{Binding SelectorOpen}"
+                <Flyout IsOpen="{CompiledBinding SelectorOpen}"
                         Closing="PopupFlyoutBase_OnClosing">
                     <characters:CharacterList 
-                        DataContext="{Binding CharacterListVm}"
+                        DataContext="{CompiledBinding CharacterListVm}"
                         Width="240"
                         Height="300"/>
                 </Flyout>

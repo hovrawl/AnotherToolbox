@@ -31,9 +31,9 @@
                     <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch">
                         <TextBlock Grid.Column="0"
                                    Margin="0,0,8,0"
-                                   Text="{Binding Stat}" />
+                                   Text="{CompiledBinding Stat}" />
                         <TextBlock Grid.Column="1"
-                                   Text="{Binding Value}" />
+                                   Text="{CompiledBinding Value}" />
                     </Grid>
                 </DataTemplate>
             </Setter>
@@ -53,7 +53,7 @@
                         <TextBlock Text="Attack/Def"></TextBlock>
                         <ItemsRepeater
                             Classes="StatsLayout" 
-                            ItemsSource="{Binding AtkStats}">
+                            ItemsSource="{CompiledBinding AtkStats}">
                         </ItemsRepeater>
                     </StackPanel>
                 </Border>
@@ -63,7 +63,7 @@
                         <TextBlock Text="Base Stats"></TextBlock>
                         <ItemsRepeater 
                             Classes="StatsLayout" 
-                            ItemsSource="{Binding BaseStats}">
+                            ItemsSource="{CompiledBinding BaseStats}">
                             </ItemsRepeater>
                     </StackPanel>
                 </Border>
@@ -73,7 +73,7 @@
                         <TextBlock Text="Critical"></TextBlock>
                         <ItemsRepeater 
                             Classes="StatsLayout" 
-                            ItemsSource="{Binding CritStats}">
+                            ItemsSource="{CompiledBinding CritStats}">
                         </ItemsRepeater>
                     </StackPanel>
                 </Border>
@@ -82,7 +82,7 @@
                         <TextBlock Text="Type Attack Damage"></TextBlock>
                         <ItemsRepeater 
                             Classes="StatsLayout" 
-                            ItemsSource="{Binding TypeAtkStats}">
+                            ItemsSource="{CompiledBinding TypeAtkStats}">
                         </ItemsRepeater>
                     </StackPanel>
                 </Border>
@@ -91,7 +91,7 @@
                         <TextBlock Text="Type Resistance"></TextBlock>
                         <ItemsRepeater 
                             Classes="StatsLayout" 
-                            ItemsSource="{Binding TypeResStats}">
+                            ItemsSource="{CompiledBinding TypeResStats}">
                         </ItemsRepeater>
                     </StackPanel>
                 </Border>
@@ -100,7 +100,7 @@
                         <TextBlock Text="Status Resistances"></TextBlock>
                         <ItemsRepeater 
                             Classes="StatsLayout" 
-                            ItemsSource="{Binding StatusResStats}">
+                            ItemsSource="{CompiledBinding StatusResStats}">
                         </ItemsRepeater>
                     </StackPanel>
                 </Border>
@@ -124,22 +124,22 @@
         <!--             <StackPanel Grid.Row="0" Grid.Column="0"> -->
         <!--                 <TextBlock Text="Weapon"></TextBlock> -->
         <!--                 <Button  -->
-        <!--                     Command="{Binding ChangeEquipmentCommand}" -->
-        <!--                     CommandParameter="{Binding WeaponSlot}"> -->
+        <!--                     Command="{CompiledBinding ChangeEquipmentCommand}" -->
+        <!--                     CommandParameter="{CompiledBinding WeaponSlot}"> -->
         <!--                     <StackPanel> -->
-        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding WeaponSlot.IsEmpty}"/> -->
-        <!--                         <TextBlock Text="{Binding WeaponSlot.SelectedItemName}" IsVisible="{Binding WeaponSlot.IsSelected}" /> -->
+        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding WeaponSlot.IsEmpty}"/> -->
+        <!--                         <TextBlock Text="{CompiledBinding WeaponSlot.SelectedItemName}" IsVisible="{CompiledBinding WeaponSlot.IsSelected}" /> -->
         <!--                     </StackPanel> -->
         <!--                 </Button> -->
         <!--             </StackPanel> -->
         <!--             <StackPanel Grid.Row="0" Grid.Column="1"> -->
         <!--                 <TextBlock Text="Armor"></TextBlock> -->
         <!--                 <Button  -->
-        <!--                     Command="{Binding ChangeEquipmentCommand}" -->
-        <!--                     CommandParameter="{Binding ArmorSlot}"> -->
+        <!--                     Command="{CompiledBinding ChangeEquipmentCommand}" -->
+        <!--                     CommandParameter="{CompiledBinding ArmorSlot}"> -->
         <!--                     <StackPanel> -->
-        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding ArmorSlot.IsEmpty}"/> -->
-        <!--                         <TextBlock Text="{Binding ArmorSlot.SelectedItemName}" IsVisible="{Binding ArmorSlot.IsSelected}" /> -->
+        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding ArmorSlot.IsEmpty}"/> -->
+        <!--                         <TextBlock Text="{CompiledBinding ArmorSlot.SelectedItemName}" IsVisible="{CompiledBinding ArmorSlot.IsSelected}" /> -->
         <!--                     </StackPanel> -->
         <!--                 </Button> -->
         <!--             </StackPanel> -->
@@ -150,21 +150,21 @@
         <!--                 <Button  -->
         <!--                     Grid.Row="1" -->
         <!--                     Grid.Column="0" -->
-        <!--                     Command="{Binding ChangeEquipmentCommand}" -->
-        <!--                     CommandParameter="{Binding BadgeSlots[0]}"> -->
+        <!--                     Command="{CompiledBinding ChangeEquipmentCommand}" -->
+        <!--                     CommandParameter="{CompiledBinding BadgeSlots[0]}"> -->
         <!--                     <StackPanel> -->
-        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding BadgeSlots[0].IsEmpty}"/> -->
-        <!--                         <TextBlock Text="{Binding BadgeSlots[0].SelectedItemName}" IsVisible="{Binding BadgeSlots[0].IsSelected}" /> -->
+        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding BadgeSlots[0].IsEmpty}"/> -->
+        <!--                         <TextBlock Text="{CompiledBinding BadgeSlots[0].SelectedItemName}" IsVisible="{CompiledBinding BadgeSlots[0].IsSelected}" /> -->
         <!--                     </StackPanel> -->
         <!--                 </Button> -->
         <!--                 <Button  -->
         <!--                     Grid.Row="1" -->
         <!--                     Grid.Column="1" -->
-        <!--                     Command="{Binding ChangeEquipmentCommand}" -->
-        <!--                     CommandParameter="{Binding BadgeSlots[1]}"> -->
+        <!--                     Command="{CompiledBinding ChangeEquipmentCommand}" -->
+        <!--                     CommandParameter="{CompiledBinding BadgeSlots[1]}"> -->
         <!--                     <StackPanel> -->
-        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding BadgeSlots[1].IsEmpty}"/> -->
-        <!--                         <TextBlock Text="{Binding BadgeSlots[1].SelectedItemName}" IsVisible="{Binding BadgeSlots[1].IsSelected}" /> -->
+        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding BadgeSlots[1].IsEmpty}"/> -->
+        <!--                         <TextBlock Text="{CompiledBinding BadgeSlots[1].SelectedItemName}" IsVisible="{CompiledBinding BadgeSlots[1].IsSelected}" /> -->
         <!--                     </StackPanel> -->
         <!--                 </Button> -->
         <!--             </Grid> -->
@@ -175,51 +175,51 @@
         <!--                 <Button    -->
         <!--                     Grid.Row="1" -->
         <!--                     Grid.Column="0" -->
-        <!--                     Command="{Binding ChangeEquipmentCommand}" -->
-        <!--                     CommandParameter="{Binding GrastaSlots[0]}"> -->
+        <!--                     Command="{CompiledBinding ChangeEquipmentCommand}" -->
+        <!--                     CommandParameter="{CompiledBinding GrastaSlots[0]}"> -->
         <!--                     <StackPanel> -->
-        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[0].IsEmpty}"/> -->
-        <!--                         <TextBlock Text="{Binding GrastaSlots[0].SelectedItemName}" IsVisible="{Binding GrastaSlots[0].IsSelected}" /> -->
+        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding GrastaSlots[0].IsEmpty}"/> -->
+        <!--                         <TextBlock Text="{CompiledBinding GrastaSlots[0].SelectedItemName}" IsVisible="{CompiledBinding GrastaSlots[0].IsSelected}" /> -->
         <!--                     </StackPanel> -->
         <!--                 </Button> -->
         <!--                 <Button  -->
         <!--                     Grid.Row="1" -->
         <!--                     Grid.Column="1" -->
-        <!--                     Command="{Binding ChangeEquipmentCommand}" -->
-        <!--                     CommandParameter="{Binding GrastaSlots[1]}"> -->
+        <!--                     Command="{CompiledBinding ChangeEquipmentCommand}" -->
+        <!--                     CommandParameter="{CompiledBinding GrastaSlots[1]}"> -->
         <!--                     <StackPanel> -->
-        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[1].IsEmpty}"/> -->
-        <!--                         <TextBlock Text="{Binding GrastaSlots[1].SelectedItemName}" IsVisible="{Binding GrastaSlots[1].IsSelected}" /> -->
+        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding GrastaSlots[1].IsEmpty}"/> -->
+        <!--                         <TextBlock Text="{CompiledBinding GrastaSlots[1].SelectedItemName}" IsVisible="{CompiledBinding GrastaSlots[1].IsSelected}" /> -->
         <!--                     </StackPanel> -->
         <!--                 </Button> -->
         <!--                 <Button  -->
         <!--                     Grid.Row="2" -->
         <!--                     Grid.Column="0" -->
-        <!--                     Command="{Binding ChangeEquipmentCommand}" -->
-        <!--                     CommandParameter="{Binding GrastaSlots[2]}"> -->
+        <!--                     Command="{CompiledBinding ChangeEquipmentCommand}" -->
+        <!--                     CommandParameter="{CompiledBinding GrastaSlots[2]}"> -->
         <!--                     <StackPanel> -->
-        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[2].IsEmpty}"/> -->
-        <!--                         <TextBlock Text="{Binding GrastaSlots[2].SelectedItemName}" IsVisible="{Binding GrastaSlots[2].IsSelected}" /> -->
+        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding GrastaSlots[2].IsEmpty}"/> -->
+        <!--                         <TextBlock Text="{CompiledBinding GrastaSlots[2].SelectedItemName}" IsVisible="{CompiledBinding GrastaSlots[2].IsSelected}" /> -->
         <!--                     </StackPanel> -->
         <!--                 </Button> -->
         <!--                 <Button  -->
         <!--                     Grid.Row="2" -->
         <!--                     Grid.Column="1" -->
-        <!--                     Command="{Binding ChangeEquipmentCommand}" -->
-        <!--                     CommandParameter="{Binding GrastaSlots[3]}"> -->
+        <!--                     Command="{CompiledBinding ChangeEquipmentCommand}" -->
+        <!--                     CommandParameter="{CompiledBinding GrastaSlots[3]}"> -->
         <!--                     <StackPanel> -->
-        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[3].IsEmpty}"/> -->
-        <!--                         <TextBlock Text="{Binding GrastaSlots[3].SelectedItemName}" IsVisible="{Binding GrastaSlots[3].IsSelected}" /> -->
+        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding GrastaSlots[3].IsEmpty}"/> -->
+        <!--                         <TextBlock Text="{CompiledBinding GrastaSlots[3].SelectedItemName}" IsVisible="{CompiledBinding GrastaSlots[3].IsSelected}" /> -->
         <!--                     </StackPanel> -->
         <!--                 </Button> -->
         <!--                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Special Grasta" Grid.ColumnSpan="2"></TextBlock> -->
         <!--                 <Button -->
         <!--                     Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" -->
-        <!--                     Command="{Binding ChangeEquipmentCommand}" -->
-        <!--                     CommandParameter="{Binding SpecialGrastaSlot}"> -->
+        <!--                     Command="{CompiledBinding ChangeEquipmentCommand}" -->
+        <!--                     CommandParameter="{CompiledBinding SpecialGrastaSlot}"> -->
         <!--                     <StackPanel> -->
-        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SpecialGrastaSlot.IsEmpty}"/> -->
-        <!--                         <TextBlock Text="{Binding SpecialGrastaSlot.SelectedItemName}" IsVisible="{Binding SpecialGrastaSlot.IsSelected}" /> -->
+        <!--                         <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding SpecialGrastaSlot.IsEmpty}"/> -->
+        <!--                         <TextBlock Text="{CompiledBinding SpecialGrastaSlot.SelectedItemName}" IsVisible="{CompiledBinding SpecialGrastaSlot.IsSelected}" /> -->
         <!--                     </StackPanel> -->
         <!--                 </Button> -->
         <!--                  -->
@@ -230,7 +230,7 @@
         <!--     ~1~ shared picker overlay @1@ -->
         <!--     <Border -->
         <!--         Background="#80000000" -->
-        <!--         IsVisible="{Binding IsEquipmentPickerOpen}"> -->
+        <!--         IsVisible="{CompiledBinding IsEquipmentPickerOpen}"> -->
         <!--         <Grid HorizontalAlignment="Center" -->
         <!--               VerticalAlignment="Center"> -->
         <!--             <Border -->
@@ -240,17 +240,17 @@
         <!--                 MinWidth="260" -->
         <!--                 MaxHeight="320"> -->
         <!--                 <StackPanel Spacing="8"> -->
-        <!--                     <TextBlock Text="{Binding ActiveSlot.Label}" FontWeight="Bold" /> -->
+        <!--                     <TextBlock Text="{CompiledBinding ActiveSlot.Label}" FontWeight="Bold" /> -->
         <!-- -->
         <!--                     <ScrollViewer MaxHeight="220"> -->
-        <!--                         <ItemsControl ItemsSource="{Binding AvailableEquipment}"> -->
+        <!--                         <ItemsControl ItemsSource="{CompiledBinding AvailableEquipment}"> -->
         <!--                             <ItemsControl.ItemTemplate> -->
         <!--                                 <DataTemplate DataType="teamBuilder:EquipmentItemViewModel"> -->
         <!--                                     <Button -->
-        <!--                                         Command="{Binding #Root.SelectEquipmentCommandProxy}" -->
-        <!--                                         CommandParameter="{Binding}" -->
+        <!--                                         Command="{CompiledBinding #Root.SelectEquipmentCommandProxy}" -->
+        <!--                                         CommandParameter="{CompiledBinding}" -->
         <!--                                         HorizontalAlignment="Stretch"> -->
-        <!--                                         <TextBlock Text="{Binding Name}" /> -->
+        <!--                                         <TextBlock Text="{CompiledBinding Name}" /> -->
         <!--                                     </Button> -->
         <!--                                 </DataTemplate> -->
         <!--                             </ItemsControl.ItemTemplate> -->
@@ -259,7 +259,7 @@
         <!-- -->
         <!--                     <Button -->
         <!--                         Content="Cancel" -->
-        <!--                         Command="{Binding CloseEquipmentPickerCommand}" /> -->
+        <!--                         Command="{CompiledBinding CloseEquipmentPickerCommand}" /> -->
         <!--                 </StackPanel> -->
         <!--             </Border> -->
         <!--         </Grid> -->
@@ -275,35 +275,35 @@
         <!--         <StackPanel> -->
         <!--             <TextBlock Text="Skills"></TextBlock> -->
         <!--             <Button  -->
-        <!--                 Command="{Binding ChangeSkillCommand}" -->
-        <!--                 CommandParameter="{Binding SkillSlots[0]}"> -->
+        <!--                 Command="{CompiledBinding ChangeSkillCommand}" -->
+        <!--                 CommandParameter="{CompiledBinding SkillSlots[0]}"> -->
         <!--                 <StackPanel> -->
-        <!--                     <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[0].IsEmpty}"/> -->
-        <!--                     <TextBlock Text="{Binding SkillSlots[0].SelectedItemName}" IsVisible="{Binding SkillSlots[0].IsSelected}" /> -->
+        <!--                     <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding SkillSlots[0].IsEmpty}"/> -->
+        <!--                     <TextBlock Text="{CompiledBinding SkillSlots[0].SelectedItemName}" IsVisible="{CompiledBinding SkillSlots[0].IsSelected}" /> -->
         <!--                 </StackPanel> -->
         <!--             </Button> -->
         <!--             <Button  -->
-        <!--                 Command="{Binding ChangeSkillCommand}" -->
-        <!--                 CommandParameter="{Binding SkillSlots[1]}"> -->
+        <!--                 Command="{CompiledBinding ChangeSkillCommand}" -->
+        <!--                 CommandParameter="{CompiledBinding SkillSlots[1]}"> -->
         <!--                 <StackPanel> -->
-        <!--                     <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[1].IsEmpty}"/> -->
-        <!--                     <TextBlock Text="{Binding SkillSlots[1].SelectedItemName}" IsVisible="{Binding SkillSlots[1].IsSelected}" /> -->
+        <!--                     <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding SkillSlots[1].IsEmpty}"/> -->
+        <!--                     <TextBlock Text="{CompiledBinding SkillSlots[1].SelectedItemName}" IsVisible="{CompiledBinding SkillSlots[1].IsSelected}" /> -->
         <!--                 </StackPanel> -->
         <!--             </Button> -->
         <!--             <Button  -->
-        <!--                 Command="{Binding ChangeSkillCommand}" -->
-        <!--                 CommandParameter="{Binding SkillSlots[2]}"> -->
+        <!--                 Command="{CompiledBinding ChangeSkillCommand}" -->
+        <!--                 CommandParameter="{CompiledBinding SkillSlots[2]}"> -->
         <!--                 <StackPanel> -->
-        <!--                     <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[2].IsEmpty}"/> -->
-        <!--                     <TextBlock Text="{Binding SkillSlots[2].SelectedItemName}" IsVisible="{Binding SkillSlots[2].IsSelected}" /> -->
+        <!--                     <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding SkillSlots[2].IsEmpty}"/> -->
+        <!--                     <TextBlock Text="{CompiledBinding SkillSlots[2].SelectedItemName}" IsVisible="{CompiledBinding SkillSlots[2].IsSelected}" /> -->
         <!--                 </StackPanel> -->
         <!--             </Button> -->
         <!--             <Button  -->
-        <!--                 Command="{Binding ChangeSkillCommand}" -->
-        <!--                 CommandParameter="{Binding SkillSlots[3]}"> -->
+        <!--                 Command="{CompiledBinding ChangeSkillCommand}" -->
+        <!--                 CommandParameter="{CompiledBinding SkillSlots[3]}"> -->
         <!--                 <StackPanel> -->
-        <!--                     <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[3].IsEmpty}"/> -->
-        <!--                     <TextBlock Text="{Binding SkillSlots[3].SelectedItemName}" IsVisible="{Binding SkillSlots[3].IsSelected}" /> -->
+        <!--                     <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding SkillSlots[3].IsEmpty}"/> -->
+        <!--                     <TextBlock Text="{CompiledBinding SkillSlots[3].SelectedItemName}" IsVisible="{CompiledBinding SkillSlots[3].IsSelected}" /> -->
         <!--                 </StackPanel> -->
         <!--             </Button> -->
         <!--         </StackPanel> -->
@@ -312,7 +312,7 @@
         <!--     ~1~ shared picker overlay @1@ -->
         <!--     <Border -->
         <!--         Background="#80000000" -->
-        <!--         IsVisible="{Binding IsSkillPickerOpen}"> -->
+        <!--         IsVisible="{CompiledBinding IsSkillPickerOpen}"> -->
         <!--         <Grid HorizontalAlignment="Center" -->
         <!--               VerticalAlignment="Center"> -->
         <!--             <Border -->
@@ -322,17 +322,17 @@
         <!--                 MinWidth="260" -->
         <!--                 MaxHeight="320"> -->
         <!--                 <StackPanel Spacing="8"> -->
-        <!--                     <TextBlock Text="{Binding ActiveSkillSlot.Label}" FontWeight="Bold" /> -->
+        <!--                     <TextBlock Text="{CompiledBinding ActiveSkillSlot.Label}" FontWeight="Bold" /> -->
         <!-- -->
         <!--                     <ScrollViewer MaxHeight="220"> -->
-        <!--                         <ItemsControl ItemsSource="{Binding AvailableSkills}"> -->
+        <!--                         <ItemsControl ItemsSource="{CompiledBinding AvailableSkills}"> -->
         <!--                             <ItemsControl.ItemTemplate> -->
         <!--                                 <DataTemplate DataType="teamBuilder:CharacterSkillViewModel"> -->
         <!--                                     <Button -->
-        <!--                                         Command="{Binding #Root.SelectSkillCommandProxy}" -->
-        <!--                                         CommandParameter="{Binding}" -->
+        <!--                                         Command="{CompiledBinding #Root.SelectSkillCommandProxy}" -->
+        <!--                                         CommandParameter="{CompiledBinding}" -->
         <!--                                         HorizontalAlignment="Stretch"> -->
-        <!--                                         <TextBlock Text="{Binding Name}" /> -->
+        <!--                                         <TextBlock Text="{CompiledBinding Name}" /> -->
         <!--                                     </Button> -->
         <!--                                 </DataTemplate> -->
         <!--                             </ItemsControl.ItemTemplate> -->
@@ -341,7 +341,7 @@
         <!-- -->
         <!--                     <Button -->
         <!--                         Content="Cancel" -->
-        <!--                         Command="{Binding CloseSkillPickerCommand}" /> -->
+        <!--                         Command="{CompiledBinding CloseSkillPickerCommand}" /> -->
         <!--                 </StackPanel> -->
         <!--             </Border> -->
         <!--         </Grid> -->
@@ -349,7 +349,7 @@
         <!-- </Grid> -->
     </Grid>
     <!-- ~1~ Loading overlay @1@ -->
-    <!-- <Border  Background="#80000000" IsVisible="{Binding IsLoading}"> -->
+    <!-- <Border  Background="#80000000" IsVisible="{CompiledBinding IsLoading}"> -->
     <!--     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8"> -->
     <!--         <controls:ProgressRing IsIndeterminate="True" Width="40" Height="40" /> -->
     <!--         <TextBlock Text="Loading..." Foreground="White" HorizontalAlignment="Center" /> -->

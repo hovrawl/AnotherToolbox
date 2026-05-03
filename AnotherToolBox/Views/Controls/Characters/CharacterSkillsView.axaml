@@ -31,9 +31,9 @@
                     <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch">
                         <TextBlock Grid.Column="0"
                                    Margin="0,0,8,0"
-                                   Text="{Binding Stat}" />
+                                   Text="{CompiledBinding Stat}" />
                         <TextBlock Grid.Column="1"
-                                   Text="{Binding Value}" />
+                                   Text="{CompiledBinding Value}" />
                     </Grid>
                 </DataTemplate>
             </Setter>
@@ -52,35 +52,35 @@
                 <StackPanel>
                     <TextBlock Text="Skills"></TextBlock>
                     <Button 
-                        Command="{Binding ChangeSkillCommand}"
-                        CommandParameter="{Binding SkillSlots[0]}">
+                        Command="{CompiledBinding ChangeSkillCommand}"
+                        CommandParameter="{CompiledBinding SkillSlots[0]}">
                         <StackPanel>
-                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[0].IsEmpty}"/>
-                            <TextBlock Text="{Binding SkillSlots[0].SelectedItemName}" IsVisible="{Binding SkillSlots[0].IsSelected}" />
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding SkillSlots[0].IsEmpty}"/>
+                            <TextBlock Text="{CompiledBinding SkillSlots[0].SelectedItemName}" IsVisible="{CompiledBinding SkillSlots[0].IsSelected}" />
                         </StackPanel>
                     </Button>
                     <Button 
-                        Command="{Binding ChangeSkillCommand}"
-                        CommandParameter="{Binding SkillSlots[1]}">
+                        Command="{CompiledBinding ChangeSkillCommand}"
+                        CommandParameter="{CompiledBinding SkillSlots[1]}">
                         <StackPanel>
-                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[1].IsEmpty}"/>
-                            <TextBlock Text="{Binding SkillSlots[1].SelectedItemName}" IsVisible="{Binding SkillSlots[1].IsSelected}" />
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding SkillSlots[1].IsEmpty}"/>
+                            <TextBlock Text="{CompiledBinding SkillSlots[1].SelectedItemName}" IsVisible="{CompiledBinding SkillSlots[1].IsSelected}" />
                         </StackPanel>
                     </Button>
                     <Button 
-                        Command="{Binding ChangeSkillCommand}"
-                        CommandParameter="{Binding SkillSlots[2]}">
+                        Command="{CompiledBinding ChangeSkillCommand}"
+                        CommandParameter="{CompiledBinding SkillSlots[2]}">
                         <StackPanel>
-                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[2].IsEmpty}"/>
-                            <TextBlock Text="{Binding SkillSlots[2].SelectedItemName}" IsVisible="{Binding SkillSlots[2].IsSelected}" />
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding SkillSlots[2].IsEmpty}"/>
+                            <TextBlock Text="{CompiledBinding SkillSlots[2].SelectedItemName}" IsVisible="{CompiledBinding SkillSlots[2].IsSelected}" />
                         </StackPanel>
                     </Button>
                     <Button 
-                        Command="{Binding ChangeSkillCommand}"
-                        CommandParameter="{Binding SkillSlots[3]}">
+                        Command="{CompiledBinding ChangeSkillCommand}"
+                        CommandParameter="{CompiledBinding SkillSlots[3]}">
                         <StackPanel>
-                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[3].IsEmpty}"/>
-                            <TextBlock Text="{Binding SkillSlots[3].SelectedItemName}" IsVisible="{Binding SkillSlots[3].IsSelected}" />
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{CompiledBinding SkillSlots[3].IsEmpty}"/>
+                            <TextBlock Text="{CompiledBinding SkillSlots[3].SelectedItemName}" IsVisible="{CompiledBinding SkillSlots[3].IsSelected}" />
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -89,7 +89,7 @@
             <!-- shared picker overlay -->
             <Border
                 Background="#80000000"
-                IsVisible="{Binding IsSkillPickerOpen}">
+                IsVisible="{CompiledBinding IsSkillPickerOpen}">
                 <Grid HorizontalAlignment="Center"
                       VerticalAlignment="Center">
                     <Border
@@ -99,17 +99,17 @@
                         MinWidth="260"
                         MaxHeight="320">
                         <StackPanel Spacing="8">
-                            <TextBlock Text="{Binding ActiveSkillSlot.Label}" FontWeight="Bold" />
+                            <TextBlock Text="{CompiledBinding ActiveSkillSlot.Label}" FontWeight="Bold" />
 
                             <ScrollViewer MaxHeight="220">
-                                <ItemsControl ItemsSource="{Binding AvailableSkills}">
+                                <ItemsControl ItemsSource="{CompiledBinding AvailableSkills}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate DataType="teamBuilder:CharacterSkillViewModel">
                                             <Button
-                                                Command="{Binding #Root.SelectSkillCommandProxy}"
-                                                CommandParameter="{Binding}"
+                                                Command="{CompiledBinding #Root.SelectSkillCommandProxy}"
+                                                CommandParameter="{CompiledBinding}"
                                                 HorizontalAlignment="Stretch">
-                                                <TextBlock Text="{Binding Name}" />
+                                                <TextBlock Text="{CompiledBinding Name}" />
                                             </Button>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
@@ -118,7 +118,7 @@
 
                             <Button
                                 Content="Cancel"
-                                Command="{Binding CloseSkillPickerCommand}" />
+                                Command="{CompiledBinding CloseSkillPickerCommand}" />
                         </StackPanel>
                     </Border>
                 </Grid>

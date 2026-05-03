@@ -10,8 +10,8 @@
              x:Class="AnotherToolBox.Views.Controls.Characters.CharacterList"
              x:DataType="viewModels:CharacterListViewModel">
     <Grid>
-        <ListBox ItemsSource="{Binding Characters}"
-                 SelectedItem="{Binding SelectedCharacter}"
+        <ListBox ItemsSource="{CompiledBinding Characters}"
+                 SelectedItem="{CompiledBinding SelectedCharacter}"
                  
                  PreparingContainer="ItemsControl_OnPreparingContainer">
             <ListBox.ItemTemplate>
@@ -19,11 +19,11 @@
                     <ListBoxItem >
                         <StackPanel Orientation="Horizontal">
                             <controls:FAProgressRing IsIndeterminate="True" Width="80" Height="80"
-                                                   IsVisible="{Binding IsLoading}"/>
-                            <Image Source="{Binding Thumbnail}"
+                                                   IsVisible="{CompiledBinding IsLoading}"/>
+                            <Image Source="{CompiledBinding Thumbnail}"
                                    Width="80" Height="80" 
                                    VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding Name}"
+                            <TextBlock Text="{CompiledBinding Name}"
                                        VerticalAlignment="Center"></TextBlock>
                         </StackPanel>
                     </ListBoxItem>
@@ -32,7 +32,7 @@
         </ListBox>
 
         <!-- Loading overlay -->
-        <Border Background="#80000000" IsVisible="{Binding IsLoading}">
+        <Border Background="#80000000" IsVisible="{CompiledBinding IsLoading}">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
                 <controls:FAProgressRing IsIndeterminate="True" Width="40" Height="40" />
                 <TextBlock Text="Loading characters..." Foreground="White" HorizontalAlignment="Center" />
