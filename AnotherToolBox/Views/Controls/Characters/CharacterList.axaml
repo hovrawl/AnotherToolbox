@@ -18,7 +18,7 @@
                 <DataTemplate DataType="characters:CharacterChoiceDto">
                     <ListBoxItem >
                         <StackPanel Orientation="Horizontal">
-                            <controls:ProgressRing IsIndeterminate="True" Width="80" Height="80"
+                            <controls:FAProgressRing IsIndeterminate="True" Width="80" Height="80"
                                                    IsVisible="{Binding IsLoading}"/>
                             <Image Source="{Binding Thumbnail}"
                                    Width="80" Height="80" 
@@ -34,7 +34,7 @@
         <!-- Loading overlay -->
         <Border Background="#80000000" IsVisible="{Binding IsLoading}">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
-                <controls:ProgressRing IsIndeterminate="True" Width="40" Height="40" />
+                <controls:FAProgressRing IsIndeterminate="True" Width="40" Height="40" />
                 <TextBlock Text="Loading characters..." Foreground="White" HorizontalAlignment="Center" />
             </StackPanel>
         </Border>

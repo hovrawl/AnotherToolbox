@@ -16,7 +16,7 @@ using TeamBuilderView = AnotherToolBox.Views.Controls.Team.TeamBuilderView;
 
 namespace AnotherToolBox.Views;
 
-public partial class MainWindow : AppWindow
+public partial class MainWindow : FAAppWindow
 {
     // Use WeakReference so cached views don't keep the objects alive forever
     // (they can be GC'd if no other strong references exist).
@@ -38,9 +38,9 @@ public partial class MainWindow : AppWindow
         try
         {
             if (NavigationView.MenuItems.FirstOrDefault(i => 
-                    i is NavigationViewItem navItem 
+                    i is FANavigationViewItem navItem 
                     && (navItem.Tag.ToString().ToLower() == "dashboard"
-                        || navItem.Tag.ToString().ToLower() == "home")) is NavigationViewItem dashboardItem)
+                        || navItem.Tag.ToString().ToLower() == "home")) is FANavigationViewItem dashboardItem)
             {
                 Dispatcher.UIThread.Post(() =>
                 {
@@ -63,9 +63,9 @@ public partial class MainWindow : AppWindow
         }
     }
 
-    private void NavOnItemInvoked(object? sender, NavigationViewItemInvokedEventArgs e)
+    private void NavOnItemInvoked(object? sender, FANavigationViewItemInvokedEventArgs e)
     {
-        if (e.InvokedItemContainer is not NavigationViewItem item) return;
+        if (e.InvokedItemContainer is not FANavigationViewItem item) return;
         if (item.Tag is not string tag) return;
 
         NavigateTo(tag);

@@ -127,7 +127,7 @@
                             Command="{Binding ChangeEquipmentCommand}"
                             CommandParameter="{Binding WeaponSlot}">
                             <StackPanel>
-                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding WeaponSlot.IsEmpty}"/>
+                                <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding WeaponSlot.IsEmpty}"/>
                                 <TextBlock Text="{Binding WeaponSlot.SelectedItemName}" IsVisible="{Binding WeaponSlot.IsSelected}" />
                             </StackPanel>
                         </Button>
@@ -138,7 +138,7 @@
                             Command="{Binding ChangeEquipmentCommand}"
                             CommandParameter="{Binding ArmorSlot}">
                             <StackPanel>
-                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding ArmorSlot.IsEmpty}"/>
+                                <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding ArmorSlot.IsEmpty}"/>
                                 <TextBlock Text="{Binding ArmorSlot.SelectedItemName}" IsVisible="{Binding ArmorSlot.IsSelected}" />
                             </StackPanel>
                         </Button>
@@ -153,7 +153,7 @@
                             Command="{Binding ChangeEquipmentCommand}"
                             CommandParameter="{Binding BadgeSlots[0]}">
                             <StackPanel>
-                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding BadgeSlots[0].IsEmpty}"/>
+                                <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding BadgeSlots[0].IsEmpty}"/>
                                 <TextBlock Text="{Binding BadgeSlots[0].SelectedItemName}" IsVisible="{Binding BadgeSlots[0].IsSelected}" />
                             </StackPanel>
                         </Button>
@@ -163,7 +163,7 @@
                             Command="{Binding ChangeEquipmentCommand}"
                             CommandParameter="{Binding BadgeSlots[1]}">
                             <StackPanel>
-                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding BadgeSlots[1].IsEmpty}"/>
+                                <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding BadgeSlots[1].IsEmpty}"/>
                                 <TextBlock Text="{Binding BadgeSlots[1].SelectedItemName}" IsVisible="{Binding BadgeSlots[1].IsSelected}" />
                             </StackPanel>
                         </Button>
@@ -178,7 +178,7 @@
                             Command="{Binding ChangeEquipmentCommand}"
                             CommandParameter="{Binding GrastaSlots[0]}">
                             <StackPanel>
-                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[0].IsEmpty}"/>
+                                <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[0].IsEmpty}"/>
                                 <TextBlock Text="{Binding GrastaSlots[0].SelectedItemName}" IsVisible="{Binding GrastaSlots[0].IsSelected}" />
                             </StackPanel>
                         </Button>
@@ -188,7 +188,7 @@
                             Command="{Binding ChangeEquipmentCommand}"
                             CommandParameter="{Binding GrastaSlots[1]}">
                             <StackPanel>
-                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[1].IsEmpty}"/>
+                                <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[1].IsEmpty}"/>
                                 <TextBlock Text="{Binding GrastaSlots[1].SelectedItemName}" IsVisible="{Binding GrastaSlots[1].IsSelected}" />
                             </StackPanel>
                         </Button>
@@ -198,7 +198,7 @@
                             Command="{Binding ChangeEquipmentCommand}"
                             CommandParameter="{Binding GrastaSlots[2]}">
                             <StackPanel>
-                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[2].IsEmpty}"/>
+                                <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[2].IsEmpty}"/>
                                 <TextBlock Text="{Binding GrastaSlots[2].SelectedItemName}" IsVisible="{Binding GrastaSlots[2].IsSelected}" />
                             </StackPanel>
                         </Button>
@@ -208,7 +208,7 @@
                             Command="{Binding ChangeEquipmentCommand}"
                             CommandParameter="{Binding GrastaSlots[3]}">
                             <StackPanel>
-                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[3].IsEmpty}"/>
+                                <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding GrastaSlots[3].IsEmpty}"/>
                                 <TextBlock Text="{Binding GrastaSlots[3].SelectedItemName}" IsVisible="{Binding GrastaSlots[3].IsSelected}" />
                             </StackPanel>
                         </Button>
@@ -218,7 +218,7 @@
                             Command="{Binding ChangeEquipmentCommand}"
                             CommandParameter="{Binding SpecialGrastaSlot}">
                             <StackPanel>
-                                <controls:SymbolIcon Symbol="Add" IsVisible="{Binding SpecialGrastaSlot.IsEmpty}"/>
+                                <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SpecialGrastaSlot.IsEmpty}"/>
                                 <TextBlock Text="{Binding SpecialGrastaSlot.SelectedItemName}" IsVisible="{Binding SpecialGrastaSlot.IsSelected}" />
                             </StackPanel>
                         </Button>
@@ -278,7 +278,7 @@
                         Command="{Binding ChangeSkillCommand}"
                         CommandParameter="{Binding SkillSlots[0]}">
                         <StackPanel>
-                            <controls:SymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[0].IsEmpty}"/>
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[0].IsEmpty}"/>
                             <TextBlock Text="{Binding SkillSlots[0].SelectedItemName}" IsVisible="{Binding SkillSlots[0].IsSelected}" />
                         </StackPanel>
                     </Button>
@@ -286,7 +286,7 @@
                         Command="{Binding ChangeSkillCommand}"
                         CommandParameter="{Binding SkillSlots[1]}">
                         <StackPanel>
-                            <controls:SymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[1].IsEmpty}"/>
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[1].IsEmpty}"/>
                             <TextBlock Text="{Binding SkillSlots[1].SelectedItemName}" IsVisible="{Binding SkillSlots[1].IsSelected}" />
                         </StackPanel>
                     </Button>
@@ -294,7 +294,7 @@
                         Command="{Binding ChangeSkillCommand}"
                         CommandParameter="{Binding SkillSlots[2]}">
                         <StackPanel>
-                            <controls:SymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[2].IsEmpty}"/>
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[2].IsEmpty}"/>
                             <TextBlock Text="{Binding SkillSlots[2].SelectedItemName}" IsVisible="{Binding SkillSlots[2].IsSelected}" />
                         </StackPanel>
                     </Button>
@@ -302,7 +302,7 @@
                         Command="{Binding ChangeSkillCommand}"
                         CommandParameter="{Binding SkillSlots[3]}">
                         <StackPanel>
-                            <controls:SymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[3].IsEmpty}"/>
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[3].IsEmpty}"/>
                             <TextBlock Text="{Binding SkillSlots[3].SelectedItemName}" IsVisible="{Binding SkillSlots[3].IsSelected}" />
                         </StackPanel>
                     </Button>

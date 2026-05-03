@@ -1,4 +1,4 @@
-<faw:AppWindow xmlns="https://github.com/avaloniaui"
+<faw:FAAppWindow xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:AnotherToolBox.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -20,23 +20,23 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <ui:NavigationView
+    <ui:FANavigationView
         x:Name="NavigationView"
         IsPaneOpen="False"
                        IsBackEnabled="False"
                        IsBackButtonVisible="False"
                        ItemInvoked="NavOnItemInvoked">
-        <ui:NavigationView.MenuItems>
+        <ui:FANavigationView.MenuItems>
             
-            <ui:NavigationViewItem Content="Home" IconSource="Home" Tag="Home"/>
-            <ui:NavigationViewItem Content="Team" IconSource="People" Tag="Team" />
-            <ui:NavigationViewItem Content="Stories" IconSource="Book" Tag="Stories" />
+            <ui:FANavigationViewItem Content="Home" IconSource="Home" Tag="Home"/>
+            <ui:FANavigationViewItem Content="Team" IconSource="People" Tag="Team" />
+            <ui:FANavigationViewItem Content="Stories" IconSource="Book" Tag="Stories" />
 
-        </ui:NavigationView.MenuItems>
-        <ui:NavigationView.Content>
+        </ui:FANavigationView.MenuItems>
+        <ui:FANavigationView.Content>
             
-        </ui:NavigationView.Content>
-    </ui:NavigationView>
+        </ui:FANavigationView.Content>
+    </ui:FANavigationView>
     
     
-</faw:AppWindow>
+</faw:FAAppWindow>

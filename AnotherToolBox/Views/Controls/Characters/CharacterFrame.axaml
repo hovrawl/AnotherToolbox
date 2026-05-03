@@ -23,7 +23,7 @@
                 VerticalAlignment="Stretch">
             <StackPanel>
                 <!-- Add Character when empty -->
-                <controls:SymbolIcon Symbol="Add" 
+                <controls:FASymbolIcon Symbol="Add" 
                                      FontSize="24"
                                      IsVisible="{Binding SelectedCharacter, Converter={StaticResource ObjectNullBoolConverter}}"
                                      VerticalAlignment="Center"
