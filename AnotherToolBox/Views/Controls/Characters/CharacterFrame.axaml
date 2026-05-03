@@ -13,8 +13,8 @@
     <Grid 
           MinWidth="144"
           MaxWidth="144"
-          MinHeight="170"
-          MaxHeight="190"
+          MinHeight="200"
+          MaxHeight="200"
           HorizontalAlignment="Center"
           VerticalAlignment="Center">
         <Button 
