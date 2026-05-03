@@ -43,6 +43,14 @@
         <DependentUpon>TeamBuilderView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+      <Compile Update="Views\Controls\Characters\CharacterStatusView.axaml.cs">
+        <DependentUpon>CharacterStatusView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Controls\Characters\CharacterSkillsView.axaml.cs">
+        <DependentUpon>CharacterSkillsView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>

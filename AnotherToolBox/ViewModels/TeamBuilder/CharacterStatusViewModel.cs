@@ -270,6 +270,7 @@ public partial class CharacterStatusViewModel : ViewModelBase
         
         
         // Status res stats
+        StatusResStats.Clear();
         StatusResStats.Add(new CharacterStatDto
         {
             Stat = UnitStat.StunRes,

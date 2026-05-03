@@ -51,18 +51,45 @@
                         MaxWidth="120" 
                         Height="40"
                         />
-                    <Button Command="{Binding ViewStats}" >
-                        Configure
-                        <Button.Flyout>
-                            <Flyout
-                                IsOpen="{Binding StatsOpen}"
+                    <StackPanel Orientation="Horizontal">
+                        
+                        <Button Command="{Binding ViewStats}">
+                            <controls:FASymbolIcon Symbol="BulletList"></controls:FASymbolIcon>
+                            <Button.Flyout>
+                                <Flyout
+                                    IsOpen="{Binding StatsOpen}"
+                                        Closing="StatsFlyout_OnClosing">
+                                    <characters:CharacterStatusView 
+                                        DataContext="{Binding CharacterStatusVm}"
+                                        Height="340"/>
+                                </Flyout>
+                            </Button.Flyout>
+                        </Button>
+                        <Button Command="{Binding ViewEquipment}">
+                            <controls:FASymbolIcon Symbol="XboxConsole"></controls:FASymbolIcon>
+                            <Button.Flyout>
+                                <Flyout
+                                    IsOpen="{Binding EquipmentOpen}"
                                     Closing="StatsFlyout_OnClosing">
-                                <team:CharacterStatusView 
-                                    DataContext="{Binding CharacterStatusVm}"
-                                    Height="340"/>
-                            </Flyout>
-                        </Button.Flyout>
-                    </Button>
+                                    <characters:CharacterEquipmentView 
+                                        DataContext="{Binding CharacterStatusVm}"
+                                        Height="340"/>
+                                </Flyout>
+                            </Button.Flyout>
+                        </Button>
+                        <Button Command="{Binding ViewSkills}">
+                            <controls:FASymbolIcon Symbol="StarAdd"></controls:FASymbolIcon>
+                            <Button.Flyout>
+                                <Flyout
+                                    IsOpen="{Binding SkillsOpen}"
+                                    Closing="StatsFlyout_OnClosing">
+                                    <characters:CharacterSkillsView 
+                                        DataContext="{Binding CharacterStatusVm}"
+                                        Height="340"/>
+                                </Flyout>
+                            </Button.Flyout>
+                        </Button>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
             <Button.Flyout>

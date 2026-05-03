@@ -1,14 +1,12 @@
 ﻿using System.Windows.Input;
 using AnotherToolBox.ViewModels.TeamBuilder;
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 
-namespace AnotherToolBox.Views.Controls.Team;
+namespace AnotherToolBox.Views.Controls.Characters;
 
-public partial class CharacterStatusView : UserControl
+public partial class CharacterSkillsView : UserControl
 {
-    public CharacterStatusView()
+    public CharacterSkillsView()
     {
         InitializeComponent();
     }

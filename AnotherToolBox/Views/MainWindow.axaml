@@ -30,7 +30,11 @@
             
             <ui:FANavigationViewItem Content="Home" IconSource="Home" Tag="Home"/>
             <ui:FANavigationViewItem Content="Team" IconSource="People" Tag="Team" />
-            <ui:FANavigationViewItem Content="Stories" IconSource="Book" Tag="Stories" />
+            <ui:FANavigationViewItem Content="Stories"  Tag="Stories">
+                <ui:FANavigationViewItem.IconSource>
+                    <ui:FASymbolIconSource Symbol="PhoneBook"></ui:FASymbolIconSource>
+                </ui:FANavigationViewItem.IconSource>
+            </ui:FANavigationViewItem>
 
         </ui:FANavigationView.MenuItems>
         <ui:FANavigationView.Content>

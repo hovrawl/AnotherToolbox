@@ -21,6 +21,8 @@ public partial class CharacterFrameViewModel : ViewModelBase
     
     [ObservableProperty] private bool selectorOpen;
     [ObservableProperty] private bool statsOpen;
+    [ObservableProperty] private bool equipmentOpen;
+    [ObservableProperty] private bool skillsOpen;
     
     [ObservableProperty] private CharacterStatusViewModel characterStatusVm;
 
@@ -69,6 +71,44 @@ public partial class CharacterFrameViewModel : ViewModelBase
 
         await CharacterStatusVm.ConfigureCharacter(SelectedCharacterSlim);
         StatsOpen = true;
+    }
+    
+    [RelayCommand]
+    public async Task ViewEquipment()
+    {
+        if (SelectedCharacter == null) return;
+
+        if (CharacterStatusVm == null)
+        {
+            
+            var scope = _serviceProvider.CreateScope();
+            var charStatusVm = scope.ServiceProvider.GetRequiredService<CharacterStatusViewModel>();
+            CharacterStatusVm = charStatusVm;
+        }
+
+        if (CharacterStatusVm == null) return;
+
+        await CharacterStatusVm.ConfigureCharacter(SelectedCharacterSlim);
+        EquipmentOpen = true;
+    }
+    
+    [RelayCommand]
+    public async Task ViewSkills()
+    {
+        if (SelectedCharacter == null) return;
+
+        if (CharacterStatusVm == null)
+        {
+            
+            var scope = _serviceProvider.CreateScope();
+            var charStatusVm = scope.ServiceProvider.GetRequiredService<CharacterStatusViewModel>();
+            CharacterStatusVm = charStatusVm;
+        }
+
+        if (CharacterStatusVm == null) return;
+
+        await CharacterStatusVm.ConfigureCharacter(SelectedCharacterSlim);
+        SkillsOpen = true;
     }
 
 

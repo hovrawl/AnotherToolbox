@@ -1,0 +1,128 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:teamBuilder="clr-namespace:AnotherToolBox.ViewModels.TeamBuilder"
+             xmlns:team="clr-namespace:AnotherToolBox.Models.Team"
+             xmlns:controls="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AnotherToolBox.Views.Controls.Characters.CharacterSkillsView"
+             x:Name="Root"
+             x:DataType="teamBuilder:CharacterStatusViewModel">
+    <Control.Styles>
+        <Style Selector="Border.StatBorder">
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="BorderBrush" Value="DarkSlateGray"></Setter>
+            <Setter Property="CornerRadius" Value="4"></Setter>
+        </Style>
+        <Style Selector="ItemsRepeater.StatsLayout">
+            <Setter Property="Layout">
+                <UniformGridLayout 
+                    Orientation="Horizontal"
+                    MaximumRowsOrColumns="2"
+                    ItemsJustification="Start"
+                    ItemsStretch="Fill"
+                    MinColumnSpacing="12"
+                    MinRowSpacing="6"
+                                   />
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <DataTemplate DataType="team:CharacterStatDto">
+                    <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch">
+                        <TextBlock Grid.Column="0"
+                                   Margin="0,0,8,0"
+                                   Text="{Binding Stat}" />
+                        <TextBlock Grid.Column="1"
+                                   Text="{Binding Value}" />
+                    </Grid>
+                </DataTemplate>
+            </Setter>
+        </Style>
+    </Control.Styles>
+    <Grid 
+        ColumnDefinitions="Auto,Auto, Auto"
+        ColumnSpacing="10">
+         <Grid Grid.Column="0" MinWidth="260">
+            
+            <Border
+                BorderBrush="DarkSlateGray"
+                BorderThickness="1"
+                CornerRadius="4"
+                >
+                <StackPanel>
+                    <TextBlock Text="Skills"></TextBlock>
+                    <Button 
+                        Command="{Binding ChangeSkillCommand}"
+                        CommandParameter="{Binding SkillSlots[0]}">
+                        <StackPanel>
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[0].IsEmpty}"/>
+                            <TextBlock Text="{Binding SkillSlots[0].SelectedItemName}" IsVisible="{Binding SkillSlots[0].IsSelected}" />
+                        </StackPanel>
+                    </Button>
+                    <Button 
+                        Command="{Binding ChangeSkillCommand}"
+                        CommandParameter="{Binding SkillSlots[1]}">
+                        <StackPanel>
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[1].IsEmpty}"/>
+                            <TextBlock Text="{Binding SkillSlots[1].SelectedItemName}" IsVisible="{Binding SkillSlots[1].IsSelected}" />
+                        </StackPanel>
+                    </Button>
+                    <Button 
+                        Command="{Binding ChangeSkillCommand}"
+                        CommandParameter="{Binding SkillSlots[2]}">
+                        <StackPanel>
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[2].IsEmpty}"/>
+                            <TextBlock Text="{Binding SkillSlots[2].SelectedItemName}" IsVisible="{Binding SkillSlots[2].IsSelected}" />
+                        </StackPanel>
+                    </Button>
+                    <Button 
+                        Command="{Binding ChangeSkillCommand}"
+                        CommandParameter="{Binding SkillSlots[3]}">
+                        <StackPanel>
+                            <controls:FASymbolIcon Symbol="Add" IsVisible="{Binding SkillSlots[3].IsEmpty}"/>
+                            <TextBlock Text="{Binding SkillSlots[3].SelectedItemName}" IsVisible="{Binding SkillSlots[3].IsSelected}" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Border>
+            
+            <!-- shared picker overlay -->
+            <Border
+                Background="#80000000"
+                IsVisible="{Binding IsSkillPickerOpen}">
+                <Grid HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                    <Border
+                        Background="White"
+                        Padding="12"
+                        CornerRadius="6"
+                        MinWidth="260"
+                        MaxHeight="320">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="{Binding ActiveSkillSlot.Label}" FontWeight="Bold" />
+
+                            <ScrollViewer MaxHeight="220">
+                                <ItemsControl ItemsSource="{Binding AvailableSkills}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="teamBuilder:CharacterSkillViewModel">
+                                            <Button
+                                                Command="{Binding #Root.SelectSkillCommandProxy}"
+                                                CommandParameter="{Binding}"
+                                                HorizontalAlignment="Stretch">
+                                                <TextBlock Text="{Binding Name}" />
+                                            </Button>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+
+                            <Button
+                                Content="Cancel"
+                                Command="{Binding CloseSkillPickerCommand}" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>
